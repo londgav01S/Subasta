@@ -1,7 +1,13 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-l
-<src/main/resources/co/edu/uniquindio/subasta/hello-view.fxml,4\c\4ca9e3513046ce2aaa32c03bc14cc2e24d61503f
-=
-src/Otro.puml,1\3\136fa695c9905ee2a0ce19120c882f7f831f6d1c
+k
+;src/main/java/co/edu/uniquindio/subasta/model/Producto.java,5\2\52107df1172bdffe7760a203691f65668632289f
+j
+:src/main/java/co/edu/uniquindio/subasta/model/Anuncio.java,d\d\ddd2b32334c8ee66b6551257de3bfc4a088a444e
+h
+8src/main/java/co/edu/uniquindio/subasta/Application.java,3\8\385949a56370d834b3b68d84d01fb9b03955016e
+N
+src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
+j
+:src/main/java/co/edu/uniquindio/subasta/model/Subasta.java,e\6\e67ccb82f9f2d2af331a2c5de3c65688c45ea696
