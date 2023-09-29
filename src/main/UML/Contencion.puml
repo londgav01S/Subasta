@@ -1,0 +1,41 @@
+@startuml
+
+
+Class Subasta {
+
+}
+
+Class Anunciante{}
+
+Class Usuario{
+    -usuario : String
+    -contraseña : String
+}
+
+Class Comprador{}
+
+Class Anuncio{
+    -nombre : String
+    -codigo : String
+}
+
+Class Producto{
+    -nombre : String
+    -tipo : String
+}
+
+Class Puja{
+    -codigo : String
+    -ofertaInicial : Integer
+    -fecha : Date
+}
+
+Subasta "+ownedBySubasta   " *-- "+listAnunciantes  *" Anunciante
+Subasta "+ownedBySubasta" *-- "listaCompradores" Comprador
+Subasta "+ownedBySubasta" *-- "listaUsuarios" Usuario
+Anunciante "+ownedByAnunciante" *-- "+listAnuncios  *" Anuncio
+Anunciante "+ownedByAnunciante" *-- "+listProductos" Producto
+Comprador "+ownedByComprador" *-- "listaPujas" Puja
+
+
+@enduml

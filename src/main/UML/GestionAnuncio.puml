@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Anuncio{
+    -nombre : String
+    -code : String
+}
+class Producto{
+    -nombre : String
+    -tipo : String
+}
+
+
+Subasta "+ownedBySubasta  " *--- "+listAnunciantes  *" Anunciante
+Anunciante "+ownedByAnunciante" *-- "+listAnuncios  *"Anuncio
+Anunciante "+ownedByAnunciante" *-- "+listProductos" Producto
+Anuncio -r- Producto
+
+@enduml

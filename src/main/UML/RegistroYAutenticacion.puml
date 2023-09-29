@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+Class Subasta {
+}
+
+Class Anunciante{}
+
+Class Usuario{
+    -usuario : String
+    -contraseña : String
+}
+
+Class Comprador{}
+
+Subasta "+ownedBySubasta" *--- "listaUsuarios" Usuario
+
+Usuario "theUsuarioAsociado"  -----left----- "theComprador"  Comprador
+
+Subasta "+ownedBySubasta  " *--- "+listAnunciantes  *" Anunciante
+
+Subasta "+ownedBySubasta" *--- "listaCompradores" Comprador
+
+Usuario "theUsuarioAsociado" -----right----- "theAnunciante"  Anunciante
+
+
+
+
+@enduml
