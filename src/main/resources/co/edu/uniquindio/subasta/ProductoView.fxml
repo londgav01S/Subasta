@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -24,9 +25,9 @@
         </columns>
       </TableView>
       <Line endX="255.20001220703125" endY="7.62939453125E-6" layoutX="319.0" layoutY="96.0" startX="-48.0" />
-      <Line endX="-100.00001525878906" endY="181.0" layoutX="164.0" layoutY="87.0" startX="-99.70712280273438" startY="10.0" />
-      <Line endX="255.20001220703125" endY="7.62939453125E-6" layoutX="320.0" layoutY="269.0" startX="-255.2000274658203" startY="7.62939453125E-6" />
-      <Line endX="-100.00001525878906" endY="181.0" layoutX="675.0" layoutY="87.0" startX="-100.29998779296875" startY="8.5" />
+      <Line endX="-100.70001220703125" endY="152.5" layoutX="164.0" layoutY="87.0" startX="-99.70712280273438" startY="10.0" />
+      <Line endX="255.20001220703125" endY="7.62939453125E-6" layoutX="319.0" layoutY="239.0" startX="-255.2000274658203" startY="7.62939453125E-6" />
+      <Line endX="-100.29998779296875" endY="152.5" layoutX="675.0" layoutY="87.0" startX="-100.29998779296875" startY="8.5" />
       <Line endX="100.0" layoutX="-6.0" layoutY="97.0" startX="70.99998474121094" startY="7.62939453125E-6" />
       <Label layoutX="65.0" layoutY="56.0" text="A continuacion ingrese la información del producto para poder ser registrado" />
       <Label layoutX="380.0" layoutY="148.0" text="Tipo de producto">
@@ -46,5 +47,8 @@
             <Font size="15.0" />
          </font>
       </Label>
+      <Button fx:id="btnAgregar" layoutX="293.0" layoutY="254.0" mnemonicParsing="false" onAction="#agregarProductoEvent" text="Agregar" />
+      <Button fx:id="btnEliminar" layoutX="469.0" layoutY="254.0" mnemonicParsing="false" onAction="#eliminarProductoEvent" text="Eliminar" />
+      <Button fx:id="btnActualizar" layoutX="134.0" layoutY="254.0" mnemonicParsing="false" onAction="#actualizarProductoEvent" text="Actualizar" />
    </children>
 </AnchorPane>
