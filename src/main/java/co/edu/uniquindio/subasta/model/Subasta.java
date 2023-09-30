@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Subasta {
-
+    //hola
     private List<Producto> listaProductos= new ArrayList<>();
 
     //----------------------------------------------------CRUD Producto-------------------------------------------------
