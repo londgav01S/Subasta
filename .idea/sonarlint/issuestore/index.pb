@@ -21,3 +21,7 @@ o
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 j
 :src/main/java/co/edu/uniquindio/subasta/model/Persona.java,a\3\a364d6a44fe2f4891d55f67d4fb60d4e9a0de50b
+~
+Nsrc/main/java/co/edu/uniquindio/subasta/controller/ModelFactoryController.java,3\1\31cb3a96590859ddb1c0f7e67e22d466382243c0
+‚
+Rsrc/main/java/co/edu/uniquindio/subasta/viewController/ProductoViewController.java,7\d\7d8d22a37e753b09c7f4965d1f0e25ad5af6a61d

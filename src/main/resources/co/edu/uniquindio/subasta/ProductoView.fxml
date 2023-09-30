@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="462.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.ProductoView">
+<AnchorPane prefHeight="462.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.ProductoViewController">
    <children>
       <Label layoutX="260.0" layoutY="14.0" text="Productos">
          <font>
@@ -49,6 +49,6 @@
       </Label>
       <Button fx:id="btnAgregar" layoutX="293.0" layoutY="254.0" mnemonicParsing="false" onAction="#agregarProductoEvent" text="Agregar" />
       <Button fx:id="btnEliminar" layoutX="469.0" layoutY="254.0" mnemonicParsing="false" onAction="#eliminarProductoEvent" text="Eliminar" />
-      <Button fx:id="btnActualizar" layoutX="134.0" layoutY="254.0" mnemonicParsing="false" onAction="#actualizarProductoEvent" text="Actualizar" />
+      <Button fx:id="btnActualizar" layoutX="125.0" layoutY="254.0" mnemonicParsing="false" onAction="#actualizarProductoEvent" text="Actualizar" />
    </children>
 </AnchorPane>
