@@ -17,3 +17,7 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 o
 ?src/main/java/co/edu/uniquindio/subasta/model/TipoProducto.java,9\a\9a9065487ee34ce4512b39981f2a8f332c14badd
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+j
+:src/main/java/co/edu/uniquindio/subasta/model/Persona.java,a\3\a364d6a44fe2f4891d55f67d4fb60d4e9a0de50b
