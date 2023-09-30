@@ -11,3 +11,9 @@ N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 j
 :src/main/java/co/edu/uniquindio/subasta/model/Subasta.java,e\6\e67ccb82f9f2d2af331a2c5de3c65688c45ea696
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+o
+?src/main/java/co/edu/uniquindio/subasta/model/TipoProducto.java,9\a\9a9065487ee34ce4512b39981f2a8f332c14badd
