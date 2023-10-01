@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SubastaApplication extends Application {
-    Stage primaryStage;
+    public static Stage primaryStage;
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
