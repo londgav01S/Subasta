@@ -1,9 +1,12 @@
 package co.edu.uniquindio.subasta.controller;
 
+import co.edu.uniquindio.subasta.model.Producto;
 import co.edu.uniquindio.subasta.model.Subasta;
+import co.edu.uniquindio.subasta.model.TipoProducto;
 
 public class ModelFactoryController {
     Subasta subasta = null;
+
 
 
 
@@ -30,16 +33,20 @@ public class ModelFactoryController {
 
     }
 
-    public Subasta getBanco() {
+    public Subasta getSubasta() {
         return subasta;
     }
 
-    public void setBanco(Subasta subasta) {
+    public void setSubasta(Subasta subasta) {
         this.subasta = subasta;
     }
 
+    public Producto crearProducto(String nombre, TipoProducto selectedItem, Object o) {
+        Producto producto = subasta.crearProducto(nombre, selectedItem, null);
+        return producto;
+    }
 
-
-
+    public void eliminarProducto(Producto producto) {
+    }
 
 }

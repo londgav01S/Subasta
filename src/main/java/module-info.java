@@ -5,4 +5,5 @@ module co.edu.uniquindio.subasta {
 
     opens co.edu.uniquindio.subasta to javafx.fxml;
     exports co.edu.uniquindio.subasta;
+    exports co.edu.uniquindio.subasta.viewController;
 }
