@@ -3,31 +3,24 @@ package co.edu.uniquindio.subasta;
 import co.edu.uniquindio.subasta.viewController.ProductoViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.SceneAntialiasing;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SubastaApplication extends Application {
     public static Stage primaryStage;
+    public static Parent rootNode;
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
-         mostrarVentanaPrincial();
-    }
-
-    private void mostrarVentanaPrincial() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(SubastaApplication.class.getResource("ProductoView.fxml"));
-        AnchorPane anchorPane = (AnchorPane)loader.load();
-        ProductoViewController bancoController = loader.getController();
-        bancoController.setAplicacion(this);
-        Scene scene = new Scene(anchorPane);
+        FXMLLoader loader= new FXMLLoader(SubastaApplication.class.getResource("ProductoView.fxml"));
+        Scene scene= new Scene(loader.load(),639 ,462,false, SceneAntialiasing.BALANCED);
         primaryStage.setScene(scene);
         primaryStage.show();
-
     }
-
 
     public static void main(String[] args)  {
         launch(args);
