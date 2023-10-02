@@ -2,6 +2,7 @@ package co.edu.uniquindio.subasta.viewController;
 
 import co.edu.uniquindio.subasta.SubastaApplication;
 import co.edu.uniquindio.subasta.controller.ModelFactoryController;
+import co.edu.uniquindio.subasta.controller.ProductoController;
 import co.edu.uniquindio.subasta.model.Producto;
 import co.edu.uniquindio.subasta.model.TipoProducto;
 import javafx.collections.FXCollections;
@@ -68,7 +69,7 @@ public class ProductoViewController implements Initializable {
     }
 
 
-    ObservableList <Producto> listadoProductos = FXCollections.observableArrayList();
+    ObservableList<Producto> listadoProductos = FXCollections.observableArrayList();
 
 
 
@@ -78,18 +79,21 @@ public class ProductoViewController implements Initializable {
     }
 
     private void agregarProductoAction() {
-        /**
+
         String nombre = fNombreProducto.getText();
         if(datosValidados(nombre)){
             crearProducto(nombre, cTipoProducto.getSelectionModel().getSelectedItem(), null);
             tableViewProducto.setItems(listadoProductos);
         }
-         */
+        fNombreProducto.setText("");
+        cTipoProducto.getSelectionModel().clearSelection();
+
+
     }
 
     private void crearProducto(String nombre, TipoProducto selectedItem, Object o) {
-        /**
-        Producto producto = mfm.crearProducto(nombre, selectedItem, o);
+
+        Producto producto = mfm.crearProducto(nombre, selectedItem, null) ;
         if(producto != null){
             listadoProductos.add(producto);
             mostrarMensajeAlerta("Notificacion ", "Registro exitoso", "El producto: " + nombre +" ha sido registrado" , Alert.AlertType.INFORMATION);
@@ -98,7 +102,7 @@ public class ProductoViewController implements Initializable {
             mostrarMensajeAlerta("Notificacion ", "Registro invalido", "El producto: " + nombre  + "  No ha sido registrado", Alert.AlertType.WARNING);
 
         }
-         */
+
     }
 
 
@@ -107,9 +111,11 @@ public class ProductoViewController implements Initializable {
         eliminarProductoAction();
     }
 
+
+    private ProductoController productoController;
     private void eliminarProductoAction() {
 
-        /**
+
         if (productoSeleccionado != null){
             mfm.eliminarProducto(productoSeleccionado);
             mostrarMensajeAlerta("Producto eliminado ", "Producto selección ", "El prosucto se elimino correctamente ", Alert.AlertType.INFORMATION);
@@ -118,7 +124,7 @@ public class ProductoViewController implements Initializable {
         else{
             mostrarMensajeAlerta("Cuenta seleccion ", "Cuenta seleccion ", "No se ha realizado ninguna seleccion", Alert.AlertType.WARNING);
         }
-         */
+
     }
 
 
@@ -127,7 +133,7 @@ public class ProductoViewController implements Initializable {
 
 
     private void agregarTiposCombo() {
-        /**
+
         List<TipoProducto> listadoTipos = new ArrayList<TipoProducto>();
         listadoTipos.add(TipoProducto.BIENRAIZ);
         listadoTipos.add(TipoProducto.DEPORTES);
@@ -136,14 +142,18 @@ public class ProductoViewController implements Initializable {
         listadoTipos.add(TipoProducto.VEHICULOS);
         ObservableList<TipoProducto> lista = FXCollections.observableArrayList(listadoTipos);
         cTipoProducto.setItems(lista);
-*/
+
     }
 
-    /**
+
     private boolean datosValidados(String nombreAux) {
         String notificacion = "";
         if(nombreAux == null || nombreAux.equals("")){
             notificacion+= "El dato es invalido";
+        }
+
+        if(notificacion.equals("") || notificacion == null){
+            return true;
         }
         return false;
 
@@ -157,12 +167,12 @@ public class ProductoViewController implements Initializable {
         alert.showAndWait();
     }
 
-*/
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.columnaNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnaTipoProducto.setCellValueFactory(new PropertyValueFactory<>("tipo"));
-        this.columnaAnuncio.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        this.columnaAnuncio.setCellValueFactory(new PropertyValueFactory<>("anuncio"));
         agregarTiposCombo();
         tableViewProducto.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) ->{
             if(newSelection!= null){
