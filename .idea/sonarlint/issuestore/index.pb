@@ -25,3 +25,13 @@ Nsrc/main/java/co/edu/uniquindio/subasta/controller/ModelFactoryController.java
 Rsrc/main/java/co/edu/uniquindio/subasta/viewController/ProductoViewController.java,7\d\7d8d22a37e753b09c7f4965d1f0e25ad5af6a61d
 o
 ?src/main/java/co/edu/uniquindio/subasta/SubastaApplication.java,6\6\6696372e9bf9d0a3cbf2f114c74cd3ac553477f7
+z
+Jsrc/main/java/co/edu/uniquindio/subasta/controller/ProductoController.java,8\b\8bc819cfd91ead5c391f627771bcca6e4241c174
+y
+Isrc/main/java/co/edu/uniquindio/subasta/model/Service/IAuntenticable.java,a\4\a46615536db097441bd8f435ebe5fe8273772e6c
+u
+Esrc/main/java/co/edu/uniquindio/subasta/model/Service/IOfertable.java,2\3\236e38fac46a792fa0d8ce948d3e411a67376060
+v
+Fsrc/main/java/co/edu/uniquindio/subasta/model/Service/IPublicable.java,a\e\ae5e9a2e401e5836cc01a8b54ecfc3fc32dd8927
+j
+:src/main/java/co/edu/uniquindio/subasta/model/Usuario.java,3\c\3ca1f17e2b049061fe12d3ef362012694c91ac51
