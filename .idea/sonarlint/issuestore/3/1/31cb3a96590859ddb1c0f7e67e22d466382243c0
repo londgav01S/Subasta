@@ -1,0 +1,10 @@
+
+‚
+java:S1488-"`Immediately return this expression instead of assigning it to the temporary variable "producto".(ÀÛşŒıÿÿÿÿ8¨ó«î®1
+
+java:S11861"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(òµ³¢8àŞâ®1
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(î÷8¹ïšâ®1
+G	java:S106"+Replace this use of System.out by a logger.(ßÉ³Ï8ºïšâ®1
+E
+java:S1172,"(Remove this unused method parameter "o".(ûçâÕ8»ïšâ®1

@@ -20,6 +20,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ProductoViewController implements Initializable {
 
+    private ProductoController productoController;
+
     ModelFactoryController mfm = ModelFactoryController.getInstance();
 
     private Producto productoSeleccionado;
@@ -93,7 +95,7 @@ public class ProductoViewController implements Initializable {
 
     private void crearProducto(String nombre, TipoProducto selectedItem, Object o) {
 
-        Producto producto = mfm.crearProducto(nombre, selectedItem, null) ;
+        Producto producto = productoController.crearProducto(nombre, selectedItem, null) ;
         if(producto != null){
             listadoProductos.add(producto);
             mostrarMensajeAlerta("Notificacion ", "Registro exitoso", "El producto: " + nombre +" ha sido registrado" , Alert.AlertType.INFORMATION);
@@ -112,12 +114,12 @@ public class ProductoViewController implements Initializable {
     }
 
 
-    private ProductoController productoController;
+
     private void eliminarProductoAction() {
 
 
         if (productoSeleccionado != null){
-            mfm.eliminarProducto(productoSeleccionado);
+            productoController.eliminarProducto(productoSeleccionado);
             mostrarMensajeAlerta("Producto eliminado ", "Producto selección ", "El prosucto se elimino correctamente ", Alert.AlertType.INFORMATION);
             listadoProductos.remove(productoSeleccionado);
         }
@@ -170,6 +172,7 @@ public class ProductoViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        productoController = new ProductoController();
         this.columnaNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnaTipoProducto.setCellValueFactory(new PropertyValueFactory<>("tipo"));
         this.columnaAnuncio.setCellValueFactory(new PropertyValueFactory<>("anuncio"));

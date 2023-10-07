@@ -1,0 +1,20 @@
+
+v
+java:S2293‹"YReplace the type specification in this constructor call with the diamond operator ("<>").(Â·ÔP8½Øä¯1
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õç‚8ÂØä¯1
+[
+java:S2589"8Remove this expression which always evaluates to "false"(†û‹Òûÿÿÿÿ8›Ùä¯1
+£
+java:S1186E"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(’äô×ıÿÿÿÿ8 Ùä¯1
+~
+java:S14508"aRemove the "subastaApplication" field and declare it as a local variable in the relevant methods.(”Şê8£Ùä¯1
+J
+java:S1172`"(Remove this unused method parameter "o".(ÂÊ¶Íÿÿÿÿÿ8±Ùä¯1
+d
+java:S1126"AReplace this if-then-else statement by a single return statement.(†û‹Òûÿÿÿÿ8ÈÙä¯1
+S
+java:S1172¤"0Remove this unused method parameter "alertType".(ƒØàûùÿÿÿÿ8ÉÙä¯1
+?
+java:S1116Å"Remove this empty statement.(Åñ­õşÿÿÿÿ8ØÙä¯1
+S
+java:S10688"6Remove this unused "subastaApplication" private field.(”Şê8ØÙä¯1

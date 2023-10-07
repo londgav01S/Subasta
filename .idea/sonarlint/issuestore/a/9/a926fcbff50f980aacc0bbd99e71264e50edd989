@@ -1,0 +1,59 @@
+
+c	java:S112–"FDefine and throw a dedicated exception instead of using a generic one.(»¥’Ş8¸¿Œå¯1
+c	java:S112«"FDefine and throw a dedicated exception instead of using a generic one.(ËÉã…8¹¿Œå¯1
+{
+java:S2293."YReplace the type specification in this constructor call with the diamond operator ("<>").(¾ÁáÆúÿÿÿÿ8º¿Œå¯1
+
+java:S1319,"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ıÁÁÒ8»¿Œå¯1
+r	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ²Õçøÿÿÿÿ8»¿Œå¯1
+r	java:S117j"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Àèˆõÿÿÿÿÿ8»¿Œå¯1
+r	java:S117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿çÕ™ıÿÿÿÿ8¼¿Œå¯1
+Y
+java:S2629H"7Use the built-in formatting to construct this argument.(ŒË–şøÿÿÿÿ8½¿Œå¯1
+Y
+java:S2629L"7Use the built-in formatting to construct this argument.(÷šÖ³úÿÿÿÿ8¾¿Œå¯1
+S
+java:S2629P"7Use the built-in formatting to construct this argument.(ü©ÛZ8¾¿Œå¯1
+f
+java:S2259b"IA "NullPointerException" could be thrown; "fileHandler" is nullable here.(öµºñ8ú¿Œå¯1
+i
+java:S20950"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(‘îèœ8ú¿Œå¯1
+n
+java:S2095 "LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(­Êšúÿÿÿÿ8ú¿Œå¯1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(ÃíÌ§8ı¿Œå¯1
+J
+java:S1481>"(Remove this unused "log" local variable.(™òßéùÿÿÿÿ8ˆÀŒå¯1
+a
+java:S2147["DCombine this catch with the one at line 87, which has the same body.(ï­£Ä8‰ÀŒå¯1
+m
+java:S3457H"KFormat specifiers or lambda should be used instead of string concatenation.(ŒË–şøÿÿÿÿ8ŒÀŒå¯1
+m
+java:S3457L"KFormat specifiers or lambda should be used instead of string concatenation.(÷šÖ³úÿÿÿÿ8ÀŒå¯1
+g
+java:S3457P"KFormat specifiers or lambda should be used instead of string concatenation.(ü©ÛZ8ÀŒå¯1
+T
+java:S1135\"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8ÀŒå¯1
+\
+java:S1854s":Remove this useless assignment to local variable "minuto".(’µ—ıÿÿÿÿ8’ÀŒå¯1
+Z
+java:S1854r"8Remove this useless assignment to local variable "hora".(Çœæéûÿÿÿÿ8’ÀŒå¯1
+L
+java:S1481j"*Remove this unused "aÃ±oN" local variable.(Àèˆõÿÿÿÿÿ8“ÀŒå¯1
+K
+java:S1481r")Remove this unused "hora" local variable.(Çœæéûÿÿÿÿ8•ÀŒå¯1
+M
+java:S1481s"+Remove this unused "minuto" local variable.(’µ—ıÿÿÿÿ8–ÀŒå¯1
+^	java:S125ƒ"<This block of commented-out lines of code should be removed.(áìœŞùÿÿÿÿ8—ÀŒå¯1
+Y	java:S125†"<This block of commented-out lines of code should be removed.(îÊ™ï8—ÀŒå¯1
+X	java:S125™"<This block of commented-out lines of code should be removed.(µ»Ç8˜ÀŒå¯1
+z
+java:S2737¢"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(úÈ¼¨ıÿÿÿÿ8™ÀŒå¯1
+M
+java:S2093›"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8ŸÀŒå¯1
+u
+java:S2737±"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û8 ÀŒå¯1
+M
+java:S2093­"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8£ÀŒå¯1
+\
+java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8å˜å¯1

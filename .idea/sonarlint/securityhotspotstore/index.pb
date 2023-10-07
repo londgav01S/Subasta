@@ -25,3 +25,11 @@ Rsrc/main/java/co/edu/uniquindio/subasta/viewController/ProductoViewController.j
 Nsrc/main/java/co/edu/uniquindio/subasta/controller/ModelFactoryController.java,3\1\31cb3a96590859ddb1c0f7e67e22d466382243c0
 o
 ?src/main/java/co/edu/uniquindio/subasta/SubastaApplication.java,6\6\6696372e9bf9d0a3cbf2f114c74cd3ac553477f7
+z
+Jsrc/main/java/co/edu/uniquindio/subasta/controller/ProductoController.java,8\b\8bc819cfd91ead5c391f627771bcca6e4241c174
+n
+>src/main/java/co/edu/uniquindio/subasta/utils/ArchivoUtil.java,a\9\a926fcbff50f980aacc0bbd99e71264e50edd989
+Å
+Qsrc/main/java/co/edu/uniquindio/subasta/viewController/SubastaViewController.java,1\3\134f402f0f5e834c74310d14e7547f766e1eb441
+y
+Isrc/main/java/co/edu/uniquindio/subasta/controller/SubastaController.java,5\6\56e5b7f527bb483e60d7479c92d980ad45713a8c
