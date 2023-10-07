@@ -16,10 +16,10 @@ S
 java:S2629P"7Use the built-in formatting to construct this argument.(ü©ÛZ8¾¿Œå¯1
 f
 java:S2259b"IA "NullPointerException" could be thrown; "fileHandler" is nullable here.(öµºñ8ú¿Œå¯1
-i
-java:S20950"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(‘îèœ8ú¿Œå¯1
 n
 java:S2095 "LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(­Êšúÿÿÿÿ8ú¿Œå¯1
+i
+java:S20950"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(‘îèœ8ú¿Œå¯1
 W
 java:S1118":Add a private constructor to hide the implicit public one.(ÃíÌ§8ı¿Œå¯1
 J
