@@ -40,15 +40,12 @@ public class Persistencia {
 
     public static void cargarDatosArchivos(Subasta subasta) throws FileNotFoundException, IOException {
 
-        //cargar archivo de Producto
-        ArrayList<Producto> productoGuardados = cargarProductos();
-        if(productoGuardados.size() > 0)
-            subasta.getListaProductos().addAll(productoGuardados);
-
         //cargar archivos Usuarios
         ArrayList<Usuario> usuariosCargados = cargarUsuarios(RUTA_ARCHIVO_USUARIOS);
         if(usuariosCargados.size() > 0)
             subasta.getListaUsuarios().addAll(usuariosCargados);
+
+        //cargar usuarios
 
         //cargar archivo transcciones
 
