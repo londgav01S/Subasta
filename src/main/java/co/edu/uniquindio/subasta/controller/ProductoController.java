@@ -3,7 +3,7 @@ package co.edu.uniquindio.subasta.controller;
 import co.edu.uniquindio.subasta.model.Producto;
 import co.edu.uniquindio.subasta.model.TipoProducto;
 
-public class ProductoController {
+public class dProductoController {
 
     ModelFactoryController mfm = ModelFactoryController.getInstance();
 
