@@ -40,7 +40,6 @@ public class Persistencia {
 //	C:\td\persistencia
 
 
-
     public static void cargarDatosArchivos(Subasta subasta) throws FileNotFoundException, IOException {
         //cargar archivo de Producto
         ArrayList<Producto> productoGuardados = cargarClientes();
@@ -260,6 +259,7 @@ public class Persistencia {
             e.printStackTrace();
         }
     }
+
 
 
 }

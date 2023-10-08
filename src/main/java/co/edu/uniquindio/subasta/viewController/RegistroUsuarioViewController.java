@@ -62,7 +62,28 @@ public class RegistroUsuarioViewController implements Initializable {
 
     @FXML
     void actualizarUsuarioEvent(ActionEvent event) {
+        String nombreUsuario = fUsuario.getText();
+        String correoElectronico = fCorreoElectronico.getText();
+        String telefono = fTelefono.getText();
+        if(usuarioSeleccionado!= null) {
+            if (datosValidados(nombreUsuario, correoElectronico, telefono, "no tocar", "no tocar", "no tocar")) {
+                registroUsuarioController.actualizarUsuario( usuarioSeleccionado,  telefono,  correoElectronico,  nombreUsuario);
+                usuarioSeleccionado.setCorreoElectronico(correoElectronico);
+                usuarioSeleccionado.setTelefono(telefono);
+                usuarioSeleccionado.setNombreUsuario(nombreUsuario);
+                tableViewUsuario.refresh();
+            }
+        }
 
+        fNombreCompleto.setDisable(false);
+        fIdentificacion.setDisable(false);
+        fContrasenia.setDisable(false);
+        fUsuario.setText("");
+        fIdentificacion.setText("");
+        fNombreCompleto.setText("");
+        fContrasenia.setText("");
+        fCorreoElectronico.setText("");
+        fTelefono.setText("");
     }
 
 
@@ -80,6 +101,13 @@ public class RegistroUsuarioViewController implements Initializable {
             crearUsuario( nombreCompleto,  telefono,  identificacion,  correoElectronico,  nombreUsuario,  contrasenia);
             tableViewUsuario.setItems(listadoUsuarios);
         }
+        fUsuario.setText("");
+        fIdentificacion.setText("");
+        fNombreCompleto.setText("");
+        fContrasenia.setText("");
+        fCorreoElectronico.setText("");
+        fTelefono.setText("");
+
     }
 
     private void crearUsuario(String nombreCompleto, String telefono, String identificacion, String correoElectronico, String nombreUsuario, String contrasenia) {
@@ -167,6 +195,9 @@ public class RegistroUsuarioViewController implements Initializable {
             fIdentificacion.setText(usuarioSeleccionado.getIdentificacion());
             fTelefono.setText(usuarioSeleccionado.getTelefono());
             fCorreoElectronico.setText(usuarioSeleccionado.getCorreoElectronico());
+            fContrasenia.setDisable(true);
+            fIdentificacion.setDisable(true);
+            fNombreCompleto.setDisable(true);
         }
     }
 }

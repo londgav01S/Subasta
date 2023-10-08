@@ -17,7 +17,7 @@ public class SubastaApplication extends Application {
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
         FXMLLoader loader= new FXMLLoader(SubastaApplication.class.getResource("RegistroUsuarioView.fxml"));
-        Scene scene= new Scene(loader.load(),639 ,462,false, SceneAntialiasing.BALANCED);
+        Scene scene= new Scene(loader.load(),680 ,520,false, SceneAntialiasing.BALANCED);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

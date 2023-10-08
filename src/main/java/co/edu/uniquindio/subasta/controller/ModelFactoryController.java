@@ -10,6 +10,8 @@ public class ModelFactoryController {
     Subasta subasta = null;
 
 
+
+
     //------------------------------  Singleton ------------------------------------------------
     // Clase estatica oculta. Tan solo se instanciara el singleton una vez
     private static class SingletonHolder {
@@ -49,9 +51,9 @@ public class ModelFactoryController {
     public void eliminarProducto(Producto producto) {
     }
 
-    public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
-        Persistencia.guardaRegistroLog(mensaje, nivel, accion);
-    }
+  //  public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
+    //    Persistencia.guardaRegistroLog(mensaje, nivel, accion);
+   // }
 
 
     public Usuario crearUsuario(String nombre, String telefono, String identificacion, String correoElectronico, String nombreUsuario, String contrasenia) {
@@ -65,5 +67,8 @@ public class ModelFactoryController {
         subasta.eliminarUsuario(id);
     }
 
+    public void actualizarUsuario(Usuario usuarioSeleccionado, String telefono, String correoElectronico, String nombreUsuario) {
+        subasta.actualizarUsuario( usuarioSeleccionado,  telefono,  correoElectronico,  nombreUsuario);
+    }
 
 }
