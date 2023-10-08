@@ -7,27 +7,27 @@ import java.util.function.Predicate;
 public class Subasta {
 
 
-    public List<Usuario> getListaUsuarios() {
+    public ArrayList<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
-    public void setListaUsuarios(List<Usuario> listaUsuarios) {
+    public void setListaUsuarios(ArrayList<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
     }
 
 
 
-    public List<Producto> getListaProductos() {
+    public ArrayList<Producto> getListaProductos() {
         return listaProductos;
     }
-    public void setListaProductos(List<Producto> listaProductos) {
+    public void setListaProductos(ArrayList<Producto> listaProductos) {
         this.listaProductos = listaProductos;
     }
 
     public Subasta() {
     }
 
-    private List<Producto> listaProductos= new ArrayList<>();
-    private List<Usuario> listaUsuarios= new ArrayList<>();
+    private ArrayList<Producto> listaProductos= new ArrayList<>();
+    private ArrayList<Usuario> listaUsuarios= new ArrayList<>();
 
     //----------------------------------------------------CRUD Producto-------------------------------------------------
 
