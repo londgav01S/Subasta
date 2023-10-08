@@ -110,8 +110,7 @@ public class Persistencia {
     }
 
 
-    public static void guardaRegistroLog(String mensajeLog, int nivel, String accion)
-    {
+    public static void guardaRegistroLog(String mensajeLog, int nivel, String accion) {
         ArchivoUtil.guardarRegistroLog(mensajeLog, nivel, accion, RUTA_ARCHIVO_LOG);
     }
 
@@ -128,7 +127,7 @@ public class Persistencia {
 
     private static boolean validarUsuario(String usuario, String contrasenia) throws FileNotFoundException, IOException
     {
-        ArrayList<Usuario> usuarios = Persistencia.cargarUsuarios(RUTA_ARCHIVO_USUARIOS);
+        ArrayList<Usuario> usuarios = Persistencia.cargarUsuarios();
 
         for (int indiceUsuario = 0; indiceUsuario < usuarios.size(); indiceUsuario++)
         {
@@ -157,7 +156,7 @@ public class Persistencia {
     }
 
 
-//	----------------------SAVES------------------------
+//                           	----------------------SAVES------------------------
 
     /**
      * Guarda en un archivo de texto todos la información de las personas almacenadas en el ArrayList
@@ -177,6 +176,20 @@ public class Persistencia {
     }
 
 
+    /**
+     * guarda usuarios
+     * @param listaUsuarios
+     * @throws IOException
+     */
+    public static void guardarUsuarios(ArrayList<Usuario> listaUsuarios) throws IOException  {
+        String contenido = "";
+
+        for(Usuario usuarioAux:listaUsuarios) {
+            contenido+= usuarioAux.getNombreUsuario()+","+usuarioAux.getContrasenia()+","+usuarioAux.getNombre()+usuarioAux.getTelefono()
+                    +","+usuarioAux.getIdentificacion()+","+usuarioAux.getCorreoElectronico()+"\n";
+        }
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_USUARIOS, contenido, true);
+    }
 
 
 

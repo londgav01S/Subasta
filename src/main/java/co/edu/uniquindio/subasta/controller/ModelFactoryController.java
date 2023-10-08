@@ -1,5 +1,6 @@
 package co.edu.uniquindio.subasta.controller;
 
+import co.edu.uniquindio.subasta.exceptions.UsuarioException;
 import co.edu.uniquindio.subasta.model.Producto;
 import co.edu.uniquindio.subasta.model.Subasta;
 import co.edu.uniquindio.subasta.model.TipoProducto;
@@ -132,14 +133,11 @@ public class ModelFactoryController {
         subasta.eliminarProducto(producto);
     }
 
-  //  public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
-    //    Persistencia.guardaRegistroLog(mensaje, nivel, accion);
-   // }
-
-
     public Usuario crearUsuario(String nombre, String telefono, String identificacion, String correoElectronico, String nombreUsuario, String contrasenia) {
 
         Usuario usuario = subasta.agregarUsuario(nombre, telefono, identificacion, correoElectronico, nombreUsuario, contrasenia);
+
+        registrarAccionesSistema(" Se ha creado un usuarioc", 1, "creación del usuario " + nombreUsuario);
         return usuario;
 
     }
@@ -155,5 +153,6 @@ public class ModelFactoryController {
         registrarAccionesSistema(" Se ha actualizado un usuario ", 1, " El usuario:  (" + nombreUsuario+") se ha actualizado");
 
     }
+
 
 }
