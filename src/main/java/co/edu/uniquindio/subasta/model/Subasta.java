@@ -6,10 +6,19 @@ import java.util.function.Predicate;
 
 public class Subasta {
 
+
+    public List<Usuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
+    public void setListaUsuarios(List<Usuario> listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
+    }
+
+
+
     public List<Producto> getListaProductos() {
         return listaProductos;
     }
-
     public void setListaProductos(List<Producto> listaProductos) {
         this.listaProductos = listaProductos;
     }
@@ -18,6 +27,7 @@ public class Subasta {
     }
 
     private List<Producto> listaProductos= new ArrayList<>();
+    private List<Usuario> listaUsuarios= new ArrayList<>();
 
     //----------------------------------------------------CRUD Producto-------------------------------------------------
 
@@ -62,4 +72,41 @@ public class Subasta {
         listaProductos.removeIf(p -> p.equals(producto));
     }
 
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////
+
+
+    public Usuario leerUsuarioPorIdentificacion(String identificacion) {
+        for (Usuario usuario : listaUsuarios) {
+            if (usuario.getIdentificacion().equals(identificacion)) {
+                return usuario;
+            }
+        }
+        return null; // Usuario no encontrado
+    }
+
+    public Usuario agregarUsuario (String nombre, String telefono, String identificacion, String correoElectronico, String nombreusuario, String contrasenia){
+        Usuario usuario = new Usuario(nombre, telefono, identificacion, correoElectronico, nombreusuario, contrasenia);
+        listaUsuarios.add(usuario);
+        return usuario;
+    }
+
+    public void actualizarUsuario(Usuario usuario, String telefono, String correoElectronico, String nombreusuario) {
+        if (nombreusuario != null) {
+            usuario.setNombreUsuario(nombreusuario);
+        }
+        if (telefono != null) {
+            usuario.setTelefono(telefono);
+        }
+        if (correoElectronico != null) {
+            usuario.setCorreoElectronico(correoElectronico);
+        }
+
+    }
+
+    // Método para eliminar un usuario por su identificación
+    public void eliminarUsuario(String identificacion) {
+        listaUsuarios.removeIf(usuario -> usuario.getIdentificacion().equals(identificacion));
+    }
 }

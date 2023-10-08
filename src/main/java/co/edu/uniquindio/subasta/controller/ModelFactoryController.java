@@ -3,11 +3,11 @@ package co.edu.uniquindio.subasta.controller;
 import co.edu.uniquindio.subasta.model.Producto;
 import co.edu.uniquindio.subasta.model.Subasta;
 import co.edu.uniquindio.subasta.model.TipoProducto;
+import co.edu.uniquindio.subasta.model.Usuario;
+import co.edu.uniquindio.subasta.utils.*;
 
 public class ModelFactoryController {
     Subasta subasta = null;
-
-
 
 
     //------------------------------  Singleton ------------------------------------------------
@@ -48,5 +48,22 @@ public class ModelFactoryController {
 
     public void eliminarProducto(Producto producto) {
     }
+
+    public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
+        Persistencia.guardaRegistroLog(mensaje, nivel, accion);
+    }
+
+
+    public Usuario crearUsuario(String nombre, String telefono, String identificacion, String correoElectronico, String nombreUsuario, String contrasenia) {
+
+        Usuario usuario = subasta.agregarUsuario(nombre, telefono, identificacion, correoElectronico, nombreUsuario, contrasenia);
+        return usuario;
+
+    }
+
+    public void eliminarUsuario (String id){
+        subasta.eliminarUsuario(id);
+    }
+
 
 }
