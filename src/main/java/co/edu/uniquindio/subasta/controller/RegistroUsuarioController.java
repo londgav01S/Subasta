@@ -1,8 +1,13 @@
 package co.edu.uniquindio.subasta.controller;
 
+import co.edu.uniquindio.subasta.model.Subasta;
 import co.edu.uniquindio.subasta.model.Usuario;
 
+import java.util.ArrayList;
+
 public class RegistroUsuarioController {
+
+    Subasta subasta;
 
     ModelFactoryController mfm = ModelFactoryController.getInstance();
 
@@ -18,4 +23,6 @@ public class RegistroUsuarioController {
     public void actualizarUsuario(Usuario usuarioSeleccionado, String telefono, String correoElectronico, String nombreUsuario) {
         mfm.actualizarUsuario ( usuarioSeleccionado,  telefono,  correoElectronico,  nombreUsuario);
     }
+
+
 }

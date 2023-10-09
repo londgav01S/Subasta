@@ -20,3 +20,31 @@ oct. 08, 2023 9:08:37 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardar
 INFO: inicioSesión,Inicio de sesión,2023-10-08
 oct. 08, 2023 9:21:22 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 10:13:01 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 10:19:38 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 10:19:48 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario 5, Se ha creado un usuarioc,2023-10-08
+oct. 08, 2023 10:21:35 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 10:25:13 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 10:28:15 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 10:28:45 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 10:35:24 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 10:36:34 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 11:06:40 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 11:09:46 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 11:10:28 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 11:11:54 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 11:13:09 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08

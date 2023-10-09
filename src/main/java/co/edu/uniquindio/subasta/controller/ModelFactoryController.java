@@ -13,6 +13,7 @@ import java.util.List;
 
 public class ModelFactoryController {
     Subasta subasta = null;
+    SubastaUtils subastaUtils = null ;
 
 
 
@@ -36,11 +37,9 @@ public class ModelFactoryController {
 
     private void inicializarDatos() {
         subasta = new Subasta();
-        //1. inicializar datos y luego guardarlo en archivos
         System.out.println("invocación clase singleton");
         //cargarDatosBase();
         //salvarDatosPrueba();
-
 
         //2. Cargar los datos de los archivos
         cargarDatosDesdeArchivos();
@@ -72,11 +71,7 @@ public class ModelFactoryController {
         }
     }
 
-    private void salvarDatosPrueba() {
-        //Persistencia.guardarClientes(getSubasta().getListaUsuarios());
-        guardarUsuarios(getSubasta().getListaUsuarios());
 
-    }
 
     /**
      * llama a la funcion guardarUsuarios de la clase Persistencia para guardar la lista de Usuarios
@@ -90,6 +85,14 @@ public class ModelFactoryController {
             throw new RuntimeException(e);
         }
 
+    }
+
+    private void salvarDatosPrueba() {
+        try {
+            Persistencia.guardarUsuarios(getSubasta().getListaUsuarios());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void cargarDatosBase() {
@@ -155,4 +158,7 @@ public class ModelFactoryController {
     }
 
 
+    public List<Usuario> obtenerUsuarios(){
+        return subasta.getListaUsuarios();
+    }
 }
