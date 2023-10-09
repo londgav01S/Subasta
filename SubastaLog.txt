@@ -1,0 +1,18 @@
+oct. 08, 2023 4:03:04 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 4:10:04 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 4:10:35 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación de usuario,se ha creado un usuario,2023-10-08
+oct. 08, 2023 4:12:36 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 4:12:44 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuarioroyer,se ha creado un usuario,2023-10-08
+oct. 08, 2023 4:42:15 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 4:42:30 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario 5, Se ha creado un usuarioc,2023-10-08
+oct. 08, 2023 5:06:35 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 5:06:51 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario 5, Se ha creado un usuarioc,2023-10-08

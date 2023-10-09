@@ -1,9 +1,9 @@
 package co.edu.uniquindio.subasta.utils;
 
-import co.edu.uniquindio.subasta.exceptions.UsuarioException;
 import co.edu.uniquindio.subasta.model.Producto;
 import co.edu.uniquindio.subasta.model.Subasta;
 import co.edu.uniquindio.subasta.model.Usuario;
+import co.edu.uniquindio.subasta.exceptions.UsuarioException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -24,28 +24,31 @@ import java.util.logging.SimpleFormatter;
 
 public class Persistencia {
 
+
+    /////
+
+
     //bancoUq/src/main/resources/persistencia/archivoClientes.txt
-    public static final String RUTA_ARCHIVO_ANUNCIANTE = "Subasta/src/main/resources/persistencia/rchivoClientes.txt";
-    public static final String RUTA_ARCHIVO_COMPRADOR= "Subasta/src/main/resources/persistencia/archivoClientes.txt";
+   //public static final String RUTA_ARCHIVO_ANUNCIANTE = "Subasta/src/main/resources/persistencia/rchivoClientes.txt";
+   // public static final String RUTA_ARCHIVO_COMPRADOR= "Subasta/src/main/resources/persistencia/archivoClientes.txt";
     public static final String RUTA_ARCHIVO_PRODUCTO = "Subasta/src/main/resources/persistencia/archivoClientes.txt";
-    public static final String RUTA_ARCHIVO_PUJA = "Subasta/src/main/resources/persistencia/archivoClientes.txt";
-    public static final String RUTA_ARCHIVO_ANUNCIO = "Subasta/src/main/resources/persistencia/archivoEmpleados.txt";
-    public static final String RUTA_ARCHIVO_USUARIOS = "Subasta/src/main/resources/persistencia/archivoUsuarios.txt";
-    public static final String RUTA_ARCHIVO_LOG = "Subasta/src/main/resources/persistencia/log/BancoLog.txt";
+    //public static final String RUTA_ARCHIVO_PUJA = "Subasta/src/main/resources/persistencia/archivoClientes.txt";
+    //public static final String RUTA_ARCHIVO_ANUNCIO = "Subasta/src/main/resources/persistencia/archivoEmpleados.txt";
+    public static final String RUTA_ARCHIVO_USUARIOS = "archivoUsuarios.txt";
+    public static final String RUTA_ARCHIVO_LOG = "SubastaLog.txt";
     public static final String RUTA_ARCHIVO_OBJETOS = "Subasta/src/main/resources/persistencia/archivoObjetos.txt";
     public static final String RUTA_ARCHIVO_MODELO_SUBASTA_BINARIO = "Subasta/src/main/resources/persistencia/model.dat";
-    public static final String RUTA_ARCHIVO_MODELO_SUBASTA_XML = "bSubasta/src/main/resources/persistencia/model.xml";
+    public static final String RUTA_ARCHIVO_MODELO_SUBASTA_XML = "Subasta/src/main/resources/persistencia/model.xml";
 //	C:\td\persistencia
 
 
     public static void cargarDatosArchivos(Subasta subasta) throws FileNotFoundException, IOException {
+        //cargar archivo de usuarios
 
         //cargar archivos Usuarios
-        ArrayList<Usuario> usuariosCargados = cargarUsuarios(RUTA_ARCHIVO_USUARIOS);
+        ArrayList<Usuario> usuariosCargados = cargarUsuarios();
         if(usuariosCargados.size() > 0)
             subasta.getListaUsuarios().addAll(usuariosCargados);
-
-        //cargar usuarios
 
         //cargar archivo transcciones
 
@@ -61,30 +64,17 @@ public class Persistencia {
      * @param
      * @throws IOException
      */
-    /*
-    public static void guardarClientes(ArrayList<Cliente> listaClientes) throws IOException {
+    public static void guardarClientes(ArrayList<Usuario> listaUsuarios) throws IOException {
         // TODO Auto-generated method stub
         String contenido = "";
-        for(Cliente cliente:listaClientes)
+        for(Usuario usuario:listaUsuarios)
         {
-            contenido+= cliente.getNombre()+","+cliente.getApellido()+","+cliente.getCedula()+","+cliente.getDireccion()
-                    +","+cliente.getCorreo()+","+cliente.getFechaNacimiento()+","+cliente.getTelefono()+"\n";
+            contenido+= usuario.getNombre()+","+usuario.getTelefono()+","+usuario.getIdentificacion()+","
+                    +","+usuario.getCorreoElectronico()+","+usuario.getNombreUsuario()+","+usuario.getContrasenia()+"\n";
         }
-        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_CLIENTES, contenido, false);
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_USUARIOS, contenido, false);
     }
 
-
-    public static void guardarEmpleados(ArrayList<Empleado> listaEmpleados) throws IOException {
-        String contenido = "";
-        for(Empleado empleado:listaEmpleados)
-        {
-            contenido+= empleado.getNombre()+
-                    ","+empleado.getApellido()+
-                    ","+empleado.getCedula()+
-                    ","+empleado.getFechaNacimiento()+"\n";
-        }
-        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_EMPLEADOS, contenido, false);
-    }*/
 
 
 
@@ -98,20 +88,25 @@ public class Persistencia {
      * @throws FileNotFoundException
      * @throws IOException
      */
-    public static ArrayList<Producto> cargarProductos() throws FileNotFoundException, IOException
+    public static ArrayList<Usuario> cargarUsuarios() throws FileNotFoundException, IOException
     {
-        ArrayList<Producto> productos =new ArrayList<Producto>();
-        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_PRODUCTO);
+        ArrayList<Usuario> usuarios =new ArrayList<Usuario>();
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_USUARIOS);
         String linea="";
         for (int i = 0; i < contenido.size(); i++)
         {
-            linea = contenido.get(i);//juan,arias,125454,Armenia,uni1@,12454,125444
-            Producto producto = new Producto();
-            producto.setNombre(linea.split(",")[0]);
-            //producto.setAnuncio(linea.split(",")[1]);
-            productos.add(producto);
+            linea = contenido.get(i); //juan,arias,125454,Armenia,uni1@,12454,125444
+            Usuario usuario = new Usuario();
+            usuario.setNombre(linea.split(",")[0]);
+            usuario.setNombreUsuario(linea.split(",")[1]);
+            usuario.setIdentificacion(linea.split(",")[2]);
+            usuario.setTelefono(linea.split(",")[3]);
+            usuario.setCorreoElectronico(linea.split(",")[4]);
+            usuario.setIdentificacion(linea.split(",")[5]);
+            usuario.setContrasenia(linea.split(",")[5]);
+            usuarios.add(usuario);
         }
-        return productos;
+        return usuarios;
     }
 
 
@@ -132,7 +127,7 @@ public class Persistencia {
 
     private static boolean validarUsuario(String usuario, String contrasenia) throws FileNotFoundException, IOException
     {
-        ArrayList<Usuario> usuarios = Persistencia.cargarUsuarios(RUTA_ARCHIVO_USUARIOS);
+        ArrayList<Usuario> usuarios = Persistencia.cargarUsuarios();
 
         for (int indiceUsuario = 0; indiceUsuario < usuarios.size(); indiceUsuario++)
         {
@@ -144,57 +139,61 @@ public class Persistencia {
         return false;
     }
 
-    public static ArrayList<Usuario> cargarUsuarios(String ruta) throws FileNotFoundException, IOException {
-        ArrayList<Usuario> usuarios =new ArrayList<Usuario>();
-
-        ArrayList<String> contenido = ArchivoUtil.leerArchivo(ruta);
+    public static ArrayList<Producto> cargarProductos() throws FileNotFoundException, IOException
+    {
+        ArrayList<Producto> productos =new ArrayList<Producto>();
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_PRODUCTO);
         String linea="";
-
-        for (int i = 0; i < contenido.size(); i++) {
-            linea = contenido.get(i);
-
-            Usuario usuario = new Usuario();
-            usuario.setNombreUsuario(linea.split(",")[0]);
-            usuario.setContrasenia(linea.split(",")[1]);
-            usuario.setNombre(linea.split(",")[2]);
-            usuario.setTelefono(linea.split(",")[3]);
-            usuario.setIdentificacion(linea.split(",")[4]);
-            usuario.setCorreoElectronico(linea.split(",")[5]);
-
-            usuarios.add(usuario);
+        for (int i = 0; i < contenido.size(); i++)
+        {
+            linea = contenido.get(i);//juan,arias,125454,Armenia,uni1@,12454,125444
+            Producto producto = new Producto();
+            producto.setNombre(linea.split(",")[0]);
+            //producto.setAnuncio(linea.split(",")[1]);
+            productos.add(producto);
         }
-        return usuarios;
+        return productos;
     }
 
 
-//	----------------------SAVES------------------------
+//                           	----------------------SAVES------------------------
 
-    public static void guardarProducto(ArrayList<Producto> listaProductos, String ruta) throws IOException  {
+    /**
+     * Guarda en un archivo de texto todos la información de las personas almacenadas en el ArrayList
+     * @param
+     * @param ruta
+     * @throws IOException
+     */
+
+    public static void guardarObjetos(ArrayList<Usuario> listaUsuarios, String ruta) throws IOException  {
         String contenido = "";
 
-        for(Producto productoAux:listaProductos) {
-            contenido+= productoAux.getNombre()+","+productoAux.getAnuncio()+"\n";
+        for(Usuario usuarioAux:listaUsuarios) {
+            contenido+= usuarioAux.getNombre()+","+usuarioAux.getNombreUsuario()+","+usuarioAux.getIdentificacion()+usuarioAux.getTelefono()
+                    +","+usuarioAux.getCorreoElectronico()+","+usuarioAux.getContrasenia()+"\n";
         }
         ArchivoUtil.guardarArchivo(ruta, contenido, true);
     }
 
+
     /**
-     * guardar Usuarios
+     * guarda usuarios
      * @param listaUsuarios
-     * @param ruta
      * @throws IOException
      */
-    public static void guardarUsuarios(ArrayList<Usuario> listaUsuarios, String ruta) throws IOException  {
+    public static void guardarUsuarios(ArrayList<Usuario> listaUsuarios) throws IOException  {
         String contenido = "";
 
         for(Usuario usuarioAux:listaUsuarios) {
             contenido+= usuarioAux.getNombreUsuario()+","+usuarioAux.getContrasenia()+","+usuarioAux.getNombre()+usuarioAux.getTelefono()
                     +","+usuarioAux.getIdentificacion()+","+usuarioAux.getCorreoElectronico()+"\n";
         }
-        ArchivoUtil.guardarArchivo(ruta, contenido, true);
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_USUARIOS, contenido, true);
     }
 
-    //------------------------------------SERIALIZACIÓN  y XML---------------------------------------------//
+
+
+    //------------------------------------SERIALIZACIÓN  y XML
 
 
     public static Subasta cargarRecursoSubastaBinario() {
@@ -202,7 +201,7 @@ public class Persistencia {
         Subasta subasta = null;
 
         try {
-            subasta = (Subasta) ArchivoUtil.cargarRecursoSerializado(RUTA_ARCHIVO_MODELO_SUBASTA_BINARIO);
+            subasta = (Subasta)ArchivoUtil.cargarRecursoSerializado(RUTA_ARCHIVO_MODELO_SUBASTA_BINARIO);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -220,7 +219,7 @@ public class Persistencia {
     }
 
 
-    public static Subasta cargarRecursoBancoXML() {
+    public static Subasta cargarRecursoSubastaXML() {
 
         Subasta subasta = null;
 
@@ -236,7 +235,7 @@ public class Persistencia {
 
 
 
-    public static void guardarRecursoBancoXML(Subasta subasta) {
+    public static void guardarRecursoSubastaXML(Subasta subasta) {
 
         try {
             ArchivoUtil.salvarRecursoSerializadoXML(RUTA_ARCHIVO_MODELO_SUBASTA_XML, subasta);
@@ -245,6 +244,7 @@ public class Persistencia {
             e.printStackTrace();
         }
     }
+
 
 
 
