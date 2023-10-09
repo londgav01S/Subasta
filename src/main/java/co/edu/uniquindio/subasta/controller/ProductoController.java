@@ -2,6 +2,9 @@ package co.edu.uniquindio.subasta.controller;
 
 import co.edu.uniquindio.subasta.model.Producto;
 import co.edu.uniquindio.subasta.model.TipoProducto;
+import co.edu.uniquindio.subasta.model.Usuario;
+
+import java.util.ArrayList;
 
 public class ProductoController {
 

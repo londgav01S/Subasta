@@ -1,4 +1,5 @@
 package co.edu.uniquindio.subasta.viewController;
+import co.edu.uniquindio.subasta.controller.ModelFactoryController;
 import co.edu.uniquindio.subasta.controller.ProductoController;
 import co.edu.uniquindio.subasta.controller.RegistroUsuarioController;
 import co.edu.uniquindio.subasta.model.Persona;
@@ -13,9 +14,12 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import co.edu.uniquindio.subasta.model.Persona;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class RegistroUsuarioViewController implements Initializable {
+
+    ModelFactoryController mfm = ModelFactoryController.getInstance();
 
     RegistroUsuarioController registroUsuarioController;
     @FXML
@@ -59,6 +63,11 @@ public class RegistroUsuarioViewController implements Initializable {
 
     @FXML
     private TableView<Usuario> tableViewUsuario;
+
+    private ArrayList<Usuario> obtenerUsuarios(){
+        listadoUsuarios.addAll(mfm.obtenerUsuarios());
+        return (ArrayList<Usuario>) listadoUsuarios;
+    }
 
     @FXML
     void actualizarUsuarioEvent(ActionEvent event) {
@@ -174,6 +183,7 @@ public class RegistroUsuarioViewController implements Initializable {
     private Usuario usuarioSeleccionado;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         registroUsuarioController = new RegistroUsuarioController();
         this.columnaUsuario.setCellValueFactory(new PropertyValueFactory<>("nombreUsuario"));
         this.columnaIdentificacion.setCellValueFactory(new PropertyValueFactory<>("identificacion"));
@@ -185,6 +195,43 @@ public class RegistroUsuarioViewController implements Initializable {
                 mostrarDatosField ();
             }
         });
+
+        Usuario usuario = new Usuario();
+        usuario.setNombre("Royer Garcia Palacio");
+        usuario.setNombreUsuario("Royer1010");
+        usuario.setTelefono("3245646473");
+        usuario.setCorreoElectronico("royergarci10@gmail.com");
+        usuario.setIdentificacion("1098546043");
+        usuario.setContrasenia("royer12345");
+
+
+        Usuario usuario2 = new Usuario();
+        usuario2.setNombre("Santiago Londoño Gaviria");
+        //usuario2.setNombre("Santiago");
+        usuario2.setNombreUsuario("Santiago1010");
+        usuario2.setTelefono("3236519124");
+        usuario2.setCorreoElectronico("londgav01@gmail.com");
+        usuario2.setIdentificacion("1091884016");
+        usuario2.setContrasenia("santiago12345");
+
+
+        Usuario usuario3 = new Usuario();
+        usuario3.setNombre("J Oscar");
+        usuario3.setNombreUsuario("Jo1010");
+        usuario3.setTelefono("123456789");
+        usuario3.setCorreoElectronico("qRikoJO@gmail.com");
+        usuario3.setIdentificacion("0987654321");
+        usuario3.setContrasenia("JO12345");
+
+        listadoUsuarios.add(usuario);
+        listadoUsuarios.add(usuario2);
+        listadoUsuarios.add(usuario3);
+        tableViewUsuario.setItems(listadoUsuarios);
+        tableViewUsuario.refresh();
+
+
+
+
     }
 
     private void mostrarDatosField() {
@@ -200,4 +247,6 @@ public class RegistroUsuarioViewController implements Initializable {
             fNombreCompleto.setDisable(true);
         }
     }
+
+
 }
