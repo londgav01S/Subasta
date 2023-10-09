@@ -1,0 +1,22 @@
+oct. 08, 2023 8:28:27 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar Lista de Usuarios , Se han guardado los usuarios ,2023-10-08
+oct. 08, 2023 8:28:27 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 8:29:06 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar Lista de Usuarios , Se han guardado los usuarios ,2023-10-08
+oct. 08, 2023 8:29:06 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 8:57:04 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar Lista de Usuarios , Se han guardado los usuarios ,2023-10-08
+oct. 08, 2023 8:57:04 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 9:00:01 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar Lista de Usuarios , Se han guardado los usuarios ,2023-10-08
+oct. 08, 2023 9:00:01 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 9:03:33 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 9:08:37 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08
+oct. 08, 2023 9:21:22 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-10-08

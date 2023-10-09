@@ -38,8 +38,8 @@ public class ModelFactoryController {
         subasta = new Subasta();
         //1. inicializar datos y luego guardarlo en archivos
         System.out.println("invocación clase singleton");
-        cargarDatosBase();
-        salvarDatosPrueba();
+        //cargarDatosBase();
+        //salvarDatosPrueba();
 
 
         //2. Cargar los datos de los archivos
