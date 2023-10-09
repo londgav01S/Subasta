@@ -1,7 +1,10 @@
 package co.edu.uniquindio.subasta.model;
 
-public class Usuario extends Persona{
+import java.io.Serializable;
 
+public class Usuario extends Persona implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private String nombreUsuario;
     private String contrasenia;
 

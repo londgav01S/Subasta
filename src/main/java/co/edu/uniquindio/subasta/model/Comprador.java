@@ -1,4 +1,9 @@
 package co.edu.uniquindio.subasta.model;
 
-public class Comprador {
+import java.io.Serializable;
+
+public class Comprador implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    public Comprador() {}
 }

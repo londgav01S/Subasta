@@ -38,20 +38,22 @@ public class ModelFactoryController {
         subasta = new Subasta();
         //1. inicializar datos y luego guardarlo en archivos
         System.out.println("invocación clase singleton");
+
         //cargarDatosBase();
-        //salvarDatosPrueba();
+        salvarDatosPrueba();
 
 
         //2. Cargar los datos de los archivos
         cargarDatosDesdeArchivos();
 
         //3. Guardar y Cargar el recurso serializable binario
-        //cargarResourceBinario();
         //guardarResourceBinario();
+        //cargarResourceBinario();
+
 
         //4. Guardar y Cargar el recurso serializable XML
         //guardarResourceXML();
-     //   cargarResourceXML();
+        //cargarResourceXML();
 
         //Siempre se debe verificar si la raiz del recurso es null
 
@@ -75,7 +77,6 @@ public class ModelFactoryController {
     private void salvarDatosPrueba() {
         //Persistencia.guardarClientes(getSubasta().getListaUsuarios());
         guardarUsuarios(getSubasta().getListaUsuarios());
-
     }
 
     /**
@@ -89,8 +90,18 @@ public class ModelFactoryController {
         }catch (IOException e){
             throw new RuntimeException(e);
         }
-
     }
+
+    public void guardarUsuario(Usuario usuario){
+        try{
+            Persistencia.guardarUsuario(usuario);
+            registrarAccionesSistema(" Se han guardado el usuario ",1, " Guardar usuario ");
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+
 
     private void cargarDatosBase() {
         subasta = SubastaUtils.inicializarDatos();
@@ -136,7 +147,7 @@ public class ModelFactoryController {
     public Usuario crearUsuario(String nombre, String telefono, String identificacion, String correoElectronico, String nombreUsuario, String contrasenia) {
 
         Usuario usuario = subasta.agregarUsuario(nombre, telefono, identificacion, correoElectronico, nombreUsuario, contrasenia);
-
+        guardarUsuario(usuario);
         registrarAccionesSistema(" Se ha creado un usuarioc", 1, "creación del usuario " + nombreUsuario);
         return usuario;
 

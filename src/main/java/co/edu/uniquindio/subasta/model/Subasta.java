@@ -1,33 +1,38 @@
 package co.edu.uniquindio.subasta.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Subasta {
+public class Subasta implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private ArrayList<Producto> listaProductos= new ArrayList<>();
+    private ArrayList<Usuario> listaUsuarios= new ArrayList<>();
+
+    public Subasta() {}
 
 
     public ArrayList<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
+
     public void setListaUsuarios(ArrayList<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
     }
 
 
-
     public ArrayList<Producto> getListaProductos() {
         return listaProductos;
     }
+
     public void setListaProductos(ArrayList<Producto> listaProductos) {
         this.listaProductos = listaProductos;
     }
 
-    public Subasta() {
-    }
 
-    private ArrayList<Producto> listaProductos= new ArrayList<>();
-    private ArrayList<Usuario> listaUsuarios= new ArrayList<>();
 
     //----------------------------------------------------CRUD Producto-------------------------------------------------
 
