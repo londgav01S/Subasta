@@ -65,7 +65,7 @@ public class RegistroUsuarioViewController implements Initializable {
     private TableView<Usuario> tableViewUsuario;
 
     private ArrayList<Usuario> obtenerUsuarios(){
-        listadoUsuarios.addAll(mfm.obtenerUsuarios());
+        //listadoUsuarios.addAll(mfm.obtenerUsuarios());
         return (ArrayList<Usuario>) listadoUsuarios;
     }
 
@@ -206,9 +206,9 @@ public class RegistroUsuarioViewController implements Initializable {
 
 
         Usuario usuario2 = new Usuario();
-        usuario2.setNombre("Santiago Londoño Gaviria");
-        //usuario2.setNombre("Santiago");
-        usuario2.setNombreUsuario("Santiago1010");
+        //usuario2.setNombre("Santiago Londoño Gaviria");
+        usuario2.setNombre("Santiago");
+        usuario2.setNombreUsuario("Santiago   ");
         usuario2.setTelefono("3236519124");
         usuario2.setCorreoElectronico("londgav01@gmail.com");
         usuario2.setIdentificacion("1091884016");
