@@ -13,12 +13,22 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import co.edu.uniquindio.subasta.model.Persona;
+import javafx.stage.Stage;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class RegistroUsuarioViewController implements Initializable {
 
+
+    private LoginViewController loginController;
+    private Stage stage;
+    public void init(Stage stage, LoginViewController loginController) {
+        this.loginController = loginController;
+        this.stage = stage;
+
+    }
     ModelFactoryController mfm = ModelFactoryController.getInstance();
 
     RegistroUsuarioController registroUsuarioController;
@@ -30,6 +40,9 @@ public class RegistroUsuarioViewController implements Initializable {
 
     @FXML
     private Button btnEliminar;
+
+    @FXML
+    private Button btnIVolverniciarSesion;
 
     @FXML
     private TableColumn<Usuario, String> columnaCorreoElectronico;
@@ -141,6 +154,17 @@ public class RegistroUsuarioViewController implements Initializable {
         else{
             mostrarMensajeAlerta("Cuenta seleccion ", "Cuenta seleccion ", "No se ha realizado ninguna seleccion", Alert.AlertType.WARNING);
         }
+    }
+
+
+    @FXML
+    void volverIniciarSesionEvent(ActionEvent event) {
+        loginController.show();
+        this.stage.close();
+    }
+
+    public  Stage getPrimaryStage() {
+        return stage;
     }
 
     private boolean datosValidados(String nombreAux, String idAux, String telefonoAux, String correoAux, String usuarioAux, String contraAux) {

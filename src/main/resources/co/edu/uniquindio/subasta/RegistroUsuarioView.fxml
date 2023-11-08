@@ -35,7 +35,7 @@
       <Line endX="446.0" layoutX="195.0" layoutY="187.0" startX="-120.0" />
       <Line endX="76.5" endY="116.5" layoutX="565.0" layoutY="70.0" startX="75.5" startY="-11.5" />
       <Line endX="-77.5" endY="104.5" layoutX="152.0" layoutY="82.0" startX="-77.5" startY="-24.0" />
-      <TableView fx:id="tableViewUsuario" layoutX="76.0" layoutY="367.0" prefHeight="131.0" prefWidth="567.0">
+      <TableView fx:id="tableViewUsuario" layoutX="82.0" layoutY="348.0" prefHeight="131.0" prefWidth="567.0">
         <columns>
           <TableColumn fx:id="columnaUsuario" prefWidth="155.0" text="Nombre de usuario " />
           <TableColumn fx:id="columnaIdentificacion" prefWidth="129.0" text="Identificacion" />
@@ -59,5 +59,6 @@
       <Label layoutX="125.0" layoutY="135.0" text="Correo electronico" />
       <TextField fx:id="fCorreoElectronico" layoutX="106.0" layoutY="152.0" />
       <Line endX="76.70709228515625" endY="121.29290771484375" layoutX="565.0" layoutY="214.0" startX="76.5" startY="-6.5" />
+      <Button fx:id="btnIVolverniciarSesion" layoutX="317.0" layoutY="482.0" mnemonicParsing="false" onAction="#volverIniciarSesionEvent" text="Iniciar sesion" />
    </children>
 </AnchorPane>
