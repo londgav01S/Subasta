@@ -66,10 +66,13 @@ public class LoginViewController {
     void registrarUsuarioEvent(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(SubastaApplication.class.getResource("/RegistroUsuarioView.fxml"));
+            loader.setLocation(SubastaApplication.class.getResource("RegistroUsuarioView.fxml"));
             AnchorPane rootLayout = (AnchorPane)loader.load();
             Scene scene = new Scene(rootLayout);
+            RegistroUsuarioViewController registroUsuarioViewController = loader.getController();
+            registroUsuarioViewController.init(stage2, this);
             this.stage2.setScene(scene);
+            stage.close();
             this.stage2.show();
 
         } catch (Exception e) {
@@ -79,7 +82,7 @@ public class LoginViewController {
     }
 
     public void show() {
-        this.stage.show();
+        this.stage2.show();
     }
 
 }

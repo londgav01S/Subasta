@@ -42,7 +42,7 @@ public class RegistroUsuarioViewController implements Initializable {
     private Button btnEliminar;
 
     @FXML
-    private Button btnIVolverniciarSesion;
+    private Button btnVolverIniciarSesion;
 
     @FXML
     private TableColumn<Usuario, String> columnaCorreoElectronico;

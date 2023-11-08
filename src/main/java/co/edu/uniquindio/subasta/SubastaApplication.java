@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SubastaApplication extends Application {
-    public static Stage primaryStage;
     public static Parent rootNode;
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -24,9 +23,6 @@ public class SubastaApplication extends Application {
         primaryStage.show();
     }
 
-    public static Stage getPrimaryStage() {
-        return primaryStage;
-    }
 
     public static void main(String[] args)  {
         launch(args);
