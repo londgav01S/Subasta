@@ -186,3 +186,15 @@ nov. 07, 2023 8:46:52 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardar
 INFO:  Guardar Lista de Usuarios , Se han guardado los usuarios ,2023-11-07
 nov. 07, 2023 8:46:52 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2023-11-07
+nov. 07, 2023 9:00:06 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar Lista de Usuarios , Se han guardado los usuarios ,2023-11-07
+nov. 07, 2023 9:00:07 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-07
+nov. 07, 2023 9:33:05 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar Lista de Usuarios , Se han guardado los usuarios ,2023-11-07
+nov. 07, 2023 9:33:05 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-07
+nov. 07, 2023 9:33:28 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar Lista de Usuarios , Se han guardado los usuarios ,2023-11-07
+nov. 07, 2023 9:33:29 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-07
