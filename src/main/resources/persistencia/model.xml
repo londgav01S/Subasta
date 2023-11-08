@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="17.0.4" class="java.beans.XMLDecoder">
+<java version="17.0.8" class="java.beans.XMLDecoder">
  <object class="co.edu.uniquindio.subasta.model.Subasta" id="Subasta0">
   <void property="listaUsuarios">
    <void method="add">
@@ -109,6 +109,72 @@
      </void>
      <void property="telefono">
       <string>3</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Usuario">
+     <void property="contrasenia">
+      <string>royer12345</string>
+     </void>
+     <void property="correoElectronico">
+      <string>royergarci10@gmail.com</string>
+     </void>
+     <void property="identificacion">
+      <string>1098546043</string>
+     </void>
+     <void property="nombre">
+      <string>Royer Garcia Palacio</string>
+     </void>
+     <void property="nombreUsuario">
+      <string>Royer1010</string>
+     </void>
+     <void property="telefono">
+      <string>3245646473</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Usuario">
+     <void property="contrasenia">
+      <string>santiago12345</string>
+     </void>
+     <void property="correoElectronico">
+      <string>londgav01@gmail.com</string>
+     </void>
+     <void property="identificacion">
+      <string>1091884016</string>
+     </void>
+     <void property="nombre">
+      <string>Santiago Londoño Gaviria</string>
+     </void>
+     <void property="nombreUsuario">
+      <string>Santiago1010</string>
+     </void>
+     <void property="telefono">
+      <string>3236519124</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Usuario">
+     <void property="contrasenia">
+      <string>JO12345</string>
+     </void>
+     <void property="correoElectronico">
+      <string>qRikoJO@gmail.com</string>
+     </void>
+     <void property="identificacion">
+      <string>0987654321</string>
+     </void>
+     <void property="nombre">
+      <string>J Oscar</string>
+     </void>
+     <void property="nombreUsuario">
+      <string>Jo1010</string>
+     </void>
+     <void property="telefono">
+      <string>123456789</string>
      </void>
     </object>
    </void>
