@@ -82,7 +82,7 @@ public class LoginViewController {
     }
 
     public void show() {
-        this.stage2.show();
+        this.stage.show();
     }
 
 }
