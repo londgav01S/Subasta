@@ -10,24 +10,24 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="462.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.ProductoViewController">
+<AnchorPane prefHeight="478.0" prefWidth="639.0" style="-fx-border-color: black; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.ProductoViewController">
    <children>
       <Label layoutX="260.0" layoutY="14.0" text="Productos">
          <font>
             <Font name="SansSerif Bold" size="24.0" />
          </font>
       </Label>
-      <TableView fx:id="tableViewProducto" layoutX="68.0" layoutY="300.0" prefHeight="138.0" prefWidth="502.0">
+      <TableView fx:id="tableViewProducto" layoutX="68.0" layoutY="310.0" prefHeight="138.0" prefWidth="502.0">
         <columns>
           <TableColumn fx:id="columnaNombreProducto" prefWidth="180.0" text="Nombre" />
-          <TableColumn fx:id="columnaAnuncio" prefWidth="159.0" text="Anuncio" />
+          <TableColumn fx:id="columnaAnunciante" prefWidth="159.0" text="Anunciante" />
             <TableColumn fx:id="columnaTipoProducto" prefWidth="162.0" text="Tipo de producto" />
         </columns>
       </TableView>
       <Line endX="255.20001220703125" endY="7.62939453125E-6" layoutX="319.0" layoutY="96.0" startX="-48.0" />
-      <Line endX="-100.70001220703125" endY="152.5" layoutX="164.0" layoutY="87.0" startX="-99.70712280273438" startY="10.0" />
-      <Line endX="255.20001220703125" endY="7.62939453125E-6" layoutX="319.0" layoutY="239.0" startX="-255.2000274658203" startY="7.62939453125E-6" />
-      <Line endX="-100.29998779296875" endY="152.5" layoutX="675.0" layoutY="87.0" startX="-100.29998779296875" startY="8.5" />
+      <Line endX="-100.70002746582031" endY="179.5" layoutX="164.0" layoutY="87.0" startX="-99.70712280273438" startY="10.0" />
+      <Line endX="255.20001220703125" endY="7.62939453125E-6" layoutX="319.0" layoutY="267.0" startX="-255.2000274658203" startY="7.62939453125E-6" />
+      <Line endX="-100.29998779296875" endY="179.5" layoutX="675.0" layoutY="87.0" startX="-100.29998779296875" startY="8.5" />
       <Line endX="100.0" layoutX="-6.0" layoutY="97.0" startX="70.99998474121094" startY="7.62939453125E-6" />
       <Label layoutX="65.0" layoutY="56.0" text="A continuacion ingrese la información del producto para poder ser registrado" />
       <Label layoutX="380.0" layoutY="148.0" text="Tipo de producto">
@@ -47,8 +47,18 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnAgregar" layoutX="293.0" layoutY="254.0" mnemonicParsing="false" onAction="#agregarProductoEvent" text="Agregar" />
-      <Button fx:id="btnEliminar" layoutX="469.0" layoutY="254.0" mnemonicParsing="false" onAction="#eliminarProductoEvent" text="Eliminar" />
-      <Button fx:id="btnActualizar" layoutX="143.0" layoutY="254.0" mnemonicParsing="false" onAction="#actualizarProductoEvent" text="Actualizar" />
+      <Button fx:id="btnAgregar" layoutX="290.0" layoutY="231.0" mnemonicParsing="false" onAction="#agregarProductoEvent" text="Agregar" />
+      <Button fx:id="btnEliminar" layoutX="445.0" layoutY="227.0" mnemonicParsing="false" onAction="#eliminarProductoEvent" text="Eliminar" />
+      <Button fx:id="btnActualizar" layoutX="152.0" layoutY="231.0" mnemonicParsing="false" onAction="#actualizarProductoEvent" text="Actualizar" />
+      <Line endX="50.0" endY="0.29290771484375" layoutX="526.0" layoutY="291.0" startX="-273.20001220703125" startY="0.29290771484375" />
+      <Line endX="-99.70002746582031" endY="179.5" layoutX="163.0" layoutY="282.0" startX="-99.70712280273438" startY="10.0" />
+      <Line endX="-99.29998779296875" endY="173.0" layoutX="674.0" layoutY="288.0" startX="-99.70712280273438" startY="10.0" />
+      <Line endX="255.20001220703125" endY="7.62939453125E-6" layoutX="319.0" layoutY="461.0" startX="-255.2000274658203" startY="7.62939453125E-6" />
+      <Label layoutX="113.0" layoutY="281.0" text="Lista de Productos">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Line endX="105.99998474121094" endY="3.0517578125E-5" layoutX="-6.0" layoutY="292.0" startX="70.99998474121094" startY="7.62939453125E-6" />
    </children>
 </AnchorPane>

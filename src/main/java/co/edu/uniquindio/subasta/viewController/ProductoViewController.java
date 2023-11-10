@@ -38,7 +38,7 @@ public class ProductoViewController implements Initializable {
     private ComboBox<TipoProducto> cTipoProducto;
 
     @FXML
-    private TableColumn<Producto, String> columnaAnuncio;
+    private TableColumn<Producto, String> columnaAnunciante;
 
     @FXML
     private TableColumn<Producto, String> columnaNombreProducto;
@@ -175,7 +175,7 @@ public class ProductoViewController implements Initializable {
         productoController = new ProductoController();
         this.columnaNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnaTipoProducto.setCellValueFactory(new PropertyValueFactory<>("tipo"));
-        this.columnaAnuncio.setCellValueFactory(new PropertyValueFactory<>("anuncio"));
+        this.columnaAnunciante.setCellValueFactory(new PropertyValueFactory<>("anunciante"));
         agregarTiposCombo();
         tableViewProducto.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) ->{
             if(newSelection!= null){
