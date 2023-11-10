@@ -43,9 +43,9 @@ public class Subasta implements Serializable {
     }
 
     //Crear un nuevo producto
-    public Producto crearProducto(String nombre, TipoProducto tipo, Anuncio anuncio) {
+    public Producto crearProducto(String nombre, TipoProducto tipo, Anunciante anunciante) {
         if (!productoExiste(nombre)) {
-            Producto producto = new Producto(nombre, tipo, anuncio);
+            Producto producto = new Producto(nombre, tipo, anunciante);
             listaProductos.add(producto);
             return producto;
         } else {
@@ -67,9 +67,7 @@ public class Subasta implements Serializable {
         if (tipo != null) {
             producto.setTipo(tipo);
         }
-        if (anuncio != null) {
-            producto.setAnuncio(anuncio);
-        }
+
     }
 
     //Eliminar un producto existente

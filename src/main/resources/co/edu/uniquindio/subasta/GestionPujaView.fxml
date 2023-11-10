@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.subasta.viewController.GestionPujaViewController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.GestionPujaViewController">
+   <children>
+      <TableView fx:id="tableInformacionAnuncio" layoutX="22.0" layoutY="56.0" prefHeight="324.0" prefWidth="261.0">
+        <columns>
+          <TableColumn fx:id="colAnunciante" prefWidth="85.0" text="Anunciante" />
+          <TableColumn fx:id="colNombreAnuncio" prefWidth="96.0" text="Nombre" />
+            <TableColumn fx:id="colCodigoAnuncio" prefWidth="79.0" text="Codigo" />
+        </columns>
+      </TableView>
+      <TextField fx:id="fCodigoPuja" layoutX="410.0" layoutY="221.0" />
+      <TextField fx:id="fOferta" layoutX="410.0" layoutY="256.0" />
+      <Label layoutX="363.0" layoutY="48.0" text="Info del producto" />
+      <Label layoutX="22.0" layoutY="33.0" text="Información del anuncio" />
+      <TextField fx:id="fNombreProducto" layoutX="410.0" layoutY="80.0" />
+      <Label layoutX="355.0" layoutY="84.0" text="Nombre" />
+      <Label layoutX="377.0" layoutY="116.0" text="Tipo" />
+      <TextField fx:id="fTipoProducto" layoutX="410.0" layoutY="112.0" />
+      <Label layoutX="366.0" layoutY="192.0" text="Datos para pujar" />
+      <Label layoutX="360.0" layoutY="225.0" text="Codigo" />
+      <Label layoutX="361.0" layoutY="260.0" text="Oderta" />
+      <Button fx:id="btnPujar" layoutX="388.0" layoutY="326.0" mnemonicParsing="false" onAction="#btnPujarEvent" text="Pujar por el producto" />
+      <Separator layoutX="297.0" layoutY="5.0" orientation="VERTICAL" prefHeight="394.0" prefWidth="4.0" style="-fx-background-color: grey;" />
+      <Separator layoutX="332.0" layoutY="38.0" prefHeight="2.0" prefWidth="240.0" />
+      <Separator layoutX="332.0" layoutY="147.0" prefHeight="2.0" prefWidth="240.0" />
+      <Separator layoutX="329.0" layoutY="37.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="0.0" />
+      <Separator layoutX="569.0" layoutY="37.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="0.0" />
+      <Separator layoutX="334.0" layoutY="186.0" prefHeight="2.0" prefWidth="240.0" />
+      <Separator layoutX="332.0" layoutY="296.0" prefHeight="2.0" prefWidth="240.0" />
+      <Separator layoutX="332.0" layoutY="187.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="0.0" />
+      <Separator layoutX="569.0" layoutY="187.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="0.0" />
+   </children>
 </AnchorPane>

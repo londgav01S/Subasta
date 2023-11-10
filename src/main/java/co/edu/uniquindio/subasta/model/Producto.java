@@ -7,14 +7,14 @@ public class Producto implements Serializable {
     private static final long serialVersionUID = 1L;
     private String nombre;
     private TipoProducto tipo;
-    private Anuncio anuncio;
+    private Anunciante anunciante;
 
     public Producto() {}
 
-    public Producto(String nombre, TipoProducto tipo, Anuncio anuncio) {
+    public Producto(String nombre, TipoProducto tipo, Anunciante anunciante) {
         this.nombre = nombre;
         this.tipo = tipo;
-        this.anuncio = anuncio;
+        this.anunciante = anunciante;
     }
 
     public String getNombre() {
@@ -33,38 +33,13 @@ public class Producto implements Serializable {
         this.tipo = tipo;
     }
 
-    public Anuncio getAnuncio() {
-        return anuncio;
-    }
-
-    public void setAnuncio(Anuncio anuncio) {
-        this.anuncio = anuncio;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Producto producto)) return false;
-
-        if (!nombre.equals(producto.nombre)) return false;
-        if (tipo != producto.tipo) return false;
-        return anuncio.equals(producto.anuncio);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = nombre.hashCode();
-        result = 31 * result + tipo.hashCode();
-        result = 31 * result + anuncio.hashCode();
-        return result;
-    }
 
     @Override
     public String toString() {
         return "Producto{" +
                 "nombre='" + nombre + '\'' +
                 ", tipo=" + tipo +
-                ", anuncio=" + anuncio +
+                 +
                 '}';
     }
 }
