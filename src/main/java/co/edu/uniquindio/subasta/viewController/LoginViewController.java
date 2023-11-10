@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class LoginViewController {
@@ -41,7 +42,7 @@ public class LoginViewController {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(SubastaApplication.class.getResource("PrincipalView.fxml"));
-            AnchorPane rootLayout = (AnchorPane)loader.load();
+            StackPane rootLayout = (StackPane) loader.load();
             Scene scene = new Scene(rootLayout);
             PrincipalViewController principalViewController = loader.getController();
             principalViewController.init(stage2, this);
@@ -53,11 +54,7 @@ public class LoginViewController {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        }
-
-
-
-
+    }
 
     public void show() {
         this.stage.show();
