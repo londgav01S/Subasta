@@ -1,6 +1,7 @@
 package co.edu.uniquindio.subasta;
 
 import co.edu.uniquindio.subasta.viewController.LoginViewController;
+import co.edu.uniquindio.subasta.viewController.PrincipalViewController;
 import co.edu.uniquindio.subasta.viewController.ProductoViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,9 +16,9 @@ public class SubastaApplication extends Application {
     public static Parent rootNode;
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader= new FXMLLoader(SubastaApplication.class.getResource("LoginView.fxml"));
+        FXMLLoader loader= new FXMLLoader(SubastaApplication.class.getResource("PrincipalView.fxml"));
         Scene scene= new Scene(loader.load(),387 ,292,false, SceneAntialiasing.BALANCED);
-        LoginViewController loginViewController = loader.getController();
+        PrincipalViewController loginViewController = loader.getController();
         loginViewController.init(primaryStage);
         primaryStage.setScene(scene);
         primaryStage.show();

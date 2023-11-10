@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.subasta.viewController.GestionAnuncioViewController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="680.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.GestionAnuncioViewController">
+   <children>
+      <TabPane layoutX="43.0" layoutY="68.0" prefHeight="548.0" prefWidth="726.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Crear Anuncio">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane layoutX="32.0" layoutY="45.0" prefHeight="416.0" prefWidth="612.0">
+                            <items>
+                                <fx:include source="AnuncioView.fxml" />
+                            </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Crear Producto">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="732.0">
+                     <children>
+                        <SplitPane layoutX="50.0" layoutY="27.0" prefHeight="314.0" prefWidth="602.0">
+                            <items>
+                                <fx:include source="ProductoView.fxml" />
+                            </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Pujas de Anuncios">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane layoutX="14.0" layoutY="14.0" prefHeight="486.0" prefWidth="695.0">
+                            <items>
+                                <fx:include source="PujaDeAnuncioView.fxml" />
+                            </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>
