@@ -135,8 +135,8 @@ public class ModelFactoryController {
         this.subasta = subasta;
     }
 
-    public Producto crearProducto(String nombre, TipoProducto selectedItem, Object o) {
-        Producto producto = subasta.crearProducto(nombre, selectedItem, null);
+    public Producto crearProducto(String nombre, TipoProducto selectedItem, String nombreAnunciante) {
+        Producto producto = subasta.crearProducto(nombre, selectedItem, nombreAnunciante);
         return producto;
     }
 

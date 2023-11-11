@@ -24,6 +24,7 @@ public class ProductoViewController implements Initializable {
 
     ModelFactoryController mfm = ModelFactoryController.getInstance();
 
+    LoginViewController loginViewController;
     private Producto productoSeleccionado;
 
     @FXML
@@ -83,8 +84,9 @@ public class ProductoViewController implements Initializable {
     private void agregarProductoAction() {
 
         String nombre = fNombreProducto.getText();
+        String nombreAnunciante = loginViewController.nombreUsuario;
         if(datosValidados(nombre)){
-            crearProducto(nombre, cTipoProducto.getSelectionModel().getSelectedItem(), null);
+            crearProducto(nombre, cTipoProducto.getSelectionModel().getSelectedItem(), nombreAnunciante);
             tableViewProducto.setItems(listadoProductos);
         }
         fNombreProducto.setText("");
@@ -93,9 +95,9 @@ public class ProductoViewController implements Initializable {
 
     }
 
-    private void crearProducto(String nombre, TipoProducto selectedItem, Object o) {
+    private void crearProducto(String nombre, TipoProducto selectedItem, String nombreAnunciante) {
 
-        Producto producto = productoController.crearProducto(nombre, selectedItem, null) ;
+        Producto producto = productoController.crearProducto(nombre, selectedItem, nombreAnunciante) ;
         if(producto != null){
             listadoProductos.add(producto);
             mostrarMensajeAlerta("Notificacion ", "Registro exitoso", "El producto: " + nombre +" ha sido registrado" , Alert.AlertType.INFORMATION);
@@ -175,7 +177,7 @@ public class ProductoViewController implements Initializable {
         productoController = new ProductoController();
         this.columnaNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnaTipoProducto.setCellValueFactory(new PropertyValueFactory<>("tipo"));
-        this.columnaAnunciante.setCellValueFactory(new PropertyValueFactory<>("anunciante"));
+        this.columnaAnunciante.setCellValueFactory(new PropertyValueFactory<>("nombreAnunciante"));
         agregarTiposCombo();
         tableViewProducto.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) ->{
             if(newSelection!= null){

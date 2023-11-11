@@ -17,7 +17,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class LoginViewController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LoginViewController implements Initializable{
+
+    InicialViewController inicialViewController = new InicialViewController();
 
     @FXML
     private Button btnIniciarSesion;
@@ -31,14 +36,14 @@ public class LoginViewController {
     @FXML
     private TextField fUsuario;
 
-    private Stage stage;
     private Stage stage2 = new Stage();
 
-    public void init(Stage primaryStage) {
-        this.stage = primaryStage;
-    }
+    public String nombreUsuario ;
+
+    private Stage stage;
     @FXML
     void iniciarSesionEvent(ActionEvent event) {
+        nombreUsuario = fUsuario.getText();
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(SubastaApplication.class.getResource("PrincipalView.fxml"));
@@ -47,7 +52,9 @@ public class LoginViewController {
             PrincipalViewController principalViewController = loader.getController();
             principalViewController.init(stage2, this);
             this.stage2.setScene(scene);
-            stage.close();
+            //inicialViewController.getStage().hide();
+            //inicialViewController.cerrar(stage);
+            //stage.close();
             this.stage2.show();
 
         } catch (Exception e) {
@@ -56,8 +63,9 @@ public class LoginViewController {
         }
     }
 
-    public void show() {
-        this.stage.show();
-    }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        stage = inicialViewController.getStage();
+    }
 }
