@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModelFactoryController {
-    Subasta subasta = null;
+    Subasta subasta;
 
 
 

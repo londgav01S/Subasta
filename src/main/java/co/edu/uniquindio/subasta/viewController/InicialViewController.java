@@ -14,6 +14,7 @@ public class InicialViewController {
 
     public void cerrar(Stage stage1) {
         stage1.close();
+
         System.out.println(" Ventana cerrada ");
     }
 

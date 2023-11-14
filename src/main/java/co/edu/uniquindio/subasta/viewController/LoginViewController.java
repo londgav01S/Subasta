@@ -2,6 +2,7 @@ package co.edu.uniquindio.subasta.viewController;
 
 
 import co.edu.uniquindio.subasta.SubastaApplication;
+import co.edu.uniquindio.subasta.model.Producto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.SceneAntialiasing;
@@ -38,13 +39,26 @@ public class LoginViewController implements Initializable{
 
     private Stage stage2 = new Stage();
 
-    public String nombreUsuario ;
+    public static String nombreUsuario ;
 
-    private Stage stage;
+
+    public static String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+
+
+    public static void setNombreUsuario(String nombreUsuario) {
+        LoginViewController.nombreUsuario = nombreUsuario;
+    }
+
+    private Stage stage = inicialViewController.getStage();
+
+    private Producto producto;
     @FXML
     void iniciarSesionEvent(ActionEvent event) {
-        nombreUsuario = fUsuario.getText();
         try {
+            String f = fUsuario.getText();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(SubastaApplication.class.getResource("PrincipalView.fxml"));
             StackPane rootLayout = (StackPane) loader.load();
@@ -52,9 +66,10 @@ public class LoginViewController implements Initializable{
             PrincipalViewController principalViewController = loader.getController();
             principalViewController.init(stage2, this);
             this.stage2.setScene(scene);
+            producto.setNombreAnunciante(f);
             //inicialViewController.getStage().hide();
             //inicialViewController.cerrar(stage);
-            //stage.close();
+            stage.close();
             this.stage2.show();
 
         } catch (Exception e) {
@@ -66,6 +81,6 @@ public class LoginViewController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        stage = inicialViewController.getStage();
+        producto = new Producto();
     }
 }

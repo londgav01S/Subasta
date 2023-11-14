@@ -84,19 +84,17 @@ public class ProductoViewController implements Initializable {
     private void agregarProductoAction() {
 
         String nombre = fNombreProducto.getText();
-        String nombreAnunciante = loginViewController.nombreUsuario;
+        String nombreAnunciante = LoginViewController.nombreUsuario;
+        System.out.println("nombreAnunciante = " + nombreAnunciante);
         if(datosValidados(nombre)){
             crearProducto(nombre, cTipoProducto.getSelectionModel().getSelectedItem(), nombreAnunciante);
             tableViewProducto.setItems(listadoProductos);
         }
         fNombreProducto.setText("");
         cTipoProducto.getSelectionModel().clearSelection();
-
-
     }
 
     private void crearProducto(String nombre, TipoProducto selectedItem, String nombreAnunciante) {
-
         Producto producto = productoController.crearProducto(nombre, selectedItem, nombreAnunciante) ;
         if(producto != null){
             listadoProductos.add(producto);
@@ -174,6 +172,7 @@ public class ProductoViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        LoginViewController loginViewController1 = new LoginViewController();
         productoController = new ProductoController();
         this.columnaNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnaTipoProducto.setCellValueFactory(new PropertyValueFactory<>("tipo"));
