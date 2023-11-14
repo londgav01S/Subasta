@@ -52,3 +52,13 @@ nov. 13, 2023 7:37:23 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardar
 INFO: inicioSesión,Inicio de sesión,2023-11-13
 nov. 13, 2023 7:41:51 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2023-11-13
+nov. 13, 2023 7:55:50 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-13
+nov. 13, 2023 7:56:15 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-13
+nov. 13, 2023 7:58:34 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-13
+nov. 13, 2023 8:02:33 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-13
+nov. 13, 2023 8:03:28 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-13
