@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.subasta.viewController.PujaViewController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="541.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.PujaViewController">
+   <children>
+      <TabPane layoutX="26.0" layoutY="19.0" prefHeight="522.0" prefWidth="599.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Gestión de Pujas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="494.0" prefWidth="599.0">
+                     <children>
+                        <SplitPane layoutX="14.0" layoutY="6.0" prefHeight="474.0" prefWidth="566.0">
+                            <items>
+                                <fx:include source="GestionPujaView.fxml" />
+                            </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Pujas Realizadas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane layoutX="14.0" layoutY="14.0" prefHeight="366.0" prefWidth="574.0">
+                            <items>
+                                <fx:include source="PujaRealizadaView.fxml" />
+                            </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>

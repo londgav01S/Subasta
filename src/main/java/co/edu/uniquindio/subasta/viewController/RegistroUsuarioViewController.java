@@ -19,6 +19,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/**
+ *
+ */
 public class RegistroUsuarioViewController implements Initializable {
 
 
@@ -32,17 +35,6 @@ public class RegistroUsuarioViewController implements Initializable {
     ModelFactoryController mfm = ModelFactoryController.getInstance();
 
     RegistroUsuarioController registroUsuarioController;
-    @FXML
-    private Button btnActualizar;
-
-    @FXML
-    private Button btnAgregar;
-
-    @FXML
-    private Button btnEliminar;
-
-    @FXML
-    private Button btnVolverIniciarSesion;
 
     @FXML
     private TableColumn<Usuario, String> columnaCorreoElectronico;
@@ -55,6 +47,12 @@ public class RegistroUsuarioViewController implements Initializable {
 
     @FXML
     private TableColumn<Usuario, String> columnaUsuario;
+
+    @FXML
+    private TableView<Usuario> tableViewUsuario;
+
+    @FXML
+    private Button btnAgregar;
 
     @FXML
     private TextField fContrasenia;
@@ -75,13 +73,16 @@ public class RegistroUsuarioViewController implements Initializable {
     private TextField fUsuario;
 
     @FXML
-    private TableView<Usuario> tableViewUsuario;
+    private DatePicker tfFechaNacimiento;
+
+    @FXML
+    private ComboBox<String> cbTipoUsuario;
 
     private ArrayList<Usuario> obtenerUsuarios(){
         //listadoUsuarios.addAll(mfm.obtenerUsuarios());
         return (ArrayList<Usuario>) listadoUsuarios;
     }
-
+/*
     @FXML
     void actualizarUsuarioEvent(ActionEvent event) {
         String nombreUsuario = fUsuario.getText();
@@ -108,7 +109,7 @@ public class RegistroUsuarioViewController implements Initializable {
         fTelefono.setText("");
     }
 
-
+*/
     ObservableList<Usuario> listadoUsuarios = FXCollections.observableArrayList();
 
     @FXML
@@ -144,6 +145,7 @@ public class RegistroUsuarioViewController implements Initializable {
         }
     }
 
+    /*
     @FXML
     void eliminarUsuarioEvent(ActionEvent event) {
         if (usuarioSeleccionado != null){
@@ -154,15 +156,15 @@ public class RegistroUsuarioViewController implements Initializable {
         else{
             mostrarMensajeAlerta("Cuenta seleccion ", "Cuenta seleccion ", "No se ha realizado ninguna seleccion", Alert.AlertType.WARNING);
         }
-    }
+    }*/
 
-
+/*
     @FXML
     void volverIniciarSesionEvent(ActionEvent event) {
         loginController.show();
         this.stage.close();
     }
-
+*/
     public  Stage getPrimaryStage() {
         return stage;
     }
@@ -207,6 +209,8 @@ public class RegistroUsuarioViewController implements Initializable {
     private Usuario usuarioSeleccionado;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        cbTipoUsuario.getItems().addAll("Anunciante", "Comprador");
 
         registroUsuarioController = new RegistroUsuarioController();
         this.columnaUsuario.setCellValueFactory(new PropertyValueFactory<>("nombreUsuario"));

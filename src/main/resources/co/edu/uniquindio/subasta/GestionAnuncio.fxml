@@ -5,15 +5,15 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="680.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.GestionAnuncioViewController">
+<AnchorPane prefHeight="648.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.GestionAnuncioViewController">
    <children>
-      <TabPane layoutX="43.0" layoutY="68.0" prefHeight="548.0" prefWidth="726.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="14.0" layoutY="10.0" prefHeight="640.0" prefWidth="741.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Crear Anuncio">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <SplitPane layoutX="32.0" layoutY="45.0" prefHeight="416.0" prefWidth="612.0">
+                        <SplitPane layoutX="33.0" layoutY="14.0" prefHeight="576.0" prefWidth="660.0">
                             <items>
                                 <fx:include source="AnuncioView.fxml" />
                             </items>
@@ -26,7 +26,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="732.0">
                      <children>
-                        <SplitPane layoutX="50.0" layoutY="27.0" prefHeight="314.0" prefWidth="602.0">
+                        <SplitPane layoutX="47.0" layoutY="66.0" prefHeight="495.0" prefWidth="646.0">
                             <items>
                                 <fx:include source="ProductoView.fxml" />
                             </items>
@@ -39,7 +39,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <SplitPane layoutX="14.0" layoutY="14.0" prefHeight="486.0" prefWidth="695.0">
+                        <SplitPane layoutX="5.0" layoutY="95.0" prefHeight="393.0" prefWidth="674.0">
                             <items>
                                 <fx:include source="PujaDeAnuncioView.fxml" />
                             </items>

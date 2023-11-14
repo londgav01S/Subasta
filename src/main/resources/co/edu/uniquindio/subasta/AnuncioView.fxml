@@ -9,34 +9,60 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="447.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.AnuncioViewController">
+<AnchorPane prefHeight="593.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.AnuncioViewController">
    <children>
-      <TextField fx:id="fNombreAnuncio" layoutX="129.0" layoutY="40.0" prefHeight="25.0" prefWidth="149.0" />
-      <TextField fx:id="fCodigoAnuncio" layoutX="129.0" layoutY="70.0" />
-      <DatePicker fx:id="fechaInicial" layoutX="425.0" layoutY="40.0" />
-      <DatePicker fx:id="fechaFinal" layoutX="425.0" layoutY="93.0" />
-      <ComboBox fx:id="comboProducto" layoutX="188.0" layoutY="242.0" prefWidth="150.0" />
-      <TextField fx:id="fValorInicial" layoutX="129.0" layoutY="101.0" />
-      <TextField fx:id="fDescripcion" layoutX="40.0" layoutY="162.0" prefHeight="62.0" prefWidth="361.0" />
-      <ImageView fitHeight="78.0" fitWidth="104.0" layoutX="477.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="btnCargarImagen" layoutX="482.0" layoutY="230.0" mnemonicParsing="false" text="Cargar imagen" />
-      <Label layoutX="14.0" layoutY="44.0" text="Nombre del anuncio" />
-      <Label layoutX="17.0" layoutY="74.0" text="Codigo del anuncio" />
-      <Label layoutX="341.0" layoutY="44.0" text="Fecha de inicio" />
-      <Label layoutX="363.0" layoutY="97.0" text="Fecha final" />
-      <Label layoutX="61.0" layoutY="105.0" text="Valor inicial" />
-      <Label layoutX="40.0" layoutY="145.0" text="Descripcion del anuncio " />
-      <Label layoutX="123.0" layoutY="246.0" text="Producto" />
-      <TableView fx:id="tableAnuncio" layoutX="40.0" layoutY="288.0" prefHeight="118.0" prefWidth="596.0">
+      <TextField fx:id="fNombreAnuncio" layoutX="33.0" layoutY="68.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="fCodigoAnuncio" layoutX="236.0" layoutY="68.0" />
+      <DatePicker fx:id="fechaInicial" layoutX="423.0" layoutY="68.0" />
+      <DatePicker fx:id="fechaFinal" layoutX="234.0" layoutY="130.0" />
+      <ComboBox fx:id="comboProducto" layoutX="41.0" layoutY="249.0" prefWidth="150.0" />
+      <TextField fx:id="fValorInicial" layoutX="34.0" layoutY="130.0" />
+      <TextField fx:id="fDescripcion" layoutX="35.0" layoutY="306.0" prefHeight="62.0" prefWidth="361.0" />
+      <ImageView fitHeight="118.0" fitWidth="164.0" layoutX="424.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnCargarImagen" layoutX="459.0" layoutY="342.0" mnemonicParsing="false" text="Cargar imagen" />
+      <Label layoutX="35.0" layoutY="46.0" text="Nombre del anuncio" />
+      <Label layoutX="235.0" layoutY="46.0" text="Codigo del anuncio" />
+      <Label layoutX="423.0" layoutY="46.0" text="Fecha de inicio" />
+      <Label layoutX="235.0" layoutY="104.0" text="Fecha final" />
+      <Label layoutX="35.0" layoutY="104.0" text="Valor inicial" />
+      <Label layoutX="43.0" layoutY="286.0" text="Descripcion del anuncio " />
+      <Label layoutX="41.0" layoutY="233.0" text="Producto" />
+      <TableView fx:id="tableAnuncio" layoutX="38.0" layoutY="449.0" prefHeight="118.0" prefWidth="555.0">
         <columns>
           <TableColumn prefWidth="127.0" text="Nombre producto" />
-          <TableColumn prefWidth="121.0" text="Valor inicial " />
-            <TableColumn prefWidth="121.0" text="Fecha inicio" />
-            <TableColumn prefWidth="118.0" text="Fecha final" />
-            <TableColumn prefWidth="108.0" text="Codigo" />
+          <TableColumn prefWidth="90.4000244140625" text="Valor inicial " />
+            <TableColumn prefWidth="130.3999786376953" text="Fecha inicio" />
+            <TableColumn prefWidth="99.20001220703125" text="Fecha final" />
+            <TableColumn prefWidth="107.199951171875" text="Codigo" />
         </columns>
       </TableView>
-      <Button fx:id="btnPublicar" layoutX="315.0" layoutY="408.0" mnemonicParsing="false" onAction="#publicarEvent" text="Publicar" />
+      <Button fx:id="btnPublicar" layoutX="286.0" layoutY="377.0" mnemonicParsing="false" onAction="#publicarEvent" text="Publicar" />
+      <Line endX="484.39996337890625" endY="3.814697265625E-6" layoutX="123.0" layoutY="22.0" startX="85.99998474121094" startY="7.62939453125E-6" />
+      <Line endX="477.79290771484375" endY="1.100006103515625" layoutX="130.0" layoutY="176.0" startX="-107.20710754394531" startY="2.100006103515625" />
+      <Line endX="-86.70710754394531" endY="178.60000610351562" layoutX="109.0" layoutY="-1.0" startX="-86.70710754394531" startY="22.29290008544922" />
+      <Line endX="-86.70710754394531" endY="178.60000610351562" layoutX="694.0" layoutY="-2.0" startX="-86.70710754394531" startY="22.29290008544922" />
+      <Label layoutX="53.0" layoutY="13.0" text="Información de Anuncio">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Line endX="-76.59999084472656" endY="7.62939453125E-6" layoutX="124.0" layoutY="23.0" startX="-100.0" />
+      <Line endX="477.79290771484375" endY="1.100006103515625" layoutX="131.0" layoutY="204.0" startX="85.19999694824219" startY="1.100006103515625" />
+      <Label layoutX="52.0" layoutY="197.0" text="Información de Producto">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Line endX="-76.59999084472656" endY="7.62939453125E-6" layoutX="123.0" layoutY="207.0" startX="-100.0" />
+      <Line endX="-86.70710754394531" endY="227.60003662109375" layoutX="110.0" layoutY="186.0" startX="-86.70710754394531" startY="22.29290008544922" />
+      <Line endX="-86.70710754394531" endY="227.60003662109375" layoutX="693.0" layoutY="185.0" startX="-86.70710754394531" startY="22.29290008544922" />
+      <Line endX="470.79290771484375" endY="2.10003662109375" layoutX="136.0" layoutY="411.0" startX="-112.70710754394531" startY="3.10003662109375" />
+      <Line endX="470.79290771484375" endY="2.10003662109375" layoutX="136.0" layoutY="436.0" startX="-112.70710754394531" startY="3.10003662109375" />
+      <Line endX="-86.70710754394531" endY="162.4000244140625" layoutX="110.0" layoutY="416.0" startX="-86.70710754394531" startY="22.29290008544922" />
+      <Line endX="-86.70710754394531" endY="162.4000244140625" layoutX="694.0" layoutY="416.0" startX="-86.70710754394531" startY="22.29290008544922" />
+      <Line endX="470.79290771484375" endY="2.10003662109375" layoutX="136.0" layoutY="576.0" startX="-112.70710754394531" startY="3.10003662109375" />
    </children>
 </AnchorPane>

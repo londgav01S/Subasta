@@ -2,38 +2,46 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: withe;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.PujaDeAnuncioViewController">
+<AnchorPane prefHeight="432.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.PujaDeAnuncioViewController">
    <children>
-      <Label layoutX="57.0" layoutY="78.0" text="Lista de anuncios" />
-      <TableView fx:id="tableAnuncios" layoutX="34.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0">
+      <Label layoutX="49.0" layoutY="23.0" text="Lista de anuncios">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TableView fx:id="tableAnuncios" layoutX="22.0" layoutY="56.0" prefHeight="351.0" prefWidth="270.0">
         <columns>
-          <TableColumn prefWidth="94.0" text="Nombre" />
-          <TableColumn prefWidth="105.0" text="Codigo" />
+          <TableColumn prefWidth="136.79998779296875" text="Nombre" />
+          <TableColumn prefWidth="133.60003662109375" text="Codigo" />
         </columns>
       </TableView>
-      <TableView fx:id="tablePujasRealizadas" layoutX="279.0" layoutY="114.0" prefHeight="200.0" prefWidth="301.0">
+      <TableView fx:id="tablePujasRealizadas" layoutX="324.0" layoutY="56.0" prefHeight="320.0" prefWidth="396.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Comprador" />
-          <TableColumn prefWidth="75.0" text="Codigo puja" />
-            <TableColumn prefWidth="75.0" text="Fecha" />
-            <TableColumn prefWidth="75.0" text="Oferta" />
+          <TableColumn prefWidth="100.0" text="Comprador" />
+          <TableColumn prefWidth="95.20001220703125" text="Codigo puja" />
+            <TableColumn prefWidth="82.39996337890625" text="Fecha" />
+            <TableColumn prefWidth="118.4000244140625" text="Oferta" />
         </columns>
       </TableView>
-      <Label layoutX="326.0" layoutY="74.0" text="Lista de pujas realizadas " />
-      <Button fx:id="btnElegirPuja" layoutX="394.0" layoutY="347.0" mnemonicParsing="false" onAction="#elegirPujaEvent" style="-fx-background-color: grey;" text="Elegir puja" textFill="WHITE" />
-      <Separator layoutX="14.0" layoutY="61.0" orientation="VERTICAL" prefHeight="276.0" prefWidth="4.0" style="-fx-background-color: grey;" />
-      <Separator layoutX="14.0" layoutY="61.0" prefHeight="5.0" prefWidth="243.0" style="-fx-background-color: grey;" />
-      <Separator layoutX="14.0" layoutY="335.0" prefHeight="5.0" prefWidth="243.0" style="-fx-background-color: grey;" />
-      <Separator layoutX="254.0" layoutY="61.0" orientation="VERTICAL" prefHeight="276.0" prefWidth="6.0" style="-fx-background-color: grey;" />
-      <Separator layoutX="268.0" layoutY="59.0" prefHeight="5.0" prefWidth="321.0" style="-fx-background-color: grey;" />
-      <Separator layoutX="268.0" layoutY="333.0" prefHeight="5.0" prefWidth="321.0" style="-fx-background-color: grey;" />
-      <Separator layoutX="265.0" layoutY="61.0" orientation="VERTICAL" prefHeight="276.0" prefWidth="6.0" style="-fx-background-color: grey;" />
-      <Separator layoutX="586.0" layoutY="61.0" orientation="VERTICAL" prefHeight="276.0" prefWidth="6.0" style="-fx-background-color: grey;" />
+      <Label layoutX="359.0" layoutY="24.0" text="Lista de pujas realizadas ">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="btnElegirPuja" layoutX="486.0" layoutY="381.0" mnemonicParsing="false" onAction="#elegirPujaEvent" style="-fx-background-color: grey;" text="Elegir puja" textFill="WHITE" />
+      <Line endX="140.5999755859375" endY="0.899993896484375" layoutX="158.0" layoutY="417.0" startX="-142.29998779296875" startY="0.899993896484375" />
+      <Line endX="-125.39999389648438" endY="0.8999862670898438" layoutX="167.0" layoutY="32.0" startX="-151.29998779296875" startY="0.8999862670898438" />
+      <Line endX="-151.79998779296875" endY="-353.6000061035156" layoutX="167.0" layoutY="387.0" startX="-151.7999725341797" startY="30.399993896484375" />
+      <Line endX="-151.79998779296875" endY="-353.6000061035156" layoutX="449.0" layoutY="387.0" startX="-149.9000244140625" startY="31.399993896484375" />
+      <Line endX="3.79998779296875" endY="0.8999862670898438" layoutX="293.0" layoutY="32.0" startX="-131.4000244140625" startY="0.8999862670898438" />
+      <Line endX="264.800048828125" endY="0.899993896484375" layoutX="464.0" layoutY="416.0" startX="-150.29998779296875" startY="0.899993896484375" />
+      <Line endX="-151.79998779296875" endY="-353.6000061035156" layoutX="465.0" layoutY="387.0" startX="-151.79998779296875" startY="29.399993896484375" />
+      <Line endX="-151.79998779296875" endY="-353.6000061035156" layoutX="881.0" layoutY="387.0" startX="-151.70001220703125" startY="30.399993896484375" />
+      <Line endX="3.79998779296875" endY="0.8999862670898438" layoutX="724.0" layoutY="33.0" startX="-205.5999755859375" startY="0.8999862670898438" />
+      <Line endX="-117.20001220703125" endY="0.8999862670898438" layoutX="466.0" layoutY="33.0" startX="-151.29998779296875" startY="0.8999862670898438" />
    </children>
 </AnchorPane>

@@ -14,9 +14,6 @@ import java.util.List;
 public class ModelFactoryController {
     Subasta subasta = null;
 
-
-
-
     //------------------------------  Singleton ------------------------------------------------
     // Clase estatica oculta. Tan solo se instanciara el singleton una vez
     private static class SingletonHolder {
@@ -33,7 +30,6 @@ public class ModelFactoryController {
         inicializarDatos();
     }
 
-
     private void inicializarDatos() {
         subasta = new Subasta();
         //1. inicializar datos y luego guardarlo en archivos
@@ -41,7 +37,6 @@ public class ModelFactoryController {
 
         //cargarDatosBase();
         //salvarDatosPrueba();
-
 
         //2. Cargar los datos de los archivos
         //cargarDatosDesdeArchivos();

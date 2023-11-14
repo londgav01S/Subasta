@@ -1,42 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.GestionPujaViewController">
+<AnchorPane prefHeight="479.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.GestionPujaViewController">
    <children>
-      <TableView fx:id="tableInformacionAnuncio" layoutX="22.0" layoutY="56.0" prefHeight="324.0" prefWidth="261.0">
+      <TableView fx:id="tableInformacionAnuncio" layoutX="50.0" layoutY="284.0" prefHeight="162.0" prefWidth="443.0">
         <columns>
-          <TableColumn fx:id="colAnunciante" prefWidth="85.0" text="Anunciante" />
-          <TableColumn fx:id="colNombreAnuncio" prefWidth="96.0" text="Nombre" />
-            <TableColumn fx:id="colCodigoAnuncio" prefWidth="79.0" text="Codigo" />
+          <TableColumn fx:id="colAnunciante" prefWidth="144.0" text="Anunciante" />
+          <TableColumn fx:id="colNombreAnuncio" prefWidth="126.4000244140625" text="Nombre" />
+            <TableColumn fx:id="colCodigoAnuncio" prefWidth="159.20001220703125" text="Codigo" />
         </columns>
       </TableView>
-      <TextField fx:id="fCodigoPuja" layoutX="410.0" layoutY="221.0" />
-      <TextField fx:id="fOferta" layoutX="410.0" layoutY="256.0" />
-      <Label layoutX="363.0" layoutY="48.0" text="Info del producto" />
-      <Label layoutX="22.0" layoutY="33.0" text="Información del anuncio" />
-      <TextField fx:id="fNombreProducto" layoutX="410.0" layoutY="80.0" />
-      <Label layoutX="355.0" layoutY="84.0" text="Nombre" />
-      <Label layoutX="377.0" layoutY="116.0" text="Tipo" />
-      <TextField fx:id="fTipoProducto" layoutX="410.0" layoutY="112.0" />
-      <Label layoutX="366.0" layoutY="192.0" text="Datos para pujar" />
-      <Label layoutX="360.0" layoutY="225.0" text="Codigo" />
-      <Label layoutX="361.0" layoutY="260.0" text="Oderta" />
-      <Button fx:id="btnPujar" layoutX="388.0" layoutY="326.0" mnemonicParsing="false" onAction="#btnPujarEvent" text="Pujar por el producto" />
-      <Separator layoutX="297.0" layoutY="5.0" orientation="VERTICAL" prefHeight="394.0" prefWidth="4.0" style="-fx-background-color: grey;" />
-      <Separator layoutX="332.0" layoutY="38.0" prefHeight="2.0" prefWidth="240.0" />
-      <Separator layoutX="332.0" layoutY="147.0" prefHeight="2.0" prefWidth="240.0" />
-      <Separator layoutX="329.0" layoutY="37.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="0.0" />
-      <Separator layoutX="569.0" layoutY="37.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="0.0" />
-      <Separator layoutX="334.0" layoutY="186.0" prefHeight="2.0" prefWidth="240.0" />
-      <Separator layoutX="332.0" layoutY="296.0" prefHeight="2.0" prefWidth="240.0" />
-      <Separator layoutX="332.0" layoutY="187.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="0.0" />
-      <Separator layoutX="569.0" layoutY="187.0" orientation="VERTICAL" prefHeight="110.0" prefWidth="0.0" />
+      <TextField fx:id="fCodigoPuja" layoutX="61.0" layoutY="203.0" />
+      <TextField fx:id="fOferta" layoutX="232.0" layoutY="203.0" />
+      <Label layoutX="60.0" layoutY="29.0" text="Info del producto">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="60.0" layoutY="259.0" text="Información del anuncio">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="fNombreProducto" layoutX="82.0" layoutY="80.0" />
+      <Label layoutX="92.0" layoutY="62.0" text="Nombre" />
+      <Label layoutX="329.0" layoutY="62.0" text="Tipo" />
+      <Label layoutX="60.0" layoutY="154.0" text="Datos para pujar">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="62.0" layoutY="185.0" text="Codigo" />
+      <Label layoutX="245.0" layoutY="185.0" text="Oderta" />
+      <Button fx:id="btnPujar" layoutX="428.0" layoutY="203.0" mnemonicParsing="false" onAction="#btnPujarEvent" text="Pujar" />
+      <Line endX="367.79998779296875" endY="-3.000030517578125" layoutX="141.0" layoutY="458.0" startX="-105.79998779296875" startY="-3.000030517578125" />
+      <Line endX="-124.70001220703125" endY="-143.20001220703125" layoutX="633.0" layoutY="413.0" startX="-124.70001220703125" startY="41.499969482421875" />
+      <Line endX="-126.5" endY="-138.20001220703125" layoutX="160.0" layoutY="408.0" startX="-126.5" startY="46.499969482421875" />
+      <Line endX="187.79998779296875" endY="-3.0517578125E-5" layoutX="318.0" layoutY="269.0" startX="-96.4000244140625" startY="-3.0517578125E-5" />
+      <Line endX="79.79998779296875" endY="-2.288818359375E-5" layoutX="-24.0" layoutY="269.0" startX="58.4000244140625" startY="-2.288818359375E-5" />
+      <Line endX="-124.70001220703125" endY="-374.0" layoutX="163.0" layoutY="414.0" startX="-124.70001220703125" startY="-292.3999938964844" />
+      <Line endX="-711.2000122070312" endY="-166.70001220703125" layoutX="748.0" layoutY="408.0" startX="-238.20001220703125" startY="-166.70001220703125" />
+      <Line endX="370.0" endY="-2.288818359375E-5" layoutX="142.0" layoutY="122.0" startX="-102.0" startY="-3.0517578125E-5" />
+      <ComboBox layoutX="322.0" layoutY="80.0" prefWidth="150.0" />
+      <Line endX="-124.70001220703125" endY="-367.3999938964844" layoutX="162.0" layoutY="533.0" startX="-124.70001220703125" startY="-292.20001220703125" />
+      <Line endX="-124.5" endY="-375.5000305175781" layoutX="637.0" layoutY="415.0" startX="-124.70001220703125" startY="-292.3999938964844" />
+      <Line endX="370.0" endY="-2.288818359375E-5" layoutX="142.0" layoutY="39.0" startX="33.20001220703125" startY="-2.288818359375E-5" />
+      <Line endX="75.79998779296875" endY="-242.5" layoutX="-38.0" layoutY="282.0" startX="91.60000610351562" startY="-242.79998779296875" />
+      <Line endX="75.79998779296875" endY="-242.5" layoutX="-38.0" layoutY="406.0" startX="91.60000610351562" startY="-242.79998779296875" />
+      <Line endX="370.0" endY="-2.288818359375E-5" layoutX="139.0" layoutY="165.0" startX="33.20001220703125" startY="-2.288818359375E-5" />
+      <Line endX="-124.70001220703125" endY="-367.3999938964844" layoutX="634.0" layoutY="533.0" startX="-124.70001220703125" startY="-292.20001220703125" />
    </children>
 </AnchorPane>

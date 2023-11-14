@@ -5,16 +5,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane fx:id="contentArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.PrincipalViewController">
+<StackPane fx:id="contentArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.PrincipalViewController">
    <children>
-      <SplitPane dividerPositions="0.29797979797979796" prefHeight="510.0" prefWidth="755.0">
+      <SplitPane dividerPositions="0.23712051517939278" prefHeight="510.0" prefWidth="755.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="203.0">
                <children>
-                  <Button fx:id="bPage1" layoutX="68.0" layoutY="212.0" mnemonicParsing="false" onAction="#abrir1" text="Gestionar Anuncios" />
-                  <Button fx:id="bPage2" layoutX="84.0" layoutY="283.0" mnemonicParsing="false" onAction="#abrir2" text="Realizar Pujas" />
-                  <Button fx:id="bPage3" layoutX="102.0" layoutY="143.0" mnemonicParsing="false" onAction="#abrir3" text="User" />
-                  <Button layoutX="91.0" layoutY="355.0" mnemonicParsing="false" text="Sign Out" />
+                  <Button fx:id="bPage1" layoutX="42.0" layoutY="182.0" mnemonicParsing="false" onAction="#abrir1" text="Gestionar Anuncios" />
+                  <Button fx:id="bPage2" layoutX="58.0" layoutY="257.0" mnemonicParsing="false" onAction="#abrir2" text="Realizar Pujas" />
+                  <Button fx:id="bPage3" layoutX="82.0" layoutY="97.0" mnemonicParsing="false" onAction="#abrir3" text="User" />
+                  <Button layoutX="71.0" layoutY="400.0" mnemonicParsing="false" text="Sign Out" />
+                  <Button fx:id="estadisticas" layoutX="64.0" layoutY="332.0" mnemonicParsing="false" text="Estadisticas" />
                </children>
             </AnchorPane>
           <AnchorPane fx:id="panelCentral" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />

@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class PrincipalViewController implements Initializable {
+
     @FXML
     private Button bPage1;
     @FXML
@@ -23,16 +24,23 @@ public class PrincipalViewController implements Initializable {
     @FXML
     private Button bPage3;
     @FXML
+    private Button estadisticas;
+    @FXML
     private StackPane contentArea;
     @FXML
     private AnchorPane panelCentral;
+
     @FXML
     void abrir1(ActionEvent event) throws IOException {
+        panelCentral.getChildren().clear();
         Parent root = FXMLLoader.load((getClass().getResource("/co/edu/uniquindio/subasta/GestionAnuncio.fxml")));
         panelCentral.getChildren().add(root);
     }
     @FXML
-    void abrir2(ActionEvent event) {
+    void abrir2(ActionEvent event) throws IOException {
+        panelCentral.getChildren().clear();
+        Parent root = FXMLLoader.load((getClass().getResource("/co/edu/uniquindio/subasta/PujaView.fxml")));
+        panelCentral.getChildren().add(root);
     }
     @FXML
     void abrir3(ActionEvent event) {

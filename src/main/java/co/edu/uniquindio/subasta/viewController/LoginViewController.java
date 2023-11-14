@@ -43,11 +43,11 @@ public class LoginViewController {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(SubastaApplication.class.getResource("PrincipalView.fxml"));
             StackPane rootLayout = (StackPane) loader.load();
-            Scene scene = new Scene(rootLayout);
+            Scene scene= new Scene(rootLayout,1050 ,660,false, SceneAntialiasing.BALANCED);
             PrincipalViewController principalViewController = loader.getController();
             principalViewController.init(stage2, this);
             this.stage2.setScene(scene);
-            stage.close();
+            //stage.close();
             this.stage2.show();
 
         } catch (Exception e) {
