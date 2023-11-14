@@ -7,14 +7,14 @@ public class Producto implements Serializable {
     private static final long serialVersionUID = 1L;
     private String nombre;
     private TipoProducto tipo;
-    private Anunciante anunciante;
+    private String nombreAnunciante;
 
     public Producto() {}
 
-    public Producto(String nombre, TipoProducto tipo, Anunciante anunciante) {
+    public Producto(String nombre, TipoProducto tipo, String nombreAnunciante) {
         this.nombre = nombre;
         this.tipo = tipo;
-        this.anunciante = anunciante;
+        this.nombreAnunciante = nombreAnunciante;
     }
 
     public String getNombre() {
@@ -33,6 +33,13 @@ public class Producto implements Serializable {
         this.tipo = tipo;
     }
 
+    public String getNombreAnunciante() {
+        return nombreAnunciante;
+    }
+
+    public void setNombreAnunciante(String nombreAnunciante) {
+        this.nombreAnunciante = nombreAnunciante;
+    }
 
     @Override
     public String toString() {

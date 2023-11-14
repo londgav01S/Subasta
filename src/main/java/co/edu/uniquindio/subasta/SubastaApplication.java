@@ -9,22 +9,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.SceneAntialiasing;
-
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import java.io.IOException;
 
 public class SubastaApplication extends Application {
-
-
+    public static Parent rootNode;
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader= new FXMLLoader(SubastaApplication.class.getResource("InicialView.fxml"));
-        Scene scene= new Scene(loader.load(),691 ,625,false, SceneAntialiasing.BALANCED);
-        InicialViewController loginViewController = loader.getController();
-        loginViewController.init(primaryStage);
-        primaryStage.setTitle("Subasta");
+        Scene scene= new Scene(loader.load(),387 ,292,false, SceneAntialiasing.BALANCED);
+        InicialViewController inicialViewController = loader.getController();
+        inicialViewController.init(primaryStage);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
 
     public static void main(String[] args)  {
         launch(args);

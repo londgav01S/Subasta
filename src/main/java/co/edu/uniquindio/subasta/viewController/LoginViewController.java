@@ -2,6 +2,7 @@ package co.edu.uniquindio.subasta.viewController;
 
 
 import co.edu.uniquindio.subasta.SubastaApplication;
+import co.edu.uniquindio.subasta.model.Producto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.SceneAntialiasing;
@@ -17,7 +18,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class LoginViewController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LoginViewController implements Initializable{
+
+    InicialViewController inicialViewController = new InicialViewController();
 
     @FXML
     private Button btnIniciarSesion;
@@ -31,23 +37,39 @@ public class LoginViewController {
     @FXML
     private TextField fUsuario;
 
-    private Stage stage;
     private Stage stage2 = new Stage();
 
-    public void init(Stage primaryStage) {
-        this.stage = primaryStage;
+    public static String nombreUsuario ;
+
+
+    public static String getNombreUsuario() {
+        return nombreUsuario;
     }
+
+
+
+    public static void setNombreUsuario(String nombreUsuario) {
+        LoginViewController.nombreUsuario = nombreUsuario;
+    }
+
+    private Stage stage = inicialViewController.getStage();
+
+    private Producto producto;
     @FXML
     void iniciarSesionEvent(ActionEvent event) {
         try {
+            String f = fUsuario.getText();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(SubastaApplication.class.getResource("PrincipalView.fxml"));
             StackPane rootLayout = (StackPane) loader.load();
-            Scene scene= new Scene(rootLayout,1050 ,660,false, SceneAntialiasing.BALANCED);
+            Scene scene = new Scene(rootLayout);
             PrincipalViewController principalViewController = loader.getController();
             principalViewController.init(stage2, this);
             this.stage2.setScene(scene);
-            //stage.close();
+            producto.setNombreAnunciante(f);
+            //inicialViewController.getStage().hide();
+            //inicialViewController.cerrar(stage);
+            stage.close();
             this.stage2.show();
 
         } catch (Exception e) {
@@ -56,8 +78,9 @@ public class LoginViewController {
         }
     }
 
-    public void show() {
-        this.stage.show();
-    }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        producto = new Producto();
+    }
 }

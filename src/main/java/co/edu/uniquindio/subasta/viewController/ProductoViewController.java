@@ -24,6 +24,7 @@ public class ProductoViewController implements Initializable {
 
     ModelFactoryController mfm = ModelFactoryController.getInstance();
 
+    LoginViewController loginViewController;
     private Producto productoSeleccionado;
 
     @FXML
@@ -83,19 +84,18 @@ public class ProductoViewController implements Initializable {
     private void agregarProductoAction() {
 
         String nombre = fNombreProducto.getText();
+        String nombreAnunciante = LoginViewController.nombreUsuario;
+        System.out.println("nombreAnunciante = " + nombreAnunciante);
         if(datosValidados(nombre)){
-            crearProducto(nombre, cTipoProducto.getSelectionModel().getSelectedItem(), null);
+            crearProducto(nombre, cTipoProducto.getSelectionModel().getSelectedItem(), nombreAnunciante);
             tableViewProducto.setItems(listadoProductos);
         }
         fNombreProducto.setText("");
         cTipoProducto.getSelectionModel().clearSelection();
-
-
     }
 
-    private void crearProducto(String nombre, TipoProducto selectedItem, Object o) {
-
-        Producto producto = productoController.crearProducto(nombre, selectedItem, null) ;
+    private void crearProducto(String nombre, TipoProducto selectedItem, String nombreAnunciante) {
+        Producto producto = productoController.crearProducto(nombre, selectedItem, nombreAnunciante) ;
         if(producto != null){
             listadoProductos.add(producto);
             mostrarMensajeAlerta("Notificacion ", "Registro exitoso", "El producto: " + nombre +" ha sido registrado" , Alert.AlertType.INFORMATION);
@@ -172,10 +172,11 @@ public class ProductoViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        LoginViewController loginViewController1 = new LoginViewController();
         productoController = new ProductoController();
         this.columnaNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnaTipoProducto.setCellValueFactory(new PropertyValueFactory<>("tipo"));
-        this.columnaAnunciante.setCellValueFactory(new PropertyValueFactory<>("anunciante"));
+        this.columnaAnunciante.setCellValueFactory(new PropertyValueFactory<>("nombreAnunciante"));
         agregarTiposCombo();
         tableViewProducto.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) ->{
             if(newSelection!= null){

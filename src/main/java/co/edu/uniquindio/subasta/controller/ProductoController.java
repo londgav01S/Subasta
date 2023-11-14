@@ -10,8 +10,8 @@ public class ProductoController {
 
     ModelFactoryController mfm = ModelFactoryController.getInstance();
 
-    public  Producto crearProducto(String nombre, TipoProducto selectedItem, Object o) {
-       Producto producto=  mfm.crearProducto(nombre, selectedItem, null);
+    public  Producto crearProducto(String nombre, TipoProducto selectedItem, String nombreAnunciante) {
+       Producto producto=  mfm.crearProducto(nombre, selectedItem, nombreAnunciante);
       return producto;
     }
 

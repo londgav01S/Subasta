@@ -26,6 +26,8 @@ public class RegistroUsuarioViewController implements Initializable {
 
 
     private LoginViewController loginController;
+
+    private InicialViewController inicialViewController;
     private Stage stage;
     public void init(Stage stage, LoginViewController loginController) {
         this.loginController = loginController;
@@ -161,7 +163,7 @@ public class RegistroUsuarioViewController implements Initializable {
 /*
     @FXML
     void volverIniciarSesionEvent(ActionEvent event) {
-        loginController.show();
+        inicialViewController.show();
         this.stage.close();
     }
 */
