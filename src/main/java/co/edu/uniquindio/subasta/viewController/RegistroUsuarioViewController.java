@@ -1,9 +1,6 @@
 package co.edu.uniquindio.subasta.viewController;
 import co.edu.uniquindio.subasta.controller.ModelFactoryController;
-import co.edu.uniquindio.subasta.controller.ProductoController;
 import co.edu.uniquindio.subasta.controller.RegistroUsuarioController;
-import co.edu.uniquindio.subasta.model.Persona;
-import co.edu.uniquindio.subasta.model.Producto;
 import co.edu.uniquindio.subasta.model.Usuario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,10 +9,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import co.edu.uniquindio.subasta.model.Persona;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -34,7 +31,6 @@ public class RegistroUsuarioViewController implements Initializable {
         this.stage = stage;
 
     }
-    ModelFactoryController mfm = ModelFactoryController.getInstance();
 
     RegistroUsuarioController registroUsuarioController;
 
@@ -122,10 +118,10 @@ public class RegistroUsuarioViewController implements Initializable {
         String correoElectronico = fCorreoElectronico.getText();
         String telefono = fTelefono.getText();
         String contrasenia = fContrasenia.getText();
-        if(datosValidados(nombreCompleto, nombreUsuario, identificacion, correoElectronico, telefono, contrasenia)){
-            crearUsuario( nombreCompleto,  telefono,  identificacion,  correoElectronico,  nombreUsuario,  contrasenia);
-            tableViewUsuario.setItems(listadoUsuarios);
-        }
+        String fechaNacimiento = tfFechaNacimiento.getValue().toString();
+        String tipoUsuario = cbTipoUsuario.getValue();
+        crearUsuario(nombreCompleto, telefono, identificacion, correoElectronico, nombreUsuario, contrasenia,
+                fechaNacimiento, tipoUsuario);
         fUsuario.setText("");
         fIdentificacion.setText("");
         fNombreCompleto.setText("");
@@ -135,17 +131,38 @@ public class RegistroUsuarioViewController implements Initializable {
 
     }
 
-    private void crearUsuario(String nombreCompleto, String telefono, String identificacion, String correoElectronico, String nombreUsuario, String contrasenia) {
-        Usuario usuario = registroUsuarioController.crearUsuario(nombreCompleto,  telefono,  identificacion,  correoElectronico,  nombreUsuario,  contrasenia) ;
-        if(usuario != null){
-            listadoUsuarios.add(usuario);
-            mostrarMensajeAlerta("Notificacion ", "Registro exitoso", "El usuario con id: " + identificacion +" ha sido registrado" , Alert.AlertType.INFORMATION);
-        }
-        else{
-            mostrarMensajeAlerta("Notificacion ", "Registro invalido", "El usuario con id: " + identificacion  + "  No ha sido registrado", Alert.AlertType.WARNING);
+    private void crearUsuario(String nombreCompleto, String telefono, String identificacion, String correoElectronico,
+                              String nombreUsuario, String contrasenia, String fechaNacimiento, String tipoUsuario) {
 
+        if(datosValidados(nombreCompleto, identificacion,telefono, correoElectronico,  nombreUsuario,contrasenia,
+                fechaNacimiento, tipoUsuario)){
+            if(tipoUsuario.equals("Anunciante")){
+                registroUsuarioController.crearAnunciante(nombreCompleto, telefono, identificacion, correoElectronico,
+                        LocalDate.parse(fechaNacimiento),nombreUsuario, contrasenia);
+            }
+            else{
+                registroUsuarioController.crearComprador(nombreCompleto, telefono, identificacion, correoElectronico,
+                        LocalDate.parse(fechaNacimiento),nombreUsuario, contrasenia);
+            }
+
+            //TODO: Pensar Bien la Logica de esto, es decir, lo del usuario con anunciante-comprador
+            Usuario usuario= registroUsuarioController.crearUsuario(nombreUsuario,  contrasenia);
+            if(usuario != null){
+                listadoUsuarios.add(usuario);
+                mostrarMensajeAlerta("Notificacion ", "Registro exitoso", "El usuario con id: " + identificacion +" ha sido registrado" , Alert.AlertType.INFORMATION);
+            }
+            else{
+                mostrarMensajeAlerta("Notificacion ", "Registro invalido", "El usuario con id: " + identificacion  + "  No ha sido registrado", Alert.AlertType.WARNING);
+
+            }
+
+            //TODO: mirar de que es esto
+            tableViewUsuario.setItems(listadoUsuarios);
         }
+
+
     }
+
 
     /*
     @FXML
@@ -171,7 +188,8 @@ public class RegistroUsuarioViewController implements Initializable {
         return stage;
     }
 
-    private boolean datosValidados(String nombreAux, String idAux, String telefonoAux, String correoAux, String usuarioAux, String contraAux) {
+    private boolean datosValidados(String nombreAux, String idAux, String telefonoAux, String correoAux,
+                                   String usuarioAux, String contraAux, String fechaNacimientoAux, String tipoUsuarioAux) {
         String notificacion = "";
         if(nombreAux == null || nombreAux.equals("")){
             notificacion+= "El dato es invalido";
@@ -192,9 +210,17 @@ public class RegistroUsuarioViewController implements Initializable {
             notificacion+= "El dato es invalido";
         }
 
+        if (fechaNacimientoAux == null || fechaNacimientoAux.equals("")){
+            notificacion+= "El dato es invalido";
+        }
+        if(tipoUsuarioAux == null || tipoUsuarioAux.equals("")){
+            notificacion+= "El dato es invalido";
+        }
+
         if(notificacion.equals("") || notificacion == null){
             return true;
         }
+
         return false;
 
     }
@@ -209,9 +235,24 @@ public class RegistroUsuarioViewController implements Initializable {
     }
 
     private Usuario usuarioSeleccionado;
+
+    private void mostrarDatosField() {
+
+        if (usuarioSeleccionado != null){
+            fNombreCompleto.setText(usuarioSeleccionado.getNombre());
+            fUsuario.setText(usuarioSeleccionado.getNombreUsuario());
+            fIdentificacion.setText(usuarioSeleccionado.getIdentificacion());
+            fTelefono.setText(usuarioSeleccionado.getTelefono());
+            fCorreoElectronico.setText(usuarioSeleccionado.getCorreoElectronico());
+            fContrasenia.setDisable(true);
+            fIdentificacion.setDisable(true);
+            fNombreCompleto.setDisable(true);
+        }
+    }
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         cbTipoUsuario.getItems().addAll("Anunciante", "Comprador");
 
         registroUsuarioController = new RegistroUsuarioController();
@@ -263,20 +304,4 @@ public class RegistroUsuarioViewController implements Initializable {
 
 
     }
-
-    private void mostrarDatosField() {
-
-        if (usuarioSeleccionado != null){
-            fNombreCompleto.setText(usuarioSeleccionado.getNombre());
-            fUsuario.setText(usuarioSeleccionado.getNombreUsuario());
-            fIdentificacion.setText(usuarioSeleccionado.getIdentificacion());
-            fTelefono.setText(usuarioSeleccionado.getTelefono());
-            fCorreoElectronico.setText(usuarioSeleccionado.getCorreoElectronico());
-            fContrasenia.setDisable(true);
-            fIdentificacion.setDisable(true);
-            fNombreCompleto.setDisable(true);
-        }
-    }
-
-
 }
