@@ -1,6 +1,9 @@
 package co.edu.uniquindio.subasta.model;
 
+import javafx.scene.image.Image;
+
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -12,8 +15,14 @@ public class Subasta implements Serializable {
     private ArrayList<Producto> listaProductos= new ArrayList<>();
     private ArrayList<Usuario> listaUsuarios= new ArrayList<>();
 
+    private ArrayList<Anuncio> listaAnuncios= new ArrayList<>();
+
+
     public Subasta() {}
 
+    public Subasta(ArrayList<Producto> listaProductos) {
+        this.listaProductos = listaProductos;
+    }
 
     public ArrayList<Usuario> getListaUsuarios() {
         return listaUsuarios;
@@ -47,6 +56,7 @@ public class Subasta implements Serializable {
         if (!productoExiste(nombre)) {
             Producto producto = new Producto(nombre, tipo, nombreAnunciante);
             listaProductos.add(producto);
+            System.out.println( producto.toString());
             return producto;
         } else {
             return null; // Producto con el mismo nombre ya existe
@@ -111,5 +121,15 @@ public class Subasta implements Serializable {
     // Método para eliminar un usuario por su identificación
     public void eliminarUsuario(String identificacion) {
         listaUsuarios.removeIf(usuario -> usuario.getIdentificacion().equals(identificacion));
+    }
+
+    public Anuncio crearAnuncio(String nombre, String codigo, Anunciante anunciante, Producto producto,
+                                String descripcion, Image imagen, LocalDate fechaPublicacion,
+                                LocalDate fechaTerminacion, Double valorInicial) {
+    Anuncio anuncio = new Anuncio(nombre, codigo, anunciante, producto,
+            descripcion, imagen,  fechaPublicacion,
+            fechaTerminacion,  valorInicial);
+    listaAnuncios.add(anuncio);
+    return anuncio;
     }
 }

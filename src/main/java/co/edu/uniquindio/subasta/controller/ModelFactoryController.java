@@ -1,18 +1,19 @@
 package co.edu.uniquindio.subasta.controller;
 
 import co.edu.uniquindio.subasta.exceptions.UsuarioException;
-import co.edu.uniquindio.subasta.model.Producto;
-import co.edu.uniquindio.subasta.model.Subasta;
-import co.edu.uniquindio.subasta.model.TipoProducto;
-import co.edu.uniquindio.subasta.model.Usuario;
+import co.edu.uniquindio.subasta.model.*;
 import co.edu.uniquindio.subasta.utils.*;
+import javafx.scene.image.Image;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ModelFactoryController {
     Subasta subasta;
+
+
 
     //------------------------------  Singleton ------------------------------------------------
     // Clase estatica oculta. Tan solo se instanciara el singleton una vez
@@ -160,5 +161,12 @@ public class ModelFactoryController {
 
     }
 
-
+    public Anuncio crearAnuncio(String nombre, String codigo, Anunciante anunciante, Producto producto,
+                                String descripcion, Image imagen, LocalDate fechaPublicacion,
+                                LocalDate fechaTerminacion, Double valorInicial) {
+    Anuncio anuncio = subasta.crearAnuncio(nombre, codigo, anunciante, producto,
+            descripcion, imagen,  fechaPublicacion,
+            fechaTerminacion,  valorInicial);
+    return  anuncio;
+    }
 }
