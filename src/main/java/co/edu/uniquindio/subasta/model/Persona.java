@@ -1,6 +1,7 @@
 package co.edu.uniquindio.subasta.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class Persona implements Serializable {
 
@@ -9,6 +10,7 @@ public class Persona implements Serializable {
     private String telefono;
     private String identificacion;
     private String correoElectronico;
+    private LocalDate fechaNacimiento;
 
 
     public Persona() {}
@@ -18,6 +20,22 @@ public class Persona implements Serializable {
         this.telefono = telefono;
         this.identificacion = identificacion;
         this.correoElectronico = correoElectronico;
+    }
+
+    public Persona(String nombre, String telefono, String identificacion, String correoElectronico, LocalDate fechaNacimiento) {
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.identificacion = identificacion;
+        this.correoElectronico = correoElectronico;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getNombre() {

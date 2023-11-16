@@ -1,5 +1,6 @@
 package co.edu.uniquindio.subasta.utils;
 
+import co.edu.uniquindio.subasta.model.Anunciante;
 import co.edu.uniquindio.subasta.model.Producto;
 import co.edu.uniquindio.subasta.model.Subasta;
 import co.edu.uniquindio.subasta.model.Usuario;
@@ -7,6 +8,7 @@ import co.edu.uniquindio.subasta.exceptions.UsuarioException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.beans.XMLEncoder;
 import java.io.FileInputStream;
@@ -24,15 +26,17 @@ import java.util.logging.SimpleFormatter;
 
 public class Persistencia {
 
-    //public static final String RUTA_ARCHIVO_PUJA = "Subasta/src/main/resources/persistencia/archivoClientes.txt";
-    //public static final String RUTA_ARCHIVO_ANUNCIO = "Subasta/src/main/resources/persistencia/archivoEmpleados.txt";
-    public static final String RUTA_ARCHIVO_PRODUCTO = "Subasta/src/main/resources/persistencia/archivoClientes.txt";
+    public static final String RUTA_ARCHIVO_PUJA = "/src/main/resources/persistencia/archivoPuja.txt";
+    public static final String RUTA_ARCHIVO_ANUNCIO = "/src/main/resources/persistencia/archivoAnuncio.txt";
+    public static final String RUTA_ARCHIVO_ANUNCIANTE = "src/main/resources/persistencia/archivoAnunciante.txt";
+    public static final String RUTA_ARCHIVO_COMPRADOR = "/src/main/resources/persistencia/archivoComprador.txt";
+
+    public static final String RUTA_ARCHIVO_PRODUCTO = "/src/main/resources/persistencia/archivoClientes.txt";
     public static final String RUTA_ARCHIVO_USUARIOS = "src/main/resources/persistencia/archivoUsuarios.txt";
     public static final String RUTA_ARCHIVO_LOG = "src/main/resources/persistencia/log/SubastaLog.txt";
-    public static final String RUTA_ARCHIVO_OBJETOS = "Subasta/src/main/resources/persistencia/archivoObjetos.txt";
+    public static final String RUTA_ARCHIVO_OBJETOS = "/src/main/resources/persistencia/archivoObjetos.txt";
     public static final String RUTA_ARCHIVO_MODELO_SUBASTA_BINARIO = "src/main/resources/persistencia/model.dat";
     public static final String RUTA_ARCHIVO_MODELO_SUBASTA_XML = "src/main/resources/persistencia/model.xml";
-//	C:\td\persistencia
 
 
     public static void cargarDatosArchivos(Subasta subasta) throws FileNotFoundException, IOException {
@@ -69,7 +73,7 @@ public class Persistencia {
     }
 
 
-//	----------------------LOADS------------------------
+//	--------------------------------------------------------LOADS------------------------
 
     /**
      * @param
@@ -180,15 +184,39 @@ public class Persistencia {
 
     public static void guardarUsuario(Usuario usuario) throws IOException {
         String contenido = "";
-        contenido += usuario.getNombreUsuario() + "@@" + usuario.getContrasenia() + "@@" + usuario.getNombre()
-                + "@@" + usuario.getTelefono() + "@@" + usuario.getIdentificacion()
-                + "@@" + usuario.getCorreoElectronico() + "\n";
-
+        contenido += usuario.getNombreUsuario() + "@@" + usuario.getContrasenia() + "\n";
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_USUARIOS, contenido, true);
     }
 
+    //-------------------------------------------------------------------------------------------------------------------
+    public static void guardarAnunciante(Anunciante anunciante) throws IOException {
+        String contenido = "";
+        contenido +=  anunciante.getNombre()
+                + "@@" + anunciante.getTelefono() + "@@" + anunciante.getIdentificacion()
+                + "@@" + anunciante.getCorreoElectronico() + "@@" + anunciante.getFechaNacimiento().toString()
+                + "@@" + anunciante.getNombreUsuario() + "@@" + anunciante.getContrasenia() +"\n";
 
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ANUNCIANTE, contenido, true);
+    }
 
+    public static ArrayList<Anunciante> cargarAnunciante( ) throws IOException {
+        ArrayList<Anunciante> anunciantes = new ArrayList<Anunciante>();
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_ANUNCIANTE);
+        String linea = "";
+        for (int i = 0; i < contenido.size(); i++) {
+            linea = contenido.get(i); //juan,arias,125454,Armenia,uni1@,12454,125444
+            Anunciante anunciante = new Anunciante();
+            anunciante.setNombreUsuario(linea.split("@@")[0]);
+            anunciante.setContrasenia(linea.split("@@")[1]);
+            anunciante.setNombre(linea.split("@@")[2]);
+            anunciante.setTelefono(linea.split("@@")[3]);
+            anunciante.setIdentificacion(linea.split("@@")[4]);
+            anunciante.setCorreoElectronico(linea.split("@@")[5]);
+            anunciante.setFechaNacimiento(LocalDate.parse(linea.split("@@")[6]));
+            anunciantes.add(anunciante);
+        }
+        return anunciantes;
+    }
 
 
     //------------------------------------SERIALIZACIÓN  y XML
