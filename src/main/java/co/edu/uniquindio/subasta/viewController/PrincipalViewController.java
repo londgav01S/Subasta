@@ -26,6 +26,8 @@ public class PrincipalViewController implements Initializable {
     @FXML
     private Button estadisticas;
     @FXML
+    private Button btnSalir;
+    @FXML
     private StackPane contentArea;
     @FXML
     private AnchorPane panelCentral;
@@ -44,6 +46,14 @@ public class PrincipalViewController implements Initializable {
     }
     @FXML
     void abrir3(ActionEvent event) {
+    }
+
+    @FXML
+    void salirEvent(ActionEvent event) {
+        loginController.mortrar();
+        this.stage.close();
+
+
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

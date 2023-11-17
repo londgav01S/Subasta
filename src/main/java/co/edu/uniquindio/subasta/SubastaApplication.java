@@ -17,9 +17,11 @@ public class SubastaApplication extends Application {
     public static Parent rootNode;
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader= new FXMLLoader(SubastaApplication.class.getResource("InicialView.fxml"));
+        FXMLLoader loader= new FXMLLoader(SubastaApplication.class.getResource("LoginView.fxml"));
         Scene scene= new Scene(loader.load(),691 ,625,false, SceneAntialiasing.BALANCED);
-        InicialViewController loginViewController = loader.getController();
+        //InicialViewController inicialViewController = loader.getController();
+        LoginViewController loginViewController = loader.getController();
+        //inicialViewController.init(primaryStage);
         loginViewController.init(primaryStage);
         primaryStage.setTitle("Subasta");
         primaryStage.setScene(scene);

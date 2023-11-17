@@ -24,15 +24,20 @@ import java.util.ResourceBundle;
  */
 public class RegistroUsuarioViewController implements Initializable {
 
-
+    @FXML
+    private Button btnVolverInisioSesion;
     private LoginViewController loginController;
 
     private InicialViewController inicialViewController;
-    private Stage stage;
+    private Stage stage = new Stage();
     public void init(Stage stage, LoginViewController loginController) {
         this.loginController = loginController;
         this.stage = stage;
 
+    }
+
+    public  void  cerrar (){
+        this.stage.close();
     }
     ModelFactoryController mfm = ModelFactoryController.getInstance();
 
@@ -145,6 +150,12 @@ public class RegistroUsuarioViewController implements Initializable {
             mostrarMensajeAlerta("Notificacion ", "Registro invalido", "El usuario con id: " + identificacion  + "  No ha sido registrado", Alert.AlertType.WARNING);
 
         }
+    }
+
+    @FXML
+    void volverInicioSesionEvent(ActionEvent event) {
+        loginController.mortrar();
+        this.stage.close();
     }
 
     /*

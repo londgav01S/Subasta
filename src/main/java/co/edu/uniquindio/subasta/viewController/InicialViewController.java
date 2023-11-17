@@ -7,16 +7,15 @@ public class InicialViewController {
     public InicialViewController() {
     }
 
+    RegistroUsuarioViewController registroUsuarioViewController = new RegistroUsuarioViewController();
     Stage stage = new Stage();
-    public void init(Stage primaryStage) {
-        this.stage = primaryStage;
-    }
 
-    public void cerrar(Stage stage1) {
-        stage1.close();
 
-        System.out.println(" Ventana cerrada ");
-    }
+public void cerrar (){
+    System.out.println("Se cerro");
+
+        this.stage.close();
+}
 
     public Stage getStage() {
         return this.stage;
