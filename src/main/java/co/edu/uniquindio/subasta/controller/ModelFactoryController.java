@@ -62,7 +62,7 @@ public class ModelFactoryController {
 
 
         //4. Guardar y Cargar el recurso serializable XML
-        //guardarResourceXML();
+        guardarResourceXML();
         //cargarResourceXML();
 
         //Siempre se debe verificar si la raiz del recurso es null

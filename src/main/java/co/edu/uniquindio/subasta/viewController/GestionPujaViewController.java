@@ -1,42 +1,47 @@
 package co.edu.uniquindio.subasta.viewController;
 
+import co.edu.uniquindio.subasta.model.Anuncio;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class GestionPujaViewController {
+
 
     @FXML
     private Button btnPujar;
 
     @FXML
-    private ComboBox<?> cbTipoProducto;
+    private TableColumn<?, ?> clmAnunciante;
 
     @FXML
-    private TableColumn<?, ?> colAnunciante;
+    private TableColumn<?, ?> clmCodigo;
 
     @FXML
-    private TableColumn<?, ?> colCodigoAnuncio;
+    private TableColumn<?, ?> clmNombre;
 
     @FXML
-    private TableColumn<?, ?> colNombreAnuncio;
+    private ImageView imgVwImagen;
 
     @FXML
-    private TextField fCodigoPuja;
+    private TableView<Anuncio> tblAnunciosPublicados;
 
     @FXML
-    private TextField fNombreProducto;
+    private TextArea txtAreaInfoProducto;
 
     @FXML
-    private TextField fOferta;
-
-
-    @FXML
-    private TableView<?> tableInformacionAnuncio;
+    private TextField txtPuja;
 
     @FXML
-    void btnPujarEvent(ActionEvent event) {
+    void pujar(ActionEvent event) {
+        System.out.println(txtPuja.getText());
+    }
 
+    @FXML
+    void setInfo(MouseEvent event) {
+        System.out.println("Pusieron porno");
     }
 
 }
