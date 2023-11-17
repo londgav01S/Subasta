@@ -2,11 +2,13 @@ package co.edu.uniquindio.subasta.model;
 
 import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
 import co.edu.uniquindio.subasta.exceptions.CompradorException;
+import javafx.scene.image.Image;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 
 public class Subasta implements Serializable {
@@ -14,6 +16,7 @@ public class Subasta implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private ArrayList<Producto> listaProductos= new ArrayList<>();
+
     private ArrayList<Usuario> listaUsuarios= new ArrayList<>();
 
     private ArrayList<Anunciante> listaAnunciantes= new ArrayList<>();
@@ -90,6 +93,7 @@ public class Subasta implements Serializable {
         if (!productoExiste(nombre)) {
             Producto producto = new Producto(nombre, tipo, nombreAnunciante);
             listaProductos.add(producto);
+            System.out.println( producto.toString());
             return producto;
         } else {
             return null; // Producto con el mismo nombre ya existe
@@ -125,9 +129,9 @@ public class Subasta implements Serializable {
     //---------------------------------------------------ANUNCIANTE------------------------------------------------------------
 
     public Anunciante crearAnunciante(String nombre, String telefono, String identificacion, String correoElectronico,
-                                      LocalDate fechaNacimiento, String nombreusuario, String contrasenia) throws AnuncianteException {
+                                      LocalDate fechaNacimiento, List<Anuncio> listaAnuncios) throws AnuncianteException {
         if(!existeIdentificacionAnunciante(identificacion)) {
-            Anunciante anunciante= new Anunciante(nombre, telefono, identificacion, correoElectronico, fechaNacimiento, nombreusuario, contrasenia);
+            Anunciante anunciante= new Anunciante(nombre, telefono, identificacion, correoElectronico, fechaNacimiento, listaAnuncios);
             listaAnunciantes.add(anunciante);
             return anunciante;
         }else{
@@ -148,7 +152,7 @@ public class Subasta implements Serializable {
 
     public void actualizarAnunciante(Anunciante anunciante, String telefono, String correoElectronico, String nombreusuario) {
         if (nombreusuario != null) {
-            anunciante.setNombreUsuario(nombreusuario);
+            //anunciante.setNombreUsuario(nombreusuario);
         }
         if (telefono != null) {
             anunciante.setTelefono(telefono);
@@ -157,50 +161,44 @@ public class Subasta implements Serializable {
             anunciante.setCorreoElectronico(correoElectronico);
         }
     }
+    //---------------------------------------------------ANUNCIANTE------------------------------------------------------------
+
+
 
     //---------------------------------------------------USUARIO------------------------------------------------------------
-    public Usuario agregarUsuario(String nombreusuario, String contrasenia) {
-        Usuario usuario = new Usuario(nombreusuario, contrasenia);
+    public Usuario agregarUsuario(String nombreusuario, String contrasenia, Persona persona) {
+        Usuario usuario = new Usuario(nombreusuario, contrasenia, persona);
         listaUsuarios.add(usuario);
         return usuario;
     }
 
     //TODO: terminar de mirar esto luego de mirar la logica
-    public Usuario leerUsuarioPorIdentificacion(String identificacion) {
-        for (Usuario usuario : listaUsuarios) {
-            if (usuario.getIdentificacion().equals(identificacion)) {
-                return usuario;
-            }
-        }
-        return null; // Usuario no encontrado
+    public Usuario leerUsuarioPorNombre(String nombre) {
+        Predicate<Usuario> porNombre = usuario -> usuario.getNombreUsuario().equalsIgnoreCase(nombre);
+        return listaUsuarios.stream().filter(porNombre).findFirst().orElse(null);
     }
 
-    public void actualizarUsuario(Usuario usuario, String telefono, String correoElectronico, String nombreusuario) {
+    public void actualizarUsuario(Usuario usuario,String nombreusuario) {
         if (nombreusuario != null) {
             usuario.setNombreUsuario(nombreusuario);
-        }
-        if (telefono != null) {
-            usuario.setTelefono(telefono);
-        }
-        if (correoElectronico != null) {
-            usuario.setCorreoElectronico(correoElectronico);
         }
 
     }
 
     // Método para eliminar un usuario por su identificación
-    public void eliminarUsuario(String identificacion) {
-        listaUsuarios.removeIf(usuario -> usuario.getIdentificacion().equals(identificacion));
+    public void eliminarUsuario(String nombre) {
+        listaUsuarios.removeIf(usuario -> Objects.equals(usuario.getNombreUsuario(), nombre));
     }
 
+    //---------------------------------------------------USUARIO------------------------------------------------------------
 
 
     //-------------------------------------------------------COMPRADOR---------------------------------------------------
     public Comprador crearComprador(String nombreCompleto, String telefono, String identificacion, String correoElectronico,
-                                    LocalDate fechaNacimiento, String nombreUsuario, String contrasenia) throws CompradorException {
+                                    LocalDate fechaNacimiento, List<Puja> listaPujas) throws CompradorException {
 
         if(!existeIdentificacionComprador(identificacion)) {
-            Comprador comprador= new Comprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento, nombreUsuario, contrasenia);
+            Comprador comprador= new Comprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento, listaPujas);
             listaCompradores.add(comprador);
             return comprador;
         }else{
@@ -214,4 +212,27 @@ public class Subasta implements Serializable {
     private boolean existeIdentificacionComprador(String identificacion) {
         return listaCompradores.stream().anyMatch(a -> a.getIdentificacion().equals(identificacion));
     }
+
+
+    //-------------------------------------------------------COMPRADOR---------------------------------------------------
+
+
+
+
+    //----------------------------------------------------CRUD Anuncio-------------------------------------------------
+
+
+
+    public Anuncio crearAnuncio(String nombre, String codigo, Anunciante anunciante, Producto producto,
+                                String descripcion, Image imagen, LocalDate fechaPublicacion,
+                                LocalDate fechaTerminacion, Double valorInicial) {
+    Anuncio anuncio = new Anuncio(nombre, codigo, anunciante, producto,
+            descripcion, imagen,  fechaPublicacion,
+            fechaTerminacion,  valorInicial);
+    listaAnuncios.add(anuncio);
+    return anuncio;
+    }
+
+
+    //----------------------------------------------------CRUD Anuncio-------------------------------------------------
 }

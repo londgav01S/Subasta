@@ -3,12 +3,12 @@ package co.edu.uniquindio.subasta.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Usuario extends Persona implements Serializable {
+public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private String nombreUsuario;
     private String contrasenia;
-
+    private Persona persona;
 
     public Usuario() {
     }
@@ -18,17 +18,18 @@ public class Usuario extends Persona implements Serializable {
         this.contrasenia = contrasenia;
     }
 
-    public Usuario(String nombre, String telefono, String identificacion, String correoElectronico,
-                   LocalDate fechaNacimiento, String nombreUsuario, String contrasenia) {
-        super(nombre, telefono, identificacion, correoElectronico, fechaNacimiento);
+    public Usuario(String nombreUsuario, String contrasenia, Persona persona) {
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
+        this.persona = persona;
     }
 
-    public Usuario(String nombre, String telefono, String identificacion, String correoElectronico, String nombreUsuario, String contrasenia) {
-        super(nombre, telefono, identificacion, correoElectronico);
-        this.nombreUsuario = nombreUsuario;
-        this.contrasenia = contrasenia;
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public String getNombreUsuario() {

@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="593.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.AnuncioViewController">
+<AnchorPane prefHeight="593.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.AnuncioViewController">
    <children>
       <TextField fx:id="fNombreAnuncio" layoutX="33.0" layoutY="68.0" prefHeight="25.0" prefWidth="149.0" />
       <TextField fx:id="fCodigoAnuncio" layoutX="236.0" layoutY="68.0" />
@@ -32,11 +32,11 @@
       <Label layoutX="41.0" layoutY="233.0" text="Producto" />
       <TableView fx:id="tableAnuncio" layoutX="38.0" layoutY="449.0" prefHeight="118.0" prefWidth="555.0">
         <columns>
-          <TableColumn prefWidth="127.0" text="Nombre producto" />
-          <TableColumn prefWidth="90.4000244140625" text="Valor inicial " />
-            <TableColumn prefWidth="130.3999786376953" text="Fecha inicio" />
-            <TableColumn prefWidth="99.20001220703125" text="Fecha final" />
-            <TableColumn prefWidth="107.199951171875" text="Codigo" />
+          <TableColumn fx:id="columnNombreAnuncio" prefWidth="127.0" text="Nombre Anuncio" />
+          <TableColumn fx:id="columnValorInicial" prefWidth="90.4000244140625" text="Valor inicial " />
+            <TableColumn fx:id="columnFechaInicio" prefWidth="130.3999786376953" text="Fecha inicio" />
+            <TableColumn fx:id="columnFechaFinal" prefWidth="99.20001220703125" text="Fecha final" />
+            <TableColumn fx:id="columnCodigo" prefWidth="107.199951171875" text="Codigo" />
         </columns>
       </TableView>
       <Button fx:id="btnPublicar" layoutX="286.0" layoutY="377.0" mnemonicParsing="false" onAction="#publicarEvent" text="Publicar" />
@@ -64,5 +64,6 @@
       <Line endX="-86.70710754394531" endY="162.4000244140625" layoutX="110.0" layoutY="416.0" startX="-86.70710754394531" startY="22.29290008544922" />
       <Line endX="-86.70710754394531" endY="162.4000244140625" layoutX="694.0" layoutY="416.0" startX="-86.70710754394531" startY="22.29290008544922" />
       <Line endX="470.79290771484375" endY="2.10003662109375" layoutX="136.0" layoutY="576.0" startX="-112.70710754394531" startY="3.10003662109375" />
+      <Button fx:id="btnCargarProductos" layoutX="208.0" layoutY="249.0" mnemonicParsing="false" onAction="#cargarProductosEvent" prefHeight="2.0" prefWidth="130.0" text="Cargar Productos" />
    </children>
 </AnchorPane>

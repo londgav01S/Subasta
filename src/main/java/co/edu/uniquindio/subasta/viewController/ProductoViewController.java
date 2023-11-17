@@ -39,6 +39,9 @@ public class ProductoViewController implements Initializable {
     private ComboBox<TipoProducto> cTipoProducto;
 
     @FXML
+    private ComboBox<Producto> cProductosAnuncio;
+
+    @FXML
     private TableColumn<Producto, String> columnaAnunciante;
 
     @FXML
@@ -75,7 +78,6 @@ public class ProductoViewController implements Initializable {
     ObservableList<Producto> listadoProductos = FXCollections.observableArrayList();
 
 
-
     @FXML
     void agregarProductoEvent(ActionEvent event) {
         agregarProductoAction();
@@ -86,6 +88,7 @@ public class ProductoViewController implements Initializable {
         String nombre = fNombreProducto.getText();
         String nombreAnunciante = LoginViewController.nombreUsuario;
         System.out.println("nombreAnunciante = " + nombreAnunciante);
+
         if(datosValidados(nombre)){
             crearProducto(nombre, cTipoProducto.getSelectionModel().getSelectedItem(), nombreAnunciante);
             tableViewProducto.setItems(listadoProductos);
@@ -93,6 +96,8 @@ public class ProductoViewController implements Initializable {
         fNombreProducto.setText("");
         cTipoProducto.getSelectionModel().clearSelection();
     }
+
+    AnuncioViewController anuncioViewController;
 
     private void crearProducto(String nombre, TipoProducto selectedItem, String nombreAnunciante) {
         Producto producto = productoController.crearProducto(nombre, selectedItem, nombreAnunciante) ;
@@ -104,6 +109,7 @@ public class ProductoViewController implements Initializable {
             mostrarMensajeAlerta("Notificacion ", "Registro invalido", "El producto: " + nombre  + "  No ha sido registrado", Alert.AlertType.WARNING);
 
         }
+
 
     }
 
@@ -172,6 +178,7 @@ public class ProductoViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        anuncioViewController = new AnuncioViewController();
         LoginViewController loginViewController1 = new LoginViewController();
         productoController = new ProductoController();
         this.columnaNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombre"));
