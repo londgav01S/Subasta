@@ -65,10 +65,10 @@ public class Persistencia {
     public static void guardarClientes(ArrayList<Usuario> listaUsuarios) throws IOException {
         // TODO Auto-generated method stub
         String contenido = "";
-        for (Usuario usuario : listaUsuarios) {
+        /*for (Usuario usuario : listaUsuarios) {
             contenido += usuario.getNombre() + "," + usuario.getTelefono() + "," + usuario.getIdentificacion() + ","
                     + "," + usuario.getCorreoElectronico() + "," + usuario.getNombreUsuario() + "," + usuario.getContrasenia() + "\n";
-        }
+        }*/
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_USUARIOS, contenido, false);
     }
 
@@ -91,10 +91,6 @@ public class Persistencia {
             Usuario usuario = new Usuario();
             usuario.setNombreUsuario(linea.split("@@")[0]);
             usuario.setContrasenia(linea.split("@@")[1]);
-            usuario.setNombre(linea.split("@@")[2]);
-            usuario.setTelefono(linea.split("@@")[3]);
-            usuario.setIdentificacion(linea.split("@@")[4]);
-            usuario.setCorreoElectronico(linea.split("@@")[5]);
 
             usuarios.add(usuario);
         }
@@ -157,10 +153,10 @@ public class Persistencia {
     public static void guardarObjetos(ArrayList<Usuario> listaUsuarios, String ruta) throws IOException {
         String contenido = "";
 
-        for (Usuario usuarioAux : listaUsuarios) {
+        /*for (Usuario usuarioAux : listaUsuarios) {
             contenido += usuarioAux.getNombre() + "," + usuarioAux.getNombreUsuario() + "," + usuarioAux.getIdentificacion() + ","
                     + usuarioAux.getTelefono() + "," + usuarioAux.getCorreoElectronico() + "," + usuarioAux.getContrasenia() + "\n";
-        }
+        }*/
         ArchivoUtil.guardarArchivo(ruta, contenido, true);
     }
 
@@ -175,9 +171,8 @@ public class Persistencia {
         String contenido = "";
 
         for (Usuario usuarioAux : listaUsuarios) {
-            contenido += usuarioAux.getNombreUsuario() + "@@" + usuarioAux.getContrasenia() + "@@" + usuarioAux.getNombre()
-                    + "@@" + usuarioAux.getTelefono() + "@@" + usuarioAux.getIdentificacion()
-                    + "@@" + usuarioAux.getCorreoElectronico() + "\n";
+            contenido += usuarioAux.getNombreUsuario() + "@@" + usuarioAux.getContrasenia() + "@@"
+                     + "\n";
         }
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_USUARIOS, contenido, true);
     }
@@ -194,7 +189,7 @@ public class Persistencia {
         contenido +=  anunciante.getNombre()
                 + "@@" + anunciante.getTelefono() + "@@" + anunciante.getIdentificacion()
                 + "@@" + anunciante.getCorreoElectronico() + "@@" + anunciante.getFechaNacimiento().toString()
-                + "@@" + anunciante.getNombreUsuario() + "@@" + anunciante.getContrasenia() +"\n";
+                + "@@" +"\n";
 
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ANUNCIANTE, contenido, true);
     }
@@ -206,13 +201,11 @@ public class Persistencia {
         for (int i = 0; i < contenido.size(); i++) {
             linea = contenido.get(i); //juan,arias,125454,Armenia,uni1@,12454,125444
             Anunciante anunciante = new Anunciante();
-            anunciante.setNombreUsuario(linea.split("@@")[0]);
-            anunciante.setContrasenia(linea.split("@@")[1]);
-            anunciante.setNombre(linea.split("@@")[2]);
-            anunciante.setTelefono(linea.split("@@")[3]);
-            anunciante.setIdentificacion(linea.split("@@")[4]);
-            anunciante.setCorreoElectronico(linea.split("@@")[5]);
-            anunciante.setFechaNacimiento(LocalDate.parse(linea.split("@@")[6]));
+            anunciante.setNombre(linea.split("@@")[0]);
+            anunciante.setTelefono(linea.split("@@")[1]);
+            anunciante.setIdentificacion(linea.split("@@")[3]);
+            anunciante.setCorreoElectronico(linea.split("@@")[4]);
+            anunciante.setFechaNacimiento(LocalDate.parse(linea.split("@@")[5]));
             anunciantes.add(anunciante);
         }
         return anunciantes;

@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 
 public class Subasta implements Serializable {
@@ -128,9 +129,9 @@ public class Subasta implements Serializable {
     //---------------------------------------------------ANUNCIANTE------------------------------------------------------------
 
     public Anunciante crearAnunciante(String nombre, String telefono, String identificacion, String correoElectronico,
-                                      LocalDate fechaNacimiento, String nombreusuario, String contrasenia) throws AnuncianteException {
+                                      LocalDate fechaNacimiento, List<Anuncio> listaAnuncios) throws AnuncianteException {
         if(!existeIdentificacionAnunciante(identificacion)) {
-            Anunciante anunciante= new Anunciante(nombre, telefono, identificacion, correoElectronico, fechaNacimiento, nombreusuario, contrasenia);
+            Anunciante anunciante= new Anunciante(nombre, telefono, identificacion, correoElectronico, fechaNacimiento, listaAnuncios);
             listaAnunciantes.add(anunciante);
             return anunciante;
         }else{
@@ -151,7 +152,7 @@ public class Subasta implements Serializable {
 
     public void actualizarAnunciante(Anunciante anunciante, String telefono, String correoElectronico, String nombreusuario) {
         if (nombreusuario != null) {
-            anunciante.setNombreUsuario(nombreusuario);
+            //anunciante.setNombreUsuario(nombreusuario);
         }
         if (telefono != null) {
             anunciante.setTelefono(telefono);
@@ -165,38 +166,28 @@ public class Subasta implements Serializable {
 
 
     //---------------------------------------------------USUARIO------------------------------------------------------------
-    public Usuario agregarUsuario(String nombreusuario, String contrasenia) {
-        Usuario usuario = new Usuario(nombreusuario, contrasenia);
+    public Usuario agregarUsuario(String nombreusuario, String contrasenia, Persona persona) {
+        Usuario usuario = new Usuario(nombreusuario, contrasenia, persona);
         listaUsuarios.add(usuario);
         return usuario;
     }
 
     //TODO: terminar de mirar esto luego de mirar la logica
-    public Usuario leerUsuarioPorIdentificacion(String identificacion) {
-        for (Usuario usuario : listaUsuarios) {
-            if (usuario.getIdentificacion().equals(identificacion)) {
-                return usuario;
-            }
-        }
-        return null; // Usuario no encontrado
+    public Usuario leerUsuarioPorNombre(String nombre) {
+        Predicate<Usuario> porNombre = usuario -> usuario.getNombreUsuario().equalsIgnoreCase(nombre);
+        return listaUsuarios.stream().filter(porNombre).findFirst().orElse(null);
     }
 
-    public void actualizarUsuario(Usuario usuario, String telefono, String correoElectronico, String nombreusuario) {
+    public void actualizarUsuario(Usuario usuario,String nombreusuario) {
         if (nombreusuario != null) {
             usuario.setNombreUsuario(nombreusuario);
-        }
-        if (telefono != null) {
-            usuario.setTelefono(telefono);
-        }
-        if (correoElectronico != null) {
-            usuario.setCorreoElectronico(correoElectronico);
         }
 
     }
 
     // Método para eliminar un usuario por su identificación
-    public void eliminarUsuario(String identificacion) {
-        listaUsuarios.removeIf(usuario -> usuario.getIdentificacion().equals(identificacion));
+    public void eliminarUsuario(String nombre) {
+        listaUsuarios.removeIf(usuario -> Objects.equals(usuario.getNombreUsuario(), nombre));
     }
 
     //---------------------------------------------------USUARIO------------------------------------------------------------
@@ -204,10 +195,10 @@ public class Subasta implements Serializable {
 
     //-------------------------------------------------------COMPRADOR---------------------------------------------------
     public Comprador crearComprador(String nombreCompleto, String telefono, String identificacion, String correoElectronico,
-                                    LocalDate fechaNacimiento, String nombreUsuario, String contrasenia) throws CompradorException {
+                                    LocalDate fechaNacimiento, List<Puja> listaPujas) throws CompradorException {
 
         if(!existeIdentificacionComprador(identificacion)) {
-            Comprador comprador= new Comprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento, nombreUsuario, contrasenia);
+            Comprador comprador= new Comprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento, listaPujas);
             listaCompradores.add(comprador);
             return comprador;
         }else{

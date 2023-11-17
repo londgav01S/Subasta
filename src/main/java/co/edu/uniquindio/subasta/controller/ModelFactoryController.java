@@ -142,8 +142,8 @@ public class ModelFactoryController {
         }
     }
 
-    public Usuario crearUsuario(String nombreUsuario, String contrasenia) {
-        Usuario usuario = subasta.agregarUsuario(nombreUsuario, contrasenia);
+    public Usuario crearUsuario(String nombreUsuario, String contrasenia, Persona persona) {
+        Usuario usuario = subasta.agregarUsuario(nombreUsuario, contrasenia, persona);
         guardarUsuario(usuario);
         registrarAccionesSistema(" Se ha creado un usuarioc", 1, "creación del usuario " + nombreUsuario);
         return usuario;
@@ -157,7 +157,7 @@ public class ModelFactoryController {
     }
 
     public void actualizarUsuario(Usuario usuarioSeleccionado, String telefono, String correoElectronico, String nombreUsuario) {
-        subasta.actualizarUsuario( usuarioSeleccionado,  telefono,  correoElectronico,  nombreUsuario);
+        //TODO: HACERLO
         registrarAccionesSistema(" Se ha actualizado un usuario ", 1, " El usuario:  (" + nombreUsuario+") se ha actualizado");
 
     }
@@ -170,11 +170,15 @@ public class ModelFactoryController {
 
     // TODO: terminar los CRUD
 
-    public void crearAnunciante(String nombre, String telefono, String identificacion, String correoElectronico,
-                                LocalDate fechaNacimiento, String nombreusuario, String contrasenia)  {
+    public Anunciante crearAnunciante(String nombre, String telefono, String identificacion, String correoElectronico,
+                                LocalDate fechaNacimiento, List<Anuncio> listaAnuncios)  {
         try {
-            Anunciante anunciante= subasta.crearAnunciante(nombre, telefono, identificacion, correoElectronico, fechaNacimiento, nombreusuario, contrasenia);
+            Anunciante anunciante= subasta.crearAnunciante(nombre, telefono, identificacion, correoElectronico, fechaNacimiento,listaAnuncios );
+            //TODO: revisar lo de registrar acciones
+            registrarAccionesSistema(" Se ha creado un anunciante ", 1, " El usuario:  (" +") se ha actualizado");
+
             guardarAnunciante(anunciante);
+            return anunciante;
             // TODO: 2021-09-30 revisar si va a quedar aqui lo de usuario
             //Usuario usuario= subasta.agregarUsuario(nombreusuario, contrasenia);
             //guardarUsuario(usuario);
@@ -202,9 +206,9 @@ public class ModelFactoryController {
 
 
     public Comprador crearComprador(String nombreCompleto, String telefono, String identificacion, String correoElectronico,
-                                    LocalDate fechaNacimiento, String nombreUsuario, String contrasenia) {
+                                    LocalDate fechaNacimiento, List<Puja> listaPujas) {
         try {
-            Comprador comprador=subasta.crearComprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento ,nombreUsuario, contrasenia);
+            Comprador comprador=subasta.crearComprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento ,listaPujas);
             guardarComprador(comprador);
             // TODO: 2021-09-30 revisar si va a quedar aqui lo de usuario
             //Usuario usuario= subasta.agregarUsuario(nombreusuario, contrasenia);
