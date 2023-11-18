@@ -91,34 +91,34 @@ public class RegistroUsuarioViewController implements Initializable {
         //listadoUsuarios.addAll(mfm.obtenerUsuarios());
         return (ArrayList<Usuario>) listadoUsuarios;
     }
-/*
-    @FXML
-    void actualizarUsuarioEvent(ActionEvent event) {
-        String nombreUsuario = fUsuario.getText();
-        String correoElectronico = fCorreoElectronico.getText();
-        String telefono = fTelefono.getText();
-        if(usuarioSeleccionado!= null) {
-            if (datosValidados(nombreUsuario, correoElectronico, telefono, "no tocar", "no tocar", "no tocar")) {
-                registroUsuarioController.actualizarUsuario( usuarioSeleccionado,  telefono,  correoElectronico,  nombreUsuario);
-                usuarioSeleccionado.setCorreoElectronico(correoElectronico);
-                usuarioSeleccionado.setTelefono(telefono);
-                usuarioSeleccionado.setNombreUsuario(nombreUsuario);
-                tableViewUsuario.refresh();
+    /*
+        @FXML
+        void actualizarUsuarioEvent(ActionEvent event) {
+            String nombreUsuario = fUsuario.getText();
+            String correoElectronico = fCorreoElectronico.getText();
+            String telefono = fTelefono.getText();
+            if(usuarioSeleccionado!= null) {
+                if (datosValidados(nombreUsuario, correoElectronico, telefono, "no tocar", "no tocar", "no tocar")) {
+                    registroUsuarioController.actualizarUsuario( usuarioSeleccionado,  telefono,  correoElectronico,  nombreUsuario);
+                    usuarioSeleccionado.setCorreoElectronico(correoElectronico);
+                    usuarioSeleccionado.setTelefono(telefono);
+                    usuarioSeleccionado.setNombreUsuario(nombreUsuario);
+                    tableViewUsuario.refresh();
+                }
             }
+
+            fNombreCompleto.setDisable(false);
+            fIdentificacion.setDisable(false);
+            fContrasenia.setDisable(false);
+            fUsuario.setText("");
+            fIdentificacion.setText("");
+            fNombreCompleto.setText("");
+            fContrasenia.setText("");
+            fCorreoElectronico.setText("");
+            fTelefono.setText("");
         }
 
-        fNombreCompleto.setDisable(false);
-        fIdentificacion.setDisable(false);
-        fContrasenia.setDisable(false);
-        fUsuario.setText("");
-        fIdentificacion.setText("");
-        fNombreCompleto.setText("");
-        fContrasenia.setText("");
-        fCorreoElectronico.setText("");
-        fTelefono.setText("");
-    }
-
-*/
+    */
     ObservableList<Usuario> listadoUsuarios = FXCollections.observableArrayList();
 
     @FXML
@@ -141,8 +141,8 @@ public class RegistroUsuarioViewController implements Initializable {
         fContrasenia.setText("");
         fCorreoElectronico.setText("");
         fTelefono.setText("");
-        tfFechaNacimiento.setValue(LocalDate.parse(""));
-        cbTipoUsuario.setValue("");
+        //tfFechaNacimiento.setValue(LocalDate.parse(""));
+        //cbTipoUsuario.setValue("");
 
     }
 
@@ -171,7 +171,6 @@ public class RegistroUsuarioViewController implements Initializable {
                 }
                 else{
                     mostrarMensajeAlerta("Notificacion ", "Registro invalido", "El usuario con id: " + identificacion  + "  No ha sido registrado", Alert.AlertType.WARNING);
-
                 }
             }
 
@@ -201,13 +200,13 @@ public class RegistroUsuarioViewController implements Initializable {
         }
     }*/
 
-/*
-    @FXML
-    void volverIniciarSesionEvent(ActionEvent event) {
-        inicialViewController.show();
-        this.stage.close();
-    }
-*/
+    /*
+        @FXML
+        void volverIniciarSesionEvent(ActionEvent event) {
+            inicialViewController.show();
+            this.stage.close();
+        }
+    */
     public  Stage getPrimaryStage() {
         return stage;
     }
@@ -265,7 +264,7 @@ public class RegistroUsuarioViewController implements Initializable {
         cbTipoUsuario.getItems().addAll("Anunciante", "Comprador");
 
         registroUsuarioController = new RegistroUsuarioController();
-        this.columnaUsuario.setCellValueFactory(new PropertyValueFactory<>("nombreUsuario"));
+        /*this.columnaUsuario.setCellValueFactory(new PropertyValueFactory<>("nombreUsuario"));
         this.columnaIdentificacion.setCellValueFactory(new PropertyValueFactory<>("identificacion"));
         this.columnaTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
         this.columnaCorreoElectronico.setCellValueFactory(new PropertyValueFactory<>("correoElectronico"));
@@ -277,7 +276,7 @@ public class RegistroUsuarioViewController implements Initializable {
         });
         //TODO: QUEMAR DATOS AQUI PA SABER SI FUNCIONA
         tableViewUsuario.setItems(listadoUsuarios);
-        tableViewUsuario.refresh();
+        tableViewUsuario.refresh();*/
 
 
 

@@ -167,6 +167,7 @@ public class Subasta implements Serializable {
 
     //---------------------------------------------------USUARIO------------------------------------------------------------
     public Usuario agregarUsuario(String nombreusuario, String contrasenia, Persona persona) {
+        //TODO: verificar que el usuario si exista
         Usuario usuario = new Usuario(nombreusuario, contrasenia, persona);
         listaUsuarios.add(usuario);
         return usuario;
@@ -185,6 +186,11 @@ public class Subasta implements Serializable {
 
     }
 
+
+    public boolean existeUsuario(String nombreUsuario, String contrasenia) {
+        return listaUsuarios.stream()
+                .anyMatch(u -> u.getNombreUsuario().equals(nombreUsuario) && u.getContrasenia().equals(contrasenia));
+    }
     // Método para eliminar un usuario por su identificación
     public void eliminarUsuario(String nombre) {
         listaUsuarios.removeIf(usuario -> Objects.equals(usuario.getNombreUsuario(), nombre));
@@ -231,6 +237,11 @@ public class Subasta implements Serializable {
             fechaTerminacion,  valorInicial);
     listaAnuncios.add(anuncio);
     return anuncio;
+    }
+
+    public void crearPuja(Anuncio selectedItem, int valorPuja) {
+        Puja puja = new Puja(EstadoPuja.PENDIENTE, null, selectedItem, valorPuja, LocalDate.now());
+        listaPujas.add(puja);
     }
 
 

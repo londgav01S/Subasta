@@ -65,7 +65,8 @@ public class GestionPujaViewController implements Initializable {
             // Aquí, \\d representa cualquier dígito numérico, y + significa uno o más ocurrencias.
             valorPuja = Integer.parseInt(txtPuja.getText());
             //TODO: El usuario q está vinculado a la puja debe ser el mismo que está logeado.
-            Puja puja = new Puja(EstadoPuja.PENDIENTE,null,tblAnunciosPublicados.getSelectionModel().getSelectedItem(),valorPuja,LocalDate.now());
+            //TODO: mandarle parametros al controller y q el me lo devuelva
+            GestionPujaController.crearPuja(tblAnunciosPublicados.getSelectionModel().getSelectedItem(),valorPuja);
 
         }
         else {

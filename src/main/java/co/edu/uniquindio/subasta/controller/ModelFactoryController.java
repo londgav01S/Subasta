@@ -8,6 +8,7 @@ import co.edu.uniquindio.subasta.utils.*;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,8 +16,18 @@ import java.util.List;
 
 public class ModelFactoryController {
     Subasta subasta;
-    
 
+    public void mostrarMensajeAlerta(String titulo, String header, String contenido, Alert.AlertType tipoAlerta) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(titulo);
+        alert.setHeaderText(header);
+        alert.setContentText(contenido);
+        alert.showAndWait();
+    }
+
+    public void crearPuja(Anuncio selectedItem, int valorPuja) {
+        subasta.crearPuja(selectedItem, valorPuja);
+    }
 
 
     //------------------------------  Singleton ------------------------------------------------
@@ -55,20 +66,20 @@ public class ModelFactoryController {
         //1. inicializar datos y luego guardarlo en archivos
         System.out.println("invocación clase singleton");
 
-        //cargarDatosBase();
+        cargarDatosBase();
         //salvarDatosPrueba();
 
         //2. Cargar los datos de los archivos
         //cargarDatosDesdeArchivos();
 
         //3. Guardar y Cargar el recurso serializable binario
-        //guardarResourceBinario();
-        //cargarResourceBinario();
+        guardarResourceBinario();
+        cargarResourceBinario();
 
 
         //4. Guardar y Cargar el recurso serializable XML
         guardarResourceXML();
-        //cargarResourceXML();
+        cargarResourceXML();
 
         //Siempre se debe verificar si la raiz del recurso es null
 
@@ -100,18 +111,22 @@ public class ModelFactoryController {
 
     private void cargarResourceXML() {
         subasta = Persistencia.cargarRecursoSubastaXML();
+        System.out.println("pasando por cargar xml");
     }
 
     private void guardarResourceXML() {
         Persistencia.guardarRecursoSubastaXML(subasta);
+        System.out.println("pasando por guardar xml");
     }
 
     private void cargarResourceBinario() {
         subasta = Persistencia.cargarRecursoSubastaBinario();
+        System.out.println("cargando por cargar bin");
     }
 
     private void guardarResourceBinario() {
         Persistencia.guardarRecursoSubastaBinario(subasta);
+        System.out.println("pasando por guardar bin");
     }
 
     public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
@@ -173,12 +188,12 @@ public class ModelFactoryController {
     // TODO: terminar los CRUD
 
     public Anunciante crearAnunciante(String nombre, String telefono, String identificacion, String correoElectronico,
-                                LocalDate fechaNacimiento, List<Anuncio> listaAnuncios)  {
+                                      LocalDate fechaNacimiento, List<Anuncio> listaAnuncios)  {
         try {
             Anunciante anunciante= subasta.crearAnunciante(nombre, telefono, identificacion, correoElectronico, fechaNacimiento,listaAnuncios );
             //TODO: revisar lo de registrar acciones
             registrarAccionesSistema(" Se ha creado un anunciante ", 1, " El usuario:  (" +") se ha actualizado");
-
+            guardarResourceXML();
             guardarAnunciante(anunciante);
             return anunciante;
             // TODO: 2021-09-30 revisar si va a quedar aqui lo de usuario
@@ -212,6 +227,7 @@ public class ModelFactoryController {
         try {
             Comprador comprador=subasta.crearComprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento ,listaPujas);
             guardarComprador(comprador);
+            guardarResourceXML();
             // TODO: 2021-09-30 revisar si va a quedar aqui lo de usuario
             //Usuario usuario= subasta.agregarUsuario(nombreusuario, contrasenia);
             //guardarUsuario(usuario);
@@ -235,23 +251,27 @@ public class ModelFactoryController {
 
     public void eliminarProducto(Producto producto) {
         subasta.eliminarProducto(producto);
-}
+    }
 
 
     public Anuncio crearAnuncio(String nombre, String codigo, Anunciante anunciante, Producto producto,
                                 String descripcion, Image imagen, LocalDate fechaPublicacion,
                                 LocalDate fechaTerminacion, Double valorInicial) {
-    Anuncio anuncio = subasta.crearAnuncio(nombre, codigo, anunciante, producto,
-            descripcion, imagen,  fechaPublicacion,
-            fechaTerminacion,  valorInicial);
-    return  anuncio;
+        Anuncio anuncio = subasta.crearAnuncio(nombre, codigo, anunciante, producto,
+                descripcion, imagen,  fechaPublicacion,
+                fechaTerminacion,  valorInicial);
+        return  anuncio;
     }
 
-    public void mostrarMensajeAlerta (String titulo, String header, String contenido, Alert.AlertType alertType){
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle(titulo);
-        alert.setHeaderText(header);
-        alert.setContentText(contenido);
-        alert.showAndWait();
+
+    //------------------------------Inicio Sesion------------------------------------------------------------------
+
+
+    public boolean inicioSesion(Usuario usuario) throws UsuarioException, IOException {
+        boolean estado= Persistencia.iniciarSesion(usuario.getNombreUsuario(),usuario.getContrasenia());
+        if(estado){
+
+        }
     }
+
 }

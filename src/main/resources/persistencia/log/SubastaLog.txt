@@ -232,3 +232,139 @@ nov. 17, 2023 9:27:50 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardar
 INFO: inicioSesión,Inicio de sesión,2023-11-17
 nov. 17, 2023 9:31:34 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 10:29:56 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 10:30:48 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:30:48 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:30:48 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:30:48 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario luichi, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:31:40 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 10:31:59 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:31:59 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:31:59 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:31:59 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario aa, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:32:54 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:32:54 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:32:54 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:32:54 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario asd, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:36:49 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 10:37:04 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 10:37:24 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:37:24 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:37:24 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:37:24 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario aa, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:42:28 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 10:42:48 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:42:48 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario aa, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:44:17 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 10:44:31 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:44:31 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:44:31 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:44:31 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario aa, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:45:02 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:45:02 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:45:02 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:45:02 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario qq, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:50:42 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 10:51:18 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:51:18 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:51:18 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:51:18 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario aa, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:53:14 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 10:53:29 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:53:30 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:53:30 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:53:30 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario aa, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:53:37 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:53:37 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario aa, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:54:38 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 10:55:03 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:55:03 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:55:03 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:55:03 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario aa, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:55:12 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:55:12 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario aa, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:56:14 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:56:14 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:56:14 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:56:14 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario aaa, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:57:13 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 10:57:30 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:57:30 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:57:30 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:57:30 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario a, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:57:41 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:57:41 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario a, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:57:52 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  El usuario:  () se ha actualizado, Se ha creado un anunciante ,2023-11-17
+nov. 17, 2023 10:57:52 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar anunciante , Se han guardado el anunciante ,2023-11-17
+nov. 17, 2023 10:57:52 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:57:52 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario a, Se ha creado un usuarioc,2023-11-17
+nov. 17, 2023 10:58:14 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO:  Guardar usuario , Se han guardado el usuario ,2023-11-17
+nov. 17, 2023 10:58:14 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: creación del usuario a, Se ha creado un usuarioc,2023-11-17
