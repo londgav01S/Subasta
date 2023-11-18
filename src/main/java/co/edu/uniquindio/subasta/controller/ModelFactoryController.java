@@ -18,7 +18,7 @@ public class ModelFactoryController {
     Subasta subasta;
 
     public void mostrarMensajeAlerta(String titulo, String header, String contenido, Alert.AlertType tipoAlerta) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
+        Alert alert = new Alert(tipoAlerta);
         alert.setTitle(titulo);
         alert.setHeaderText(header);
         alert.setContentText(contenido);
@@ -268,5 +268,12 @@ public class ModelFactoryController {
 
 
 
+    public boolean inicioSesion(String nombre, String contraseña) throws UsuarioException, IOException {
+        return subasta.existeUsuario(nombre,contraseña);
+    }
+
+    public Persona retornarPersona(String nombreUsuario) {
+        return subasta.retornarPersona(nombreUsuario);
+    }
 
 }
