@@ -5,6 +5,7 @@ import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.exceptions.UsuarioException;
 import co.edu.uniquindio.subasta.model.*;
 import co.edu.uniquindio.subasta.utils.*;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 
 import java.io.IOException;
@@ -14,6 +15,7 @@ import java.util.List;
 
 public class ModelFactoryController {
     Subasta subasta;
+    
 
 
 
@@ -243,5 +245,13 @@ public class ModelFactoryController {
             descripcion, imagen,  fechaPublicacion,
             fechaTerminacion,  valorInicial);
     return  anuncio;
+    }
+
+    public void mostrarMensajeAlerta (String titulo, String header, String contenido, Alert.AlertType alertType){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(titulo);
+        alert.setHeaderText(header);
+        alert.setContentText(contenido);
+        alert.showAndWait();
     }
 }
