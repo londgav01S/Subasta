@@ -5,6 +5,7 @@ import co.edu.uniquindio.subasta.model.TipoProducto;
 import co.edu.uniquindio.subasta.model.Usuario;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductoController {
 
@@ -18,5 +19,11 @@ public class ProductoController {
     public void eliminarProducto(Producto productoSeleccionado) {
         mfm.eliminarProducto(productoSeleccionado);
 
+    }
+
+    public List<Producto> cargarProducto() {
+        List <Producto> lista = new ArrayList<>();
+        lista = mfm.cargarProducto();
+        return lista;
     }
 }

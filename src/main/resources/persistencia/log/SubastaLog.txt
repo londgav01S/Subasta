@@ -190,3 +190,7 @@ nov. 16, 2023 9:11:26 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardar
 INFO: creación del usuario a, Se ha creado un usuarioc,2023-11-16
 nov. 16, 2023 9:21:14 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2023-11-16
+nov. 17, 2023 8:42:45 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17
+nov. 17, 2023 11:27:08 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-17

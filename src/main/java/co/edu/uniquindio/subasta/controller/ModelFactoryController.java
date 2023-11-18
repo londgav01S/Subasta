@@ -240,4 +240,11 @@ public class ModelFactoryController {
             fechaTerminacion,  valorInicial);
     return  anuncio;
     }
+
+    public List<Producto> cargarProducto() {
+        List <Producto> lista = subasta.getListaProductos();
+        System.out.println("");
+        return lista;
+    }
+
 }
