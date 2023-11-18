@@ -168,82 +168,93 @@ public class Subasta implements Serializable {
     //---------------------------------------------------USUARIO------------------------------------------------------------
     public Usuario agregarUsuario(String nombreusuario, String contrasenia, Persona persona) {
         //TODO: verificar que el usuario si exista
-        Usuario usuario = new Usuario(nombreusuario, contrasenia, persona);
-        listaUsuarios.add(usuario);
+        Usuario usuario= null;
+        if(existeUsuario(nombreusuario, contrasenia)) {
+            usuario = new Usuario(nombreusuario, contrasenia, persona);
+            listaUsuarios.add(usuario);
+        }
         return usuario;
     }
 
-    //TODO: terminar de mirar esto luego de mirar la logica
-    public Usuario leerUsuarioPorNombre(String nombre) {
-        Predicate<Usuario> porNombre = usuario -> usuario.getNombreUsuario().equalsIgnoreCase(nombre);
-        return listaUsuarios.stream().filter(porNombre).findFirst().orElse(null);
-    }
-
-    public void actualizarUsuario(Usuario usuario,String nombreusuario) {
-        if (nombreusuario != null) {
-            usuario.setNombreUsuario(nombreusuario);
+        //TODO: terminar de mirar esto luego de mirar la logica
+        public Usuario leerUsuarioPorNombre(String nombre) {
+            Predicate<Usuario> porNombre = usuario -> usuario.getNombreUsuario().equalsIgnoreCase(nombre);
+            return listaUsuarios.stream().filter(porNombre).findFirst().orElse(null);
         }
 
-    }
+        public void actualizarUsuario(Usuario usuario,String nombreusuario) {
+            if (nombreusuario != null) {
+                usuario.setNombreUsuario(nombreusuario);
+            }
 
-
-    public boolean existeUsuario(String nombreUsuario, String contrasenia) {
-        return listaUsuarios.stream()
-                .anyMatch(u -> u.getNombreUsuario().equals(nombreUsuario) && u.getContrasenia().equals(contrasenia));
-    }
-    // Método para eliminar un usuario por su identificación
-    public void eliminarUsuario(String nombre) {
-        listaUsuarios.removeIf(usuario -> Objects.equals(usuario.getNombreUsuario(), nombre));
-    }
-
-    //---------------------------------------------------USUARIO------------------------------------------------------------
-
-
-    //-------------------------------------------------------COMPRADOR---------------------------------------------------
-    public Comprador crearComprador(String nombreCompleto, String telefono, String identificacion, String correoElectronico,
-                                    LocalDate fechaNacimiento, List<Puja> listaPujas) throws CompradorException {
-
-        if(!existeIdentificacionComprador(identificacion)) {
-            Comprador comprador= new Comprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento, listaPujas);
-            listaCompradores.add(comprador);
-            return comprador;
-        }else{
-            throw new CompradorException("El anunciante con identificación "+identificacion+" ya existe");
         }
 
+        public Persona retornarPersona(String nombreUsuario) {
+            return listaUsuarios.stream()
+                    .filter(u -> u.getNombreUsuario().equals(nombreUsuario))
+                    .map(Usuario::getPersona)
+                    .findFirst()
+                    .orElse(null);
+        }
+
+        public boolean existeUsuario(String nombreUsuario, String contrasenia) {
+            return listaUsuarios.stream()
+                    .anyMatch(u -> u.getNombreUsuario().equals(nombreUsuario) && u.getContrasenia().equals(contrasenia));
+        }
+
+        // Método para eliminar un usuario por su identificación
+        public void eliminarUsuario(String nombre) {
+            listaUsuarios.removeIf(usuario -> Objects.equals(usuario.getNombreUsuario(), nombre));
+        }
+
+        //---------------------------------------------------USUARIO------------------------------------------------------------
+
+
+        //-------------------------------------------------------COMPRADOR---------------------------------------------------
+        public Comprador crearComprador(String nombreCompleto, String telefono, String identificacion, String correoElectronico,
+                LocalDate fechaNacimiento, List<Puja> listaPujas) throws CompradorException {
+
+            if(!existeIdentificacionComprador(identificacion)) {
+                Comprador comprador= new Comprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento, listaPujas);
+                listaCompradores.add(comprador);
+                return comprador;
+            }else{
+                throw new CompradorException("El anunciante con identificación "+identificacion+" ya existe");
+            }
+
+        }
+
+        //TODO: terminar de hacer crud para comprador
+
+        private boolean existeIdentificacionComprador(String identificacion) {
+            return listaCompradores.stream().anyMatch(a -> a.getIdentificacion().equals(identificacion));
+        }
+
+
+        //-------------------------------------------------------COMPRADOR---------------------------------------------------
+
+
+
+
+        //----------------------------------------------------CRUD Anuncio-------------------------------------------------
+
+
+
+        public Anuncio crearAnuncio(String nombre, String codigo, Anunciante anunciante, Producto producto,
+                String descripcion, Image imagen, LocalDate fechaPublicacion,
+                LocalDate fechaTerminacion, Double valorInicial) {
+            Anuncio anuncio = new Anuncio(nombre, codigo, anunciante, producto,
+                    descripcion, imagen,  fechaPublicacion,
+                    fechaTerminacion,  valorInicial);
+            listaAnuncios.add(anuncio);
+            return anuncio;
+        }
+
+        public void crearPuja(Anuncio selectedItem, int valorPuja) {
+            Puja puja = new Puja(EstadoPuja.PENDIENTE, null, selectedItem, valorPuja, LocalDate.now());
+            listaPujas.add(puja);
+        }
+
+
+        //----------------------------------------------------CRUD Anuncio-------------------------------------------------
     }
-
-    //TODO: terminar de hacer crud para comprador
-
-    private boolean existeIdentificacionComprador(String identificacion) {
-        return listaCompradores.stream().anyMatch(a -> a.getIdentificacion().equals(identificacion));
-    }
-
-
-    //-------------------------------------------------------COMPRADOR---------------------------------------------------
-
-
-
-
-    //----------------------------------------------------CRUD Anuncio-------------------------------------------------
-
-
-
-    public Anuncio crearAnuncio(String nombre, String codigo, Anunciante anunciante, Producto producto,
-                                String descripcion, Image imagen, LocalDate fechaPublicacion,
-                                LocalDate fechaTerminacion, Double valorInicial) {
-    Anuncio anuncio = new Anuncio(nombre, codigo, anunciante, producto,
-            descripcion, imagen,  fechaPublicacion,
-            fechaTerminacion,  valorInicial);
-    listaAnuncios.add(anuncio);
-    return anuncio;
-    }
-
-    public void crearPuja(Anuncio selectedItem, int valorPuja) {
-        Puja puja = new Puja(EstadoPuja.PENDIENTE, null, selectedItem, valorPuja, LocalDate.now());
-        listaPujas.add(puja);
-    }
-
-
-    //----------------------------------------------------CRUD Anuncio-------------------------------------------------
-}

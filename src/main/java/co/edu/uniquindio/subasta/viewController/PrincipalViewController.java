@@ -1,5 +1,6 @@
 package co.edu.uniquindio.subasta.viewController;
 
+import co.edu.uniquindio.subasta.model.Persona;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +32,12 @@ public class PrincipalViewController implements Initializable {
     private StackPane contentArea;
     @FXML
     private AnchorPane panelCentral;
+
+    Persona persona;
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
 
     @FXML
     void abrir1(ActionEvent event) throws IOException {
