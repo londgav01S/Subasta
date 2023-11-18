@@ -267,11 +267,6 @@ public class ModelFactoryController {
     //------------------------------Inicio Sesion------------------------------------------------------------------
 
 
-    public boolean inicioSesion(Usuario usuario) throws UsuarioException, IOException {
-        boolean estado= Persistencia.iniciarSesion(usuario.getNombreUsuario(),usuario.getContrasenia());
-        if(estado){
 
-        }
-    }
 
 }
