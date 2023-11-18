@@ -30,6 +30,7 @@ public class ModelFactoryController {
     }
 
 
+
     //------------------------------  Singleton ------------------------------------------------
     // Clase estatica oculta. Tan solo se instanciara el singleton una vez
     private static class SingletonHolder {
@@ -78,7 +79,7 @@ public class ModelFactoryController {
 
 
         //4. Guardar y Cargar el recurso serializable XML
-        guardarResourceXML();
+        //guardarResourceXML();
         cargarResourceXML();
 
         //Siempre se debe verificar si la raiz del recurso es null
@@ -246,6 +247,7 @@ public class ModelFactoryController {
     //------------------------------------------------------------------------------------------------------------------
     public Producto crearProducto(String nombre, TipoProducto selectedItem, String nombreAnunciante) {
         Producto producto = subasta.crearProducto(nombre, selectedItem, nombreAnunciante);
+        guardarResourceXML();
         return producto;
     }
 
@@ -263,15 +265,22 @@ public class ModelFactoryController {
         return  anuncio;
     }
 
+    public List<Producto> cargarProducto() {
+        List<Producto> lisa = subasta.getListaProductos();
+        return lisa;
+    }
 
     //------------------------------Inicio Sesion------------------------------------------------------------------
 
 
+    /*
     public boolean inicioSesion(Usuario usuario) throws UsuarioException, IOException {
         boolean estado= Persistencia.iniciarSesion(usuario.getNombreUsuario(),usuario.getContrasenia());
         if(estado){
 
         }
     }
+
+     */
 
 }

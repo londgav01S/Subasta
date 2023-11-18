@@ -142,11 +142,7 @@ public class AnuncioViewController implements Initializable {
 
     @FXML
     void cargarProductosEvent(ActionEvent event) {
-        List<Producto> lista = new ArrayList<Producto>();
-        lista.add(subasta.getListaProductos().get(0));
-        ObservableList<Producto> listadoProductos = FXCollections.observableArrayList(lista);
-        System.out.println("listadoProductos = " + lista.toString());
-        comboProducto.setItems(listadoProductos);
+llenarCombo();
     }
 
     private void llenarCombo (){
