@@ -77,7 +77,7 @@ public class LoginViewController implements Initializable{
             stage2.show();
             this.stage.close();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
     }

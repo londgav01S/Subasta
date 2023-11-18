@@ -124,16 +124,14 @@ public class Anuncio implements Serializable {
 
     @Override
     public String toString() {
-        return "co.edu.uniquindio.subasta.model.Anuncio{" +
-                "nombre='" + nombre + '\'' +
-                ", codigo='" + codigo + '\'' +
-                ", anunciante=" + anunciante +
-                ", producto=" + producto +
-                ", descripcion='" + descripcion + '\'' +
-                ", imagen=" + imagen +
-                ", fechaPublicacion=" + fechaPublicacion +
-                ", fechaTerminacion=" + fechaTerminacion +
-                ", valorInicial=" + valorInicial +
-                '}';
+        return
+                "nombre='" + nombre + '\n' +
+                "codigo='" + codigo + '\n' +
+                "anunciante=" + anunciante.getNombre() +'\n' +
+                "producto=" + producto + '\n' +
+                "descripcion='" + descripcion + '\n' +
+                "fechaPublicacion=" + fechaPublicacion +'\n' +
+                "fechaTerminacion=" + fechaTerminacion + '\n' +
+                "valorInicial=" + valorInicial;
     }
 }
