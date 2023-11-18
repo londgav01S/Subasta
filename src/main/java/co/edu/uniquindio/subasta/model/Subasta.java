@@ -169,7 +169,7 @@ public class Subasta implements Serializable {
     public Usuario agregarUsuario(String nombreusuario, String contrasenia, Persona persona) {
         //TODO: verificar que el usuario si exista
         Usuario usuario= null;
-        if(existeUsuario(nombreusuario, contrasenia)) {
+        if(!existeUsuario(nombreusuario, contrasenia)) {
             usuario = new Usuario(nombreusuario, contrasenia, persona);
             listaUsuarios.add(usuario);
         }
@@ -250,9 +250,11 @@ public class Subasta implements Serializable {
             return anuncio;
         }
 
-        public void crearPuja(Anuncio selectedItem, int valorPuja) {
-            Puja puja = new Puja(EstadoPuja.PENDIENTE, null, selectedItem, valorPuja, LocalDate.now());
+        public void crearPuja(Anuncio selectedItem, int valorPuja, Persona persona) {
+
+            Puja puja = new Puja(EstadoPuja.PENDIENTE, (Comprador) persona, selectedItem, valorPuja, LocalDate.now());
             listaPujas.add(puja);
+            System.out.println("Sexito con la puja hecha");
         }
 
 

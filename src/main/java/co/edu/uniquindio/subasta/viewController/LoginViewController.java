@@ -129,7 +129,9 @@ public class LoginViewController implements Initializable{
             e.printStackTrace();
         }
     }
-
+    public Persona getPersona (){
+        return persona;
+    }
     public void mortrar() {
         this.stage.show();
     }

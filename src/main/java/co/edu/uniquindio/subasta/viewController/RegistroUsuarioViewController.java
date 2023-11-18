@@ -175,7 +175,7 @@ public class RegistroUsuarioViewController implements Initializable {
             }
 
             //TODO: mirar de que es esto
-            tableViewUsuario.setItems(listadoUsuarios);
+            //tableViewUsuario.setItems(listadoUsuarios);
         }
 
 

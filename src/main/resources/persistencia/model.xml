@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="17.0.6" class="java.beans.XMLDecoder">
- <object class="co.edu.uniquindio.subasta.model.Subasta"/>
+ <object class="co.edu.uniquindio.subasta.model.Subasta" id="Subasta0">
+  <void property="listaCompradores">
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Comprador" id="Comprador0">
+     <void property="correoElectronico">
+      <string>asd</string>
+     </void>
+     <void property="identificacion">
+      <string>asdasd</string>
+     </void>
+     <void property="listaPujas">
+      <null/>
+     </void>
+     <void property="nombre">
+      <string>asd</string>
+     </void>
+     <void property="telefono">
+      <string>asd</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaUsuarios">
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Usuario">
+     <void property="contrasenia">
+      <string>213</string>
+     </void>
+     <void property="nombreUsuario">
+      <string>sexo</string>
+     </void>
+     <void property="persona">
+      <object idref="Comprador0"/>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
 </java>

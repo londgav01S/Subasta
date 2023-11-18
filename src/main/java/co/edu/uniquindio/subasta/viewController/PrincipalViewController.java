@@ -33,6 +33,7 @@ public class PrincipalViewController implements Initializable {
     @FXML
     private AnchorPane panelCentral;
 
+
     Persona persona;
 
     public void setPersona(Persona persona) {
@@ -49,6 +50,7 @@ public class PrincipalViewController implements Initializable {
     void abrir2(ActionEvent event) throws IOException {
         panelCentral.getChildren().clear();
         Parent root = FXMLLoader.load((getClass().getResource("/co/edu/uniquindio/subasta/PujaView.fxml")));
+
         panelCentral.getChildren().add(root);
     }
     @FXML

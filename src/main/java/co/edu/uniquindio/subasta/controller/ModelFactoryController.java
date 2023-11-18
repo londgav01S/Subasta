@@ -5,6 +5,7 @@ import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.exceptions.UsuarioException;
 import co.edu.uniquindio.subasta.model.*;
 import co.edu.uniquindio.subasta.utils.*;
+import co.edu.uniquindio.subasta.viewController.LoginViewController;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 
@@ -26,7 +27,7 @@ public class ModelFactoryController {
     }
 
     public void crearPuja(Anuncio selectedItem, int valorPuja) {
-        subasta.crearPuja(selectedItem, valorPuja);
+        subasta.crearPuja(selectedItem, valorPuja, persona);
     }
 
 
@@ -64,22 +65,22 @@ public class ModelFactoryController {
     private void inicializarDatos() {
         subasta = new Subasta();
         //1. inicializar datos y luego guardarlo en archivos
-        System.out.println("invocación clase singleton");
+        //System.out.println("invocación clase singleton");
 
-        cargarDatosBase();
+       // cargarDatosBase();
         //salvarDatosPrueba();
 
         //2. Cargar los datos de los archivos
         //cargarDatosDesdeArchivos();
 
         //3. Guardar y Cargar el recurso serializable binario
-        guardarResourceBinario();
-        cargarResourceBinario();
+       // guardarResourceBinario();
+        //cargarResourceBinario();
 
 
         //4. Guardar y Cargar el recurso serializable XML
-        guardarResourceXML();
-        cargarResourceXML();
+       // guardarResourceXML();
+       cargarResourceXML();
 
         //Siempre se debe verificar si la raiz del recurso es null
 
@@ -161,8 +162,10 @@ public class ModelFactoryController {
 
     public Usuario crearUsuario(String nombreUsuario, String contrasenia, Persona persona) {
         Usuario usuario = subasta.agregarUsuario(nombreUsuario, contrasenia, persona);
+
         guardarUsuario(usuario);
         registrarAccionesSistema(" Se ha creado un usuarioc", 1, "creación del usuario " + nombreUsuario);
+        guardarResourceXML();
         return usuario;
 
     }
@@ -243,7 +246,7 @@ public class ModelFactoryController {
     //-----------------------------------------Comprador--------------------------------------------------------------
 
 
-    //------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------Producto----------------------------------------------------------
     public Producto crearProducto(String nombre, TipoProducto selectedItem, String nombreAnunciante) {
         Producto producto = subasta.crearProducto(nombre, selectedItem, nombreAnunciante);
         return producto;
@@ -264,16 +267,20 @@ public class ModelFactoryController {
     }
 
 
-    //------------------------------Inicio Sesion------------------------------------------------------------------
+    //----------------------------------------------Inicio Sesion------------------------------------------------------------------
 
-
-
+    Persona persona;
     public boolean inicioSesion(String nombre, String contraseña) throws UsuarioException, IOException {
         return subasta.existeUsuario(nombre,contraseña);
     }
 
     public Persona retornarPersona(String nombreUsuario) {
-        return subasta.retornarPersona(nombreUsuario);
+        persona= subasta.retornarPersona(nombreUsuario);
+        return persona;
+    }
+
+    public Persona retornarPersonaLog(){
+        return persona;
     }
 
 }
