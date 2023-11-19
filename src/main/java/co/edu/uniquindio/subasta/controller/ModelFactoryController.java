@@ -66,19 +66,19 @@ public class ModelFactoryController {
         //1. inicializar datos y luego guardarlo en archivos
         System.out.println("invocación clase singleton");
 
-        cargarDatosBase();
+        //cargarDatosBase();
         //salvarDatosPrueba();
 
         //2. Cargar los datos de los archivos
         //cargarDatosDesdeArchivos();
 
         //3. Guardar y Cargar el recurso serializable binario
-        guardarResourceBinario();
-        cargarResourceBinario();
+        //guardarResourceBinario();
+        //cargarResourceBinario();
 
 
         //4. Guardar y Cargar el recurso serializable XML
-        guardarResourceXML();
+        //guardarResourceXML();
         cargarResourceXML();
 
         //Siempre se debe verificar si la raiz del recurso es null
@@ -243,7 +243,7 @@ public class ModelFactoryController {
     //-----------------------------------------Comprador--------------------------------------------------------------
 
 
-    //------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------Producto-----------------------------------------------------------------------
     public Producto crearProducto(String nombre, TipoProducto selectedItem, String nombreAnunciante) {
         Producto producto = subasta.crearProducto(nombre, selectedItem, nombreAnunciante);
         return producto;
@@ -252,6 +252,11 @@ public class ModelFactoryController {
     public void eliminarProducto(Producto producto) {
         subasta.eliminarProducto(producto);
     }
+
+    //-------------------------------------------Producto---------------------------------------------------------------
+
+
+    //-------------------------------------------Anuncio---------------------------------------------------------------
 
 
     public Anuncio crearAnuncio(String nombre, String codigo, Anunciante anunciante, Producto producto,
@@ -265,7 +270,6 @@ public class ModelFactoryController {
 
 
     //------------------------------Inicio Sesion------------------------------------------------------------------
-
 
     public boolean inicioSesion(String nombre, String contraseña) throws UsuarioException, IOException {
         return subasta.existeUsuario(nombre,contraseña);
