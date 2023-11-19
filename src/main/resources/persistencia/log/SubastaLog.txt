@@ -430,3 +430,25 @@ nov. 18, 2023 7:27:02 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardar
 INFO: inicioSesión,Inicio de sesión,2023-11-18
 nov. 18, 2023 7:27:41 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2023-11-18
+nov. 18, 2023 10:48:35 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-18
+nov. 18, 2023 10:54:35 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-18
+nov. 18, 2023 10:58:42 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-18
+nov. 18, 2023 11:21:22 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-18
+nov. 18, 2023 11:22:21 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-18
+nov. 18, 2023 11:23:24 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-18
+nov. 18, 2023 11:24:58 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-18
+nov. 18, 2023 11:28:48 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-18
+nov. 18, 2023 11:29:48 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-18
+nov. 18, 2023 11:31:48 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-18
+nov. 18, 2023 11:34:18 P. M. co.edu.uniquindio.subasta.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2023-11-18

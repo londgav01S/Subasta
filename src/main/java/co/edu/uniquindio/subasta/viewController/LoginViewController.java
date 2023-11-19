@@ -88,7 +88,7 @@ public class LoginViewController implements Initializable{
         Stage stage2 = new Stage();
         PrincipalViewController principalViewController = loader.getController();
         principalViewController.setPersona(persona);
-        Scene scene= new Scene(rootLayout,1050 ,660,false, SceneAntialiasing.BALANCED);
+        Scene scene= new Scene(rootLayout,950 ,630,false, SceneAntialiasing.BALANCED);
         stage2.setScene(scene);
         principalViewController.init(stage2, this);
         stage2.show();
@@ -102,8 +102,6 @@ public class LoginViewController implements Initializable{
         }
         return true;
     }
-
-
 
     @FXML
     void iniciarSesionEvent(ActionEvent event) {
@@ -119,7 +117,7 @@ public class LoginViewController implements Initializable{
             AnchorPane anchorPane = (AnchorPane)loader.load();
             Stage stage2 = new Stage();
             RegistroUsuarioViewController registroUsuarioViewController1 = loader.getController();
-            Scene scene= new Scene(anchorPane,1050 ,660,false, SceneAntialiasing.BALANCED);
+            Scene scene= new Scene(anchorPane,667 ,610,false, SceneAntialiasing.BALANCED);
             stage2.setScene(scene);
             registroUsuarioViewController1.init(stage2, this);
             stage2.show();

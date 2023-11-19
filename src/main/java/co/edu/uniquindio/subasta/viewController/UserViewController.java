@@ -1,12 +1,18 @@
 package co.edu.uniquindio.subasta.viewController;
 
+import co.edu.uniquindio.subasta.controller.UserController;
+import co.edu.uniquindio.subasta.model.Persona;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class UserViewController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class UserViewController implements Initializable {
 
     @FXML
     private Button btActualizarDatos;
@@ -38,9 +44,10 @@ public class UserViewController {
     @FXML
     private DatePicker tfFechaNacimiento;
 
+    Persona persona= UserController.retornarPersona();
+
     @FXML
     void actualizar(ActionEvent event) {
-
     }
 
     @FXML
@@ -48,4 +55,12 @@ public class UserViewController {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        fNombreCompleto.setText(persona.getNombre());
+        fIdentificacion.setText(persona.getIdentificacion());
+        fCorreoElectronico.setText(persona.getCorreoElectronico());
+        fTelefono.setText(persona.getTelefono());
+        tfFechaNacimiento.setValue(persona.getFechaNacimiento());
+    }
 }

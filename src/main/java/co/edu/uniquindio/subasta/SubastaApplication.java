@@ -18,7 +18,7 @@ public class SubastaApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader= new FXMLLoader(SubastaApplication.class.getResource("LoginView.fxml"));
-        Scene scene= new Scene(loader.load(),691 ,625,false, SceneAntialiasing.BALANCED);
+        Scene scene= new Scene(loader.load(),300 ,289,false, SceneAntialiasing.BALANCED);
         //InicialViewController inicialViewController = loader.getController();
         LoginViewController loginViewController = loader.getController();
         //inicialViewController.init(primaryStage);

@@ -50,11 +50,13 @@ public class PrincipalViewController implements Initializable {
     void abrir2(ActionEvent event) throws IOException {
         panelCentral.getChildren().clear();
         Parent root = FXMLLoader.load((getClass().getResource("/co/edu/uniquindio/subasta/PujaView.fxml")));
-
         panelCentral.getChildren().add(root);
     }
     @FXML
-    void abrir3(ActionEvent event) {
+    void abrir3(ActionEvent event) throws IOException {
+        panelCentral.getChildren().clear();
+        Parent root = FXMLLoader.load((getClass().getResource("/co/edu/uniquindio/subasta/UsuarioView.fxml")));
+        panelCentral.getChildren().add(root);
     }
 
     @FXML

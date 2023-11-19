@@ -77,7 +77,7 @@ public class ModelFactoryController {
         //1. inicializar datos y luego guardarlo en archivos
         //System.out.println("invocación clase singleton");
 
-        guardarResourceXML();
+        //guardarResourceXML();
         cargarResourceXML();
 
 

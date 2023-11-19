@@ -4,21 +4,37 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<StackPane fx:id="contentArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.PrincipalViewController">
+<StackPane fx:id="contentArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.PrincipalViewController">
    <children>
-      <SplitPane dividerPositions="0.23712051517939278" prefHeight="510.0" prefWidth="755.0">
+      <SplitPane dividerPositions="0.20537428023032625" prefHeight="510.0" prefWidth="755.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="203.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="558.0" prefWidth="201.0">
                <children>
-                  <Button fx:id="bPage1" layoutX="42.0" layoutY="182.0" mnemonicParsing="false" onAction="#abrir1" text="Gestionar Anuncios" />
-                  <Button fx:id="bPage2" layoutX="58.0" layoutY="257.0" mnemonicParsing="false" onAction="#abrir2" text="Realizar Pujas" />
-                  <Button fx:id="bPage3" layoutX="82.0" layoutY="97.0" mnemonicParsing="false" onAction="#abrir3" text="User" />
-                  <Button fx:id="btnSalir" layoutX="71.0" layoutY="400.0" mnemonicParsing="false" onAction="#salirEvent" text="Sign Out" />
-                  <Button fx:id="estadisticas" layoutX="64.0" layoutY="332.0" mnemonicParsing="false" text="Estadisticas" />
+                  <Button fx:id="bPage1" layoutX="-3.0" layoutY="158.0" mnemonicParsing="false" onAction="#abrir1" prefHeight="66.0" prefWidth="206.0" text="Gestionar Anuncios">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <Button fx:id="bPage2" layoutX="-2.0" layoutY="245.0" mnemonicParsing="false" onAction="#abrir2" prefHeight="66.0" prefWidth="206.0" text="Realizar Pujas">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <Button fx:id="bPage3" layoutX="-3.0" layoutY="30.0" mnemonicParsing="false" onAction="#abrir3" prefHeight="55.0" prefWidth="206.0" text="My User">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <Button fx:id="btnSalir" layoutX="65.0" layoutY="470.0" mnemonicParsing="false" onAction="#salirEvent" text="Sign Out">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Button fx:id="estadisticas" layoutX="-1.0" layoutY="336.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="206.0" text="Estadisticas">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
                </children>
             </AnchorPane>
-          <AnchorPane fx:id="panelCentral" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane fx:id="panelCentral" minHeight="0.0" minWidth="0.0" prefHeight="558.0" prefWidth="614.0" />
         </items>
       </SplitPane>
    </children>
