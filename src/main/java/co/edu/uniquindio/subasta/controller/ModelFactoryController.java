@@ -270,6 +270,10 @@ public class ModelFactoryController {
         return  anuncio;
     }
 
+    public List<Producto> cargarProducto() {
+        List<Producto> lista = subasta.getListaProductos();
+        return lista;
+    }
 
 
     //----------------------------------------------Inicio Sesion------------------------------------------------------------------

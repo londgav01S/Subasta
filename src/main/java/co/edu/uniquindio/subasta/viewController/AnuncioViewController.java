@@ -113,9 +113,7 @@ public class AnuncioViewController implements Initializable {
     }
 
     private List<Producto> cargarProducto (){
-        List<Producto> lista  = new ArrayList<>();
-        lista = productoController.cargarProducto();
-        return lista;
+        return productoController.cargarProducto();
     }
 
     ProductoViewController productoViewController;
