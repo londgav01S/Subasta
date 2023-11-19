@@ -85,13 +85,13 @@ public class GestionPujaViewController implements Initializable {
     void setInfo(MouseEvent event) {
         Anuncio anuncio = tblAnunciosPublicados.getSelectionModel().getSelectedItem();
         txtAreaInfoProducto.setText(anuncio.toString());
+        imgVwImagen.setImage(tblAnunciosPublicados.getSelectionModel().getSelectedItem().getImagen());
     }
-
 
 
     public void initialize (URL url, ResourceBundle resourceBundle){
         this.clmNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        this.clmAnunciante.setCellValueFactory(new PropertyValueFactory<>("anunciante"));
+        this.clmAnunciante.setCellValueFactory(new PropertyValueFactory<>("valorInicial"));
         this.clmCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         tblAnunciosPublicados.setItems(GestionPujaController.getListaAnunciosPublicados());
 
