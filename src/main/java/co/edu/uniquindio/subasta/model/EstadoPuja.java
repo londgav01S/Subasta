@@ -1,5 +1,5 @@
 package co.edu.uniquindio.subasta.model;
 
 public enum EstadoPuja {
-    ACEPTADA, RECHAZADA, PENDIENTE
+    ACEPTADA, RECHAZADA, PENDIENTE, RESUELTA
 }

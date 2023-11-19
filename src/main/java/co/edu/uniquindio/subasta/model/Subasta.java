@@ -291,6 +291,33 @@ public class Subasta implements Serializable {
         return lista;
     }
 
+    public void eliminarPuja(Puja selectedItem, Comprador persona) {
+        persona.getListaPujas().remove(selectedItem);
+    }
+
+    public ObservableList<Puja> getListaPujasRespondidas(Comprador persona) {
+        ObservableList <Puja> lista = FXCollections.observableArrayList();
+        if(persona.getListaPujas() == null) {
+            return lista;
+        }
+        for (Puja puja : persona.getListaPujas()){
+            if (puja.getEstado().equals(EstadoPuja.ACEPTADA) || puja.getEstado().equals(EstadoPuja.RECHAZADA)){
+                lista.add(puja);
+            }
+        }
+        return lista;
+    }
+
+    public void aceptarPuja(Puja selectedItem, Comprador persona) {
+        for (Puja puja: persona.getListaPujas()) {
+            if (puja.equals(selectedItem)){
+                puja.setEstado(EstadoPuja.RESUELTA);
+                break;
+            }
+
+        }
+    }
+
 
     //----------------------------------------------------CRUD Anuncio-------------------------------------------------
     }

@@ -3,6 +3,7 @@ package co.edu.uniquindio.subasta.controller;
 import co.edu.uniquindio.subasta.model.Anuncio;
 import co.edu.uniquindio.subasta.model.Persona;
 import co.edu.uniquindio.subasta.viewController.LoginViewController;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 
 public class GestionPujaController {
@@ -19,5 +20,9 @@ public class GestionPujaController {
 
     public static boolean puedePujar(Anuncio anuncio) {
         return singleton.puedePujar(anuncio);
+    }
+
+    public static ObservableList<Anuncio> getListaAnunciosPublicados() {
+        return singleton.getListaAnunciosPublicados();
     }
 }

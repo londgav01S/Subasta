@@ -40,6 +40,29 @@ public class ModelFactoryController {
         return subasta.getListaPujasPendientes((Comprador)persona);
     }
 
+    public void cancelarPuja(Puja selectedItem) {
+        subasta.eliminarPuja(selectedItem,(Comprador)persona);
+        guardarResourceXML();
+    }
+
+    public ObservableList<Puja> getListaPujasRespondidas() {
+        return subasta.getListaPujasRespondidas((Comprador)persona);
+    }
+
+    public void aceptarPuja(Puja selectedItem) {
+        subasta.aceptarPuja(selectedItem,(Comprador)persona);
+        guardarResourceXML();
+    }
+
+    public void rechazarPuja(Puja selectedItem) {
+        subasta.aceptarPuja(selectedItem,(Comprador)persona);
+        guardarResourceXML();
+    }
+
+    public ObservableList<Anuncio> getListaAnunciosPublicados() {
+        return (ObservableList<Anuncio>) subasta.getListaAnuncios();
+    }
+
 
     //------------------------------  Singleton ------------------------------------------------
     // Clase estatica oculta. Tan solo se instanciara el singleton una vez
@@ -77,7 +100,7 @@ public class ModelFactoryController {
         //1. inicializar datos y luego guardarlo en archivos
         //System.out.println("invocación clase singleton");
 
-        guardarResourceXML();
+        //guardarResourceXML();
         cargarResourceXML();
 
 
@@ -276,12 +299,15 @@ public class ModelFactoryController {
 
     Persona persona;
 
+
+
     public boolean inicioSesion(String nombre, String contraseña) throws UsuarioException, IOException {
         return subasta.existeUsuario(nombre,contraseña);
     }
 
     public Persona retornarPersona(String nombreUsuario) {
         persona= subasta.retornarPersona(nombreUsuario);
+
         return persona;
     }
 

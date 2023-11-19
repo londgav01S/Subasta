@@ -50,7 +50,7 @@ public class GestionPujaViewController implements Initializable {
     private int valorPuja;
 
     ObservableList<Anuncio> listaAnuncios = FXCollections.observableArrayList();
-
+    //TODO: LA FOKIN IMAGEN
 
 
     @FXML
@@ -63,6 +63,10 @@ public class GestionPujaViewController implements Initializable {
                 // Aquí, \\d representa cualquier dígito numérico, y + significa uno o más ocurrencias.
                 valorPuja = Integer.parseInt(txtPuja.getText());
                 GestionPujaController.crearPuja(anuncio,valorPuja);
+                GestionPujaController.enviarAlerta("Puja Realizada", "Puja Realizada Exitosamente",
+                "Has realizado esta puja correctamente!", Alert.AlertType.CONFIRMATION);
+                txtPuja.clear();
+                txtAreaInfoProducto.clear();
 
             }
             else {
@@ -89,15 +93,8 @@ public class GestionPujaViewController implements Initializable {
         this.clmNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.clmAnunciante.setCellValueFactory(new PropertyValueFactory<>("anunciante"));
         this.clmCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
-        Anunciante ader = new Anunciante("José","315450677","1232589857"
-        ,"luichiMail", LocalDate.now(),null);
-        Anuncio ad = new Anuncio("Carro","123",ader,null,"Carrito lindo uwu",null,null,null,120.000);
-        listaAnuncios.add(ad);
-        tblAnunciosPublicados.setItems(listaAnuncios);
-        /*
-        TODO: En Teoría aqui se le pide al ViewController qn a su vez
-         le pide al Singleton q porfis le mande la lista de Anuncios :beg
-        */
+        tblAnunciosPublicados.setItems(GestionPujaController.getListaAnunciosPublicados());
+
     }
 
 
