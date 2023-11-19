@@ -2,6 +2,7 @@ package co.edu.uniquindio.subasta.viewController;
 
 
 import co.edu.uniquindio.subasta.controller.AnuncioController;
+import co.edu.uniquindio.subasta.controller.ProductoController;
 import co.edu.uniquindio.subasta.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -111,11 +112,20 @@ public class AnuncioViewController implements Initializable {
     return anuncio;
     }
 
+    private List<Producto> cargarProducto (){
+        List<Producto> lista  = new ArrayList<>();
+        lista = productoController.cargarProducto();
+        return lista;
+    }
+
     ProductoViewController productoViewController;
+    ProductoController productoController;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        productoController = new ProductoController();
         productoViewController = new ProductoViewController();
         anuncioController = new AnuncioController();
+        llenarCombo();
         this.columnNombreAnuncio.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnValorInicial.setCellValueFactory(new PropertyValueFactory<>("valorInicial"));
         this.columnCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
@@ -132,14 +142,15 @@ public class AnuncioViewController implements Initializable {
 
     @FXML
     void cargarProductosEvent(ActionEvent event) {
-        List<Producto> lista = new ArrayList<Producto>();
-        lista.add(subasta.getListaProductos().get(0));
-        ObservableList<Producto> listadoProductos = FXCollections.observableArrayList(lista);
-        System.out.println("listadoProductos = " + lista.toString());
-        comboProducto.setItems(listadoProductos);
+llenarCombo();
     }
 
-    private boolean datosValidados(String nombreAux, String idAux, String telefonoAux, String correoAux, String usuarioAux, String contraAux) {
+    private void llenarCombo (){
+        List<Producto> lista = cargarProducto();
+        ObservableList<Producto> listaProducts = FXCollections.observableArrayList(lista);
+        comboProducto.setItems(listaProducts);
+    }
+        private boolean datosValidados(String nombreAux, String idAux, String telefonoAux, String correoAux, String usuarioAux, String contraAux) {
         String notificacion = "";
         if(nombreAux == null || nombreAux.equals("")){
             notificacion+= "El dato es invalido";
@@ -178,9 +189,5 @@ public class AnuncioViewController implements Initializable {
 
         }
     }
-
-
-
-
 
 }
