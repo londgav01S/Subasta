@@ -252,6 +252,10 @@ public class Subasta implements Serializable {
             return anuncio;
         }
 
+
+    public void eliminarAnuncio(Anuncio anuncio) {
+        listaAnuncios.removeIf(p -> p.equals(anuncio));
+    }
         public void crearPuja(Anuncio selectedItem, int valorPuja, Persona persona) {
 
             Puja puja = new Puja(EstadoPuja.PENDIENTE, (Comprador) persona, selectedItem, valorPuja, LocalDate.now());
@@ -289,6 +293,17 @@ public class Subasta implements Serializable {
             }
         }
         return lista;
+    }
+
+    public Comprador retornarAnunciante (String id){
+        for (Comprador comprador: listaCompradores
+             ) {
+            if(comprador.getIdentificacion().equals(id)){
+                return comprador;
+            }
+
+
+        }return null;
     }
 
 

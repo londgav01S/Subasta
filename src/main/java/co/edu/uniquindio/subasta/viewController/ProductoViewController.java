@@ -122,8 +122,6 @@ public class ProductoViewController implements Initializable {
 
 
     private void eliminarProductoAction() {
-
-
         if (productoSeleccionado != null){
             productoController.eliminarProducto(productoSeleccionado);
             mostrarMensajeAlerta("Producto eliminado ", "Producto selección ", "El prosucto se elimino correctamente ", Alert.AlertType.INFORMATION);
@@ -176,15 +174,23 @@ public class ProductoViewController implements Initializable {
     }
 
 
+    public void agregarDatosBase (){
+        listadoProductos = productoController.agregarDatosBase();
+        tableViewProducto.getItems().addAll(listadoProductos);
+    }
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         anuncioViewController = new AnuncioViewController();
         LoginViewController loginViewController1 = new LoginViewController();
         productoController = new ProductoController();
+        agregarDatosBase();
         this.columnaNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnaTipoProducto.setCellValueFactory(new PropertyValueFactory<>("tipo"));
         this.columnaAnunciante.setCellValueFactory(new PropertyValueFactory<>("nombreAnunciante"));
         agregarTiposCombo();
+
         tableViewProducto.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) ->{
             if(newSelection!= null){
                 productoSeleccionado = newSelection;

@@ -52,6 +52,8 @@ public class AnuncioViewController implements Initializable {
     @FXML
     private Button btnPublicar;
 
+    @FXML
+    private Button btnEliminarAnuncio;
 
     @FXML
     private Button btnCargarProductos;
@@ -116,14 +118,28 @@ public class AnuncioViewController implements Initializable {
         return productoController.cargarProducto();
     }
 
+
+    @FXML
+    void eliminarAnuncioEvent(ActionEvent event) {
+        if(anuncioSeleccionado!=null){
+            anuncioController.eliminarAnuncio(anuncioSeleccionado);
+            mostrarMensajeAlerta("Eliminacion de producto" , "Selección de anuncio" , "EL anuncion se elimino correctamente", Alert.AlertType.INFORMATION);
+
+            }
+        }
+
+
     ProductoViewController productoViewController;
     ProductoController productoController;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         productoController = new ProductoController();
         productoViewController = new ProductoViewController();
         anuncioController = new AnuncioController();
         llenarCombo();
+        agregarDatosBase();
         this.columnNombreAnuncio.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.columnValorInicial.setCellValueFactory(new PropertyValueFactory<>("valorInicial"));
         this.columnCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
@@ -187,5 +203,19 @@ llenarCombo();
 
         }
     }
+
+    public void mostrarMensajeAlerta (String titulo, String header, String contenido, Alert.AlertType alertType){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(titulo);
+        alert.setHeaderText(header);
+        alert.setContentText(contenido);
+        alert.showAndWait();
+    }
+
+    public void agregarDatosBase (){
+        listadoAnuncios = anuncioController.agregarDatosBase();
+        tableAnuncio.getItems().addAll(listadoAnuncios);
+    }
+
 
 }

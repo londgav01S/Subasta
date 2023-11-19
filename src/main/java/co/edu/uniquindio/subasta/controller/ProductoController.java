@@ -3,6 +3,8 @@ package co.edu.uniquindio.subasta.controller;
 import co.edu.uniquindio.subasta.model.Producto;
 import co.edu.uniquindio.subasta.model.TipoProducto;
 import co.edu.uniquindio.subasta.model.Usuario;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,5 +27,11 @@ public class ProductoController {
         List <Producto> lista = new ArrayList<>();
         lista = mfm.cargarProducto();
         return lista;
+    }
+
+    public ObservableList<Producto> agregarDatosBase() {
+        ObservableList<Producto> listadoProductos = FXCollections.observableArrayList();
+        listadoProductos = mfm.agregarDatosBaseProductos();
+        return listadoProductos;
     }
 }

@@ -6,6 +6,7 @@ import co.edu.uniquindio.subasta.exceptions.UsuarioException;
 import co.edu.uniquindio.subasta.model.*;
 import co.edu.uniquindio.subasta.utils.*;
 import co.edu.uniquindio.subasta.viewController.LoginViewController;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
@@ -33,12 +34,14 @@ public class ModelFactoryController {
     }
 
     public boolean puedePujar(Anuncio anuncio) {
-        return subasta.puedePujar(anuncio,(Comprador)persona);
+        return subasta.puedePujar(anuncio, (Comprador) persona);
     }
 
     public ObservableList<Puja> getListaPujasPendientes() {
-        return subasta.getListaPujasPendientes((Comprador)persona);
+        return subasta.getListaPujasPendientes((Comprador) persona);
     }
+
+
 
 
     //------------------------------  Singleton ------------------------------------------------
@@ -77,14 +80,14 @@ public class ModelFactoryController {
         //1. inicializar datos y luego guardarlo en archivos
         //System.out.println("invocación clase singleton");
 
-        guardarResourceXML();
+        //guardarResourceXML();
         cargarResourceXML();
 
 
         //Siempre se debe verificar si la raiz del recurso es null
 
 
-        if(subasta == null){
+        if (subasta == null) {
             cargarDatosBase();
             guardarResourceXML();
         }
@@ -137,24 +140,26 @@ public class ModelFactoryController {
 
 
     //-----------------------------------------Usuario--------------------------------------------------------------
+
     /**
      * llama a la funcion guardarUsuarios de la clase Persistencia para guardar la lista de Usuarios
+     *
      * @param listaUsuarios
      */
-    public void guardarUsuarios(ArrayList<Usuario> listaUsuarios){
-        try{
+    public void guardarUsuarios(ArrayList<Usuario> listaUsuarios) {
+        try {
             Persistencia.guardarUsuarios(listaUsuarios);
-            registrarAccionesSistema(" Se han guardado los usuarios ",1, " Guardar Lista de Usuarios ");
-        }catch (IOException e){
+            registrarAccionesSistema(" Se han guardado los usuarios ", 1, " Guardar Lista de Usuarios ");
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void guardarUsuario(Usuario usuario){
-        try{
+    public void guardarUsuario(Usuario usuario) {
+        try {
             Persistencia.guardarUsuario(usuario);
-            registrarAccionesSistema(" Se han guardado el usuario ",1, " Guardar usuario ");
-        }catch (IOException e){
+            registrarAccionesSistema(" Se han guardado el usuario ", 1, " Guardar usuario ");
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
@@ -169,7 +174,7 @@ public class ModelFactoryController {
 
     }
 
-    public void eliminarUsuario (String id){
+    public void eliminarUsuario(String id) {
         subasta.eliminarUsuario(id);
         registrarAccionesSistema(" Se ha eliminado un usuario ", 1, "eliminacion del usuario con id: " + id);
 
@@ -177,7 +182,7 @@ public class ModelFactoryController {
 
     public void actualizarUsuario(Usuario usuarioSeleccionado, String telefono, String correoElectronico, String nombreUsuario) {
         //TODO: HACERLO
-        registrarAccionesSistema(" Se ha actualizado un usuario ", 1, " El usuario:  (" + nombreUsuario+") se ha actualizado");
+        registrarAccionesSistema(" Se ha actualizado un usuario ", 1, " El usuario:  (" + nombreUsuario + ") se ha actualizado");
 
     }
 
@@ -190,11 +195,11 @@ public class ModelFactoryController {
     // TODO: terminar los CRUD
 
     public Anunciante crearAnunciante(String nombre, String telefono, String identificacion, String correoElectronico,
-                                      LocalDate fechaNacimiento, List<Anuncio> listaAnuncios)  {
+                                      LocalDate fechaNacimiento, List<Anuncio> listaAnuncios) {
         try {
-            Anunciante anunciante= subasta.crearAnunciante(nombre, telefono, identificacion, correoElectronico, fechaNacimiento,listaAnuncios );
+            Anunciante anunciante = subasta.crearAnunciante(nombre, telefono, identificacion, correoElectronico, fechaNacimiento, listaAnuncios);
             //TODO: revisar lo de registrar acciones
-            registrarAccionesSistema(" Se ha creado un anunciante ", 1, " El usuario:  (" +") se ha actualizado");
+            registrarAccionesSistema(" Se ha creado un anunciante ", 1, " El usuario:  (" + ") se ha actualizado");
             guardarResourceXML();
             guardarAnunciante(anunciante);
             return anunciante;
@@ -206,14 +211,15 @@ public class ModelFactoryController {
         }
     }
 
-    public void eliminarAnunciante(String id){
+    public void eliminarAnunciante(String id) {
         subasta.eliminarAnunciante(id);
     }
+
     private void guardarAnunciante(Anunciante anunciante) {
-        try{
+        try {
             Persistencia.guardarAnunciante(anunciante);
-            registrarAccionesSistema(" Se han guardado el anunciante ",1, " Guardar anunciante ");
-        }catch (IOException e){
+            registrarAccionesSistema(" Se han guardado el anunciante ", 1, " Guardar anunciante ");
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
@@ -227,7 +233,7 @@ public class ModelFactoryController {
     public Comprador crearComprador(String nombreCompleto, String telefono, String identificacion, String correoElectronico,
                                     LocalDate fechaNacimiento, List<Puja> listaPujas) {
         try {
-            Comprador comprador=subasta.crearComprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento ,listaPujas);
+            Comprador comprador = subasta.crearComprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento, listaPujas);
             guardarComprador(comprador);
             guardarResourceXML();
             // TODO: 2021-09-30 revisar si va a quedar aqui lo de usuario
@@ -245,14 +251,23 @@ public class ModelFactoryController {
     //-----------------------------------------Comprador--------------------------------------------------------------
 
 
-
     public Producto crearProducto(String nombre, TipoProducto selectedItem, String nombreAnunciante) {
         Producto producto = subasta.crearProducto(nombre, selectedItem, nombreAnunciante);
+        guardarResourceXML();
         return producto;
     }
 
     public void eliminarProducto(Producto producto) {
         subasta.eliminarProducto(producto);
+        guardarResourceXML();
+    }
+
+    public ObservableList<Producto> agregarDatosBaseProductos() {
+        List<Producto> lista;
+        lista=subasta.getListaProductos();
+        ObservableList<Producto> listadoProductos = FXCollections.observableArrayList(lista);
+        return listadoProductos;
+
     }
 
     //-------------------------------------------Producto---------------------------------------------------------------
@@ -265,14 +280,29 @@ public class ModelFactoryController {
                                 String descripcion, Image imagen, LocalDate fechaPublicacion,
                                 LocalDate fechaTerminacion, Double valorInicial) {
         Anuncio anuncio = subasta.crearAnuncio(nombre, codigo, anunciante, producto,
-                descripcion, imagen,  fechaPublicacion,
-                fechaTerminacion,  valorInicial);
-        return  anuncio;
+                descripcion, imagen, fechaPublicacion,
+                fechaTerminacion, valorInicial);
+        guardarResourceXML();
+        return anuncio;
+    }
+
+
+    public void elimiarAnuncio(Anuncio anuncioSeleccionado) {
+        subasta.eliminarAnuncio(anuncioSeleccionado);
+        guardarResourceXML();
     }
 
     public List<Producto> cargarProducto() {
         List<Producto> lista = subasta.getListaProductos();
         return lista;
+    }
+
+    public ObservableList<Anuncio> agregarDatosBaseAnuncios() {
+        List<Anuncio> lista;
+        lista=subasta.getListaAnuncios();
+        ObservableList<Anuncio> listadoProductos = FXCollections.observableArrayList(lista);
+        return listadoProductos;
+
     }
 
 
@@ -281,16 +311,27 @@ public class ModelFactoryController {
     Persona persona;
 
     public boolean inicioSesion(String nombre, String contraseña) throws UsuarioException, IOException {
-        return subasta.existeUsuario(nombre,contraseña);
+        return subasta.existeUsuario(nombre, contraseña);
     }
 
     public Persona retornarPersona(String nombreUsuario) {
-        persona= subasta.retornarPersona(nombreUsuario);
+        persona = subasta.retornarPersona(nombreUsuario);
         return persona;
     }
 
-    public Persona retornarPersonaLog(){
+    public Persona retornarPersonaLog() {
         return persona;
     }
 
+    public String idNecesaria (){
+        String id = retornarPersonaLog().getIdentificacion();
+        return id;
+    }
+    public boolean verificarTipoUsuario() {
+        String id = idNecesaria();
+        if(subasta.retornarAnunciante(id) != null){
+            return true;
+        }
+        return false;
+    }
 }
