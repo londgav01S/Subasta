@@ -1,10 +1,19 @@
 package co.edu.uniquindio.subasta.viewController;
+import co.edu.uniquindio.subasta.controller.PujaRealizadaController;
+import co.edu.uniquindio.subasta.model.Producto;
 import co.edu.uniquindio.subasta.model.Puja;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-public class PujaRealizadaViewController {
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class PujaRealizadaViewController  implements Initializable {
     @FXML
     private Button btnAceptarPuja;
 
@@ -58,5 +67,15 @@ public class PujaRealizadaViewController {
     void selectPujasPendiente(MouseEvent event) {
         btnAceptarPuja.setDisable(false);
         btnRechazarPuja.setDisable(false);
+        txtAreaInformacionPuja.setText(tblPujasPendientes.getSelectionModel().getSelectedItem().getAnuncio().toString());
+        txtPrecioConcordado.setText(tblPujasPendientes.getSelectionModel().getSelectedItem().getValorInicial()+"");
+    }
+    public void initialize (URL url, ResourceBundle resourceBundle){
+        clmEstado.setCellValueFactory(new PropertyValueFactory<>("estado"));
+        clmPrecioPendiente.setCellValueFactory(new PropertyValueFactory<>("valorInicial"));
+        clmProductoPendiente.setCellValueFactory(new PropertyValueFactory<>("producto"));
+        clmPrecioRespondido.setCellValueFactory(new PropertyValueFactory<>("valorInicial"));
+        clmProductoRespondido.setCellValueFactory(new PropertyValueFactory<>("producto"));
+        tblPujasPendientes.setItems(PujaRealizadaController.getListaPujasPendientes());
     }
 }

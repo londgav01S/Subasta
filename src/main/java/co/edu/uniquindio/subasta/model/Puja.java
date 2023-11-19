@@ -66,4 +66,15 @@ public class Puja implements Serializable {
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
+
+
+    @Override
+    public String toString() {
+        return  "estado=" + estado +
+                ", comprador=" + comprador.getNombre() +
+                ", anuncio=" + anuncio +
+                ", valorInicial=" + valorInicial +
+                ", fecha=" + fecha +
+                '}';
+    }
 }

@@ -2,6 +2,8 @@ package co.edu.uniquindio.subasta.model;
 
 import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
 import co.edu.uniquindio.subasta.exceptions.CompradorException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
 
 import java.io.Serializable;
@@ -254,9 +256,41 @@ public class Subasta implements Serializable {
 
             Puja puja = new Puja(EstadoPuja.PENDIENTE, (Comprador) persona, selectedItem, valorPuja, LocalDate.now());
             listaPujas.add(puja);
+            ((Comprador) persona).getListaPujas().add(puja);
             System.out.println("Sexito con la puja hecha");
         }
 
+    public boolean puedePujar(Anuncio anuncio, Comprador persona) {
+        if (persona.getListaPujas() == null) {
+             // Si la lista de pujas es nula, permitir la puja
+            ArrayList<Puja> lista = new ArrayList<Puja>();
+            persona.setListaPujas(lista);
+            return true;
+        }
 
-        //----------------------------------------------------CRUD Anuncio-------------------------------------------------
+        int cant = 0;
+        for (Puja puja : persona.getListaPujas()) {
+            if (anuncio.getCodigo().equals(puja.getAnuncio().getCodigo())) {
+                cant++;
+            }
+        }
+
+        return cant < 3;
+    }
+
+    public ObservableList<Puja> getListaPujasPendientes(Comprador persona) {
+        ObservableList <Puja> lista = FXCollections.observableArrayList();
+        if(persona.getListaPujas() == null) {
+            return lista;
+        }
+        for (Puja puja : persona.getListaPujas()){
+            if (puja.getEstado(). equals(EstadoPuja.PENDIENTE)){
+                lista.add(puja);
+            }
+        }
+        return lista;
+    }
+
+
+    //----------------------------------------------------CRUD Anuncio-------------------------------------------------
     }

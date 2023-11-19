@@ -6,6 +6,7 @@ import co.edu.uniquindio.subasta.exceptions.UsuarioException;
 import co.edu.uniquindio.subasta.model.*;
 import co.edu.uniquindio.subasta.utils.*;
 import co.edu.uniquindio.subasta.viewController.LoginViewController;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 
@@ -28,6 +29,15 @@ public class ModelFactoryController {
 
     public void crearPuja(Anuncio selectedItem, int valorPuja) {
         subasta.crearPuja(selectedItem, valorPuja, persona);
+        guardarResourceXML();
+    }
+
+    public boolean puedePujar(Anuncio anuncio) {
+        return subasta.puedePujar(anuncio,(Comprador)persona);
+    }
+
+    public ObservableList<Puja> getListaPujasPendientes() {
+        return subasta.getListaPujasPendientes((Comprador)persona);
     }
 
 

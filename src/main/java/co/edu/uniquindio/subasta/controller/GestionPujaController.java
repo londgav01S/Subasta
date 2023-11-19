@@ -17,6 +17,7 @@ public class GestionPujaController {
     }
 
 
-
-
+    public static boolean puedePujar(Anuncio anuncio) {
+        return singleton.puedePujar(anuncio);
+    }
 }

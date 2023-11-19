@@ -11,7 +11,57 @@
       <string>asdasd</string>
      </void>
      <void property="listaPujas">
-      <null/>
+      <void method="add">
+       <object class="co.edu.uniquindio.subasta.model.Puja" id="Puja0">
+        <void property="anuncio">
+         <object class="co.edu.uniquindio.subasta.model.Anuncio">
+          <void property="anunciante">
+           <object class="co.edu.uniquindio.subasta.model.Anunciante">
+            <void property="correoElectronico">
+             <string>luichiMail</string>
+            </void>
+            <void property="identificacion">
+             <string>1232589857</string>
+            </void>
+            <void property="listaAnuncios">
+             <null/>
+            </void>
+            <void property="nombre">
+             <string>José</string>
+            </void>
+            <void property="telefono">
+             <string>315450677</string>
+            </void>
+           </object>
+          </void>
+          <void property="codigo">
+           <string>123</string>
+          </void>
+          <void property="descripcion">
+           <string>Carrito lindo uwu</string>
+          </void>
+          <void property="nombre">
+           <string>Carro</string>
+          </void>
+          <void property="valorInicial">
+           <double>120.0</double>
+          </void>
+         </object>
+        </void>
+        <void property="comprador">
+         <object idref="Comprador0"/>
+        </void>
+        <void property="estado">
+         <object class="java.lang.Enum" method="valueOf">
+          <class>co.edu.uniquindio.subasta.model.EstadoPuja</class>
+          <string>PENDIENTE</string>
+         </object>
+        </void>
+        <void property="valorInicial">
+         <double>123.0</double>
+        </void>
+       </object>
+      </void>
      </void>
      <void property="nombre">
       <string>asd</string>
@@ -20,6 +70,11 @@
       <string>asd</string>
      </void>
     </object>
+   </void>
+  </void>
+  <void property="listaPujas">
+   <void method="add">
+    <object idref="Puja0"/>
    </void>
   </void>
   <void property="listaUsuarios">

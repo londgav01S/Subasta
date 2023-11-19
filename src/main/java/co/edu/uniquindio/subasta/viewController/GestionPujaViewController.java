@@ -55,23 +55,24 @@ public class GestionPujaViewController implements Initializable {
 
     @FXML
     void pujar(ActionEvent event) {
-        /*
-        TODO: Tambien estaría bien que el programa revise si no hay una puja PENDIENTE
-         Previamente realizada por dicho Usuario
-        */
-        if(!txtPuja.getText().isEmpty() && txtPuja.getText().matches("\\d+")) {
-            //En este ejemplo, la expresión regular \\d+ se utiliza para verificar si la cadena
-            // contiene uno o más dígitos numéricos.
-            // Aquí, \\d representa cualquier dígito numérico, y + significa uno o más ocurrencias.
-            valorPuja = Integer.parseInt(txtPuja.getText());
-            //TODO: El usuario q está vinculado a la puja debe ser el mismo que está logeado.
-            //TODO: mandarle parametros al controller y q el me lo devuelva
-            GestionPujaController.crearPuja(tblAnunciosPublicados.getSelectionModel().getSelectedItem(),valorPuja);
+        Anuncio anuncio= tblAnunciosPublicados.getSelectionModel().getSelectedItem();
+        if(GestionPujaController.puedePujar(anuncio)){
+            if(!txtPuja.getText().isEmpty() && txtPuja.getText().matches("\\d+")) {
+                //En este ejemplo, la expresión regular \\d+ se utiliza para verificar si la cadena
+                // contiene uno o más dígitos numéricos.
+                // Aquí, \\d representa cualquier dígito numérico, y + significa uno o más ocurrencias.
+                valorPuja = Integer.parseInt(txtPuja.getText());
+                GestionPujaController.crearPuja(anuncio,valorPuja);
 
-        }
-        else {
-            GestionPujaController.enviarAlerta("Error", "Error en el monto",
-                    "Por favor ingresa un monto valido",
+            }
+            else {
+                GestionPujaController.enviarAlerta("Error", "Error en el monto",
+                        "Por favor ingresa un monto valido",
+                        Alert.AlertType.WARNING);
+            }
+        }else{
+            GestionPujaController.enviarAlerta("Error", "Cantidad máxima de pujas",
+                    "Haz alcanzado la máxima cantidad de pujas para este anuncio 😭😭",
                     Alert.AlertType.WARNING);
         }
     }
