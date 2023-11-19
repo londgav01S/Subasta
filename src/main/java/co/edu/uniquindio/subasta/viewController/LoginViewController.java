@@ -3,7 +3,6 @@ package co.edu.uniquindio.subasta.viewController;
 
 import co.edu.uniquindio.subasta.SubastaApplication;
 import co.edu.uniquindio.subasta.controller.LoginController;
-import co.edu.uniquindio.subasta.exceptions.UsuarioException;
 import co.edu.uniquindio.subasta.model.Persona;
 import co.edu.uniquindio.subasta.model.Producto;
 import javafx.event.ActionEvent;
@@ -106,6 +105,8 @@ public class LoginViewController implements Initializable{
     @FXML
     void iniciarSesionEvent(ActionEvent event) {
         iniciarSesion();
+        fUsuario.setText("");
+        fContrasenia.setText("");
     }
 
 
@@ -130,7 +131,7 @@ public class LoginViewController implements Initializable{
     public Persona getPersona (){
         return persona;
     }
-    public void mortrar() {
+    public void mostrar() {
         this.stage.show();
     }
 

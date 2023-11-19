@@ -12,7 +12,7 @@ public class Comprador extends Persona implements Serializable {
 
     public Comprador() {}
 
-    public Comprador(String nombre, String telefono, String identificacion, String correoElectronico, LocalDate fechaNacimiento, List<Puja> listaPujas) {
+    public Comprador(String nombre, String telefono, String identificacion, String correoElectronico, String fechaNacimiento, List<Puja> listaPujas) {
         super(nombre, telefono, identificacion, correoElectronico, fechaNacimiento);
         this.listaPujas = listaPujas;
     }

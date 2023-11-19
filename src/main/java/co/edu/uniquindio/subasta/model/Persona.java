@@ -10,19 +10,13 @@ public class Persona implements Serializable {
     private String telefono;
     private String identificacion;
     private String correoElectronico;
-    private LocalDate fechaNacimiento;
+    private String fechaNacimiento;
 
 
     public Persona() {}
 
-    public Persona(String nombre, String telefono, String identificacion, String correoElectronico) {
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.identificacion = identificacion;
-        this.correoElectronico = correoElectronico;
-    }
 
-    public Persona(String nombre, String telefono, String identificacion, String correoElectronico, LocalDate fechaNacimiento) {
+    public Persona(String nombre, String telefono, String identificacion, String correoElectronico, String fechaNacimiento) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.identificacion = identificacion;
@@ -30,11 +24,11 @@ public class Persona implements Serializable {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public LocalDate getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

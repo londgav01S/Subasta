@@ -90,7 +90,7 @@ public class GestionPujaViewController implements Initializable {
         this.clmAnunciante.setCellValueFactory(new PropertyValueFactory<>("anunciante"));
         this.clmCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         Anunciante ader = new Anunciante("José","315450677","1232589857"
-        ,"luichiMail", LocalDate.now(),null);
+        ,"luichiMail", "19-11-2023",null);
         Anuncio ad = new Anuncio("Carro","123",ader,null,"Carrito lindo uwu",null,null,null,120.000);
         listaAnuncios.add(ad);
         tblAnunciosPublicados.setItems(listaAnuncios);

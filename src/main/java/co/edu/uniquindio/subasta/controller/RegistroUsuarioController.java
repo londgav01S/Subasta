@@ -16,20 +16,11 @@ public class RegistroUsuarioController {
     }
 
     public Anunciante crearAnunciante(String nombreCompleto, String telefono, String identificacion, String correoElectronico,
-                                      LocalDate fechaNacimiento, List<Anuncio> listaAnuncios) {
+                                      String fechaNacimiento, List<Anuncio> listaAnuncios) {
         return mfm.crearAnunciante(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento, listaAnuncios);
     }
 
-    public void eliminarUsuario(Usuario usuarioSeleccionado) {
-        //mfm.eliminarUsuario(usuarioSeleccionado.getIdentificacion());
-    }
-
-    public void actualizarUsuario(Usuario usuarioSeleccionado, String telefono, String correoElectronico, String nombreUsuario) {
-        mfm.actualizarUsuario ( usuarioSeleccionado,  telefono,  correoElectronico,  nombreUsuario);
-    }
-
-
-    public Comprador crearComprador(String nombreCompleto, String telefono, String identificacion, String correoElectronico, LocalDate parse, List<Puja> listaPujas) {
+    public Comprador crearComprador(String nombreCompleto, String telefono, String identificacion, String correoElectronico, String parse, List<Puja> listaPujas) {
         return mfm.crearComprador(nombreCompleto, telefono, identificacion, correoElectronico, parse, listaPujas);
     }
 }

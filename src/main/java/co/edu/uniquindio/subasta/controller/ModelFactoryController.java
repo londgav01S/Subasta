@@ -8,7 +8,9 @@ import co.edu.uniquindio.subasta.utils.*;
 import co.edu.uniquindio.subasta.viewController.LoginViewController;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -27,18 +29,28 @@ public class ModelFactoryController {
         alert.showAndWait();
     }
 
-    public void crearPuja(Anuncio selectedItem, int valorPuja) {
-        subasta.crearPuja(selectedItem, valorPuja, persona);
-        guardarResourceXML();
+    public static boolean mostrarAlertaConfirmacion(String mensaje, String titulo) {
+        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+
+        // Configura los botones (Aceptar y Cancelar)
+        ButtonType botonAceptar = new ButtonType("Aceptar");
+        ButtonType botonCancelar = new ButtonType("Cancelar");
+        alerta.getButtonTypes().setAll(botonAceptar, botonCancelar);
+
+        // Muestra la alerta y espera a que el usuario elija una opción
+        Stage stage = (Stage) alerta.getDialogPane().getScene().getWindow();
+        stage.setAlwaysOnTop(true); // Asegura que la alerta esté encima de otras ventanas
+
+        alerta.showAndWait();
+
+        // Devuelve true si se presionó "Aceptar", false si se presionó "Cancelar"
+        return alerta.getResult() == botonAceptar;
     }
 
-    public boolean puedePujar(Anuncio anuncio) {
-        return subasta.puedePujar(anuncio,(Comprador)persona);
-    }
 
-    public ObservableList<Puja> getListaPujasPendientes() {
-        return subasta.getListaPujasPendientes((Comprador)persona);
-    }
 
 
     //------------------------------  Singleton ------------------------------------------------
@@ -161,7 +173,6 @@ public class ModelFactoryController {
 
     public Usuario crearUsuario(String nombreUsuario, String contrasenia, Persona persona) {
         Usuario usuario = subasta.agregarUsuario(nombreUsuario, contrasenia, persona);
-
         guardarUsuario(usuario);
         registrarAccionesSistema(" Se ha creado un usuarioc", 1, "creación del usuario " + nombreUsuario);
         guardarResourceXML();
@@ -169,16 +180,17 @@ public class ModelFactoryController {
 
     }
 
-    public void eliminarUsuario (String id){
-        subasta.eliminarUsuario(id);
-        registrarAccionesSistema(" Se ha eliminado un usuario ", 1, "eliminacion del usuario con id: " + id);
-
+    public void eliminarUsuario (String nombre){
+        subasta.eliminarUsuario(nombre);
+        registrarAccionesSistema(" Se ha eliminado un usuario ", 1,"usuario eliminado" );
+        guardarResourceXML();
     }
 
-    public void actualizarUsuario(Usuario usuarioSeleccionado, String telefono, String correoElectronico, String nombreUsuario) {
+    public void actualizarUsuario(Usuario usuarioSeleccionado, String telefono, String correoElectronico, Persona persona) {
         //TODO: HACERLO
-        registrarAccionesSistema(" Se ha actualizado un usuario ", 1, " El usuario:  (" + nombreUsuario+") se ha actualizado");
-
+        subasta.actualizarUsuario(usuarioSeleccionado, telefono, correoElectronico, persona);
+        registrarAccionesSistema(" Se ha actualizado un usuario ", 1, " El usuario:  (" + persona.getNombre()+") se ha actualizado");
+        guardarResourceXML();
     }
 
 
@@ -190,7 +202,7 @@ public class ModelFactoryController {
     // TODO: terminar los CRUD
 
     public Anunciante crearAnunciante(String nombre, String telefono, String identificacion, String correoElectronico,
-                                      LocalDate fechaNacimiento, List<Anuncio> listaAnuncios)  {
+                                      String fechaNacimiento, List<Anuncio> listaAnuncios)  {
         try {
             Anunciante anunciante= subasta.crearAnunciante(nombre, telefono, identificacion, correoElectronico, fechaNacimiento,listaAnuncios );
             //TODO: revisar lo de registrar acciones
@@ -204,10 +216,6 @@ public class ModelFactoryController {
         } catch (AnuncianteException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public void eliminarAnunciante(String id){
-        subasta.eliminarAnunciante(id);
     }
     private void guardarAnunciante(Anunciante anunciante) {
         try{
@@ -225,7 +233,7 @@ public class ModelFactoryController {
 
 
     public Comprador crearComprador(String nombreCompleto, String telefono, String identificacion, String correoElectronico,
-                                    LocalDate fechaNacimiento, List<Puja> listaPujas) {
+                                    String fechaNacimiento, List<Puja> listaPujas) {
         try {
             Comprador comprador=subasta.crearComprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento ,listaPujas);
             guardarComprador(comprador);
@@ -280,17 +288,43 @@ public class ModelFactoryController {
 
     Persona persona;
 
+    Usuario usuario;
+
     public boolean inicioSesion(String nombre, String contraseña) throws UsuarioException, IOException {
         return subasta.existeUsuario(nombre,contraseña);
     }
 
     public Persona retornarPersona(String nombreUsuario) {
-        persona= subasta.retornarPersona(nombreUsuario);
+        usuario= subasta.retornarUsuario(nombreUsuario);
+        persona= usuario.getPersona();
         return persona;
     }
 
     public Persona retornarPersonaLog(){
         return persona;
+    }
+
+    public Usuario retornarUsuarioLog(){
+        return usuario;
+    }
+
+    //--------------------------------------------------Puja--------------------------------------------------------------
+
+    public void crearPuja(Anuncio selectedItem, int valorPuja) {
+        subasta.crearPuja(selectedItem, valorPuja, persona);
+        guardarResourceXML();
+    }
+
+    public boolean puedePujar(Anuncio anuncio) {
+        return subasta.puedePujar(anuncio,(Comprador)persona);
+    }
+
+    public ObservableList<Puja> getListaPujasPendientes() {
+        return subasta.getListaPujasPendientes((Comprador)persona);
+    }
+
+    public List<Puja> getListaPujasResueltas(List<Puja> list) {
+        return subasta.filtrarPujasResueltas(list);
     }
 
 }
