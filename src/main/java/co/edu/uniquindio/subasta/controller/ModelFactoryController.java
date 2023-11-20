@@ -236,7 +236,6 @@ public class ModelFactoryController {
                                     String fechaNacimiento, List<Puja> listaPujas) {
         try {
             Comprador comprador=subasta.crearComprador(nombreCompleto, telefono, identificacion, correoElectronico, fechaNacimiento ,listaPujas);
-            guardarComprador(comprador);
             guardarResourceXML();
             // TODO: 2021-09-30 revisar si va a quedar aqui lo de usuario
             //Usuario usuario= subasta.agregarUsuario(nombreusuario, contrasenia);
@@ -245,9 +244,6 @@ public class ModelFactoryController {
         } catch (CompradorException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private void guardarComprador(Comprador comprador) {
     }
 
     //-----------------------------------------Comprador--------------------------------------------------------------
