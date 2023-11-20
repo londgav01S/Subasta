@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="476.0" prefWidth="674.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.UserViewController">
+<AnchorPane prefHeight="454.0" prefWidth="674.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.UserViewController">
    <children>
       <TextField fx:id="fNombreCompleto" layoutX="84.0" layoutY="141.0" />
       <TextField fx:id="fIdentificacion" layoutX="269.0" layoutY="142.0" />
       <TextField fx:id="fTelefono" layoutX="461.0" layoutY="142.0" />
       <TextField fx:id="fUsuario" layoutX="83.0" layoutY="302.0" />
-      <TextField fx:id="fContrasenia" layoutX="269.0" layoutY="303.0" />
+      <TextField fx:id="fContrasenia" layoutX="295.0" layoutY="302.0" />
       <Label layoutX="89.0" layoutY="124.0" text="Nombre completo" />
       <Label layoutX="276.0" layoutY="124.0" text="Numero de identificacion" />
       <Label layoutX="465.0" layoutY="124.0" text="Numero telefonico" />
@@ -34,8 +35,8 @@
       <Line endX="453.2071533203125" endY="-1.792877197265625" layoutX="173.0" layoutY="233.0" startX="-127.0" startY="-1.0" />
       <Line endX="76.5" endY="116.5" layoutX="549.0" layoutY="114.0" startX="75.5" startY="-11.5" />
       <Line endX="-77.5" endY="104.5" layoutX="123.0" layoutY="127.0" startX="-77.5" startY="-24.0" />
-      <Line endX="451.7928466796875" endY="-1.999969482421875" layoutX="173.0" layoutY="352.0" startX="-127.4141845703125" startY="-5.0" />
-      <Line endX="293.99981689453125" layoutX="330.0" layoutY="257.0" startX="-100.0" />
+      <Line endX="82.41413879394531" endY="-5.0" layoutX="173.0" layoutY="352.0" startX="-127.4141845703125" startY="-5.0" />
+      <Line endX="-74.58586120605469" endY="-3.0517578125E-5" layoutX="330.0" layoutY="257.0" startX="-100.0" />
       <Label layoutX="95.0" layoutY="247.0" text="Informacion Usuario">
          <font>
             <Font size="14.0" />
@@ -46,7 +47,7 @@
       <Line endX="-73.0" layoutX="158.0" layoutY="257.0" startX="-110.79290771484375" />
       <Label layoutX="88.0" layoutY="181.0" text="Correo electronico" />
       <TextField fx:id="fCorreoElectronico" layoutX="84.0" layoutY="198.0" />
-      <Line endX="76.70697021484375" endY="89.99996948242188" layoutX="548.0" layoutY="258.0" startX="76.70703125" startY="-3.29290771484375" />
+      <Line endX="76.70697021484375" endY="89.99996948242188" layoutX="178.0" layoutY="261.0" startX="76.70703125" startY="-3.29290771484375" />
       <Label layoutX="270.0" layoutY="181.0" text="Fecha de Nacimiento" />
       <DatePicker fx:id="tfFechaNacimiento" layoutX="269.0" layoutY="198.0" />
       <Label layoutX="51.0" layoutY="59.0">
@@ -54,17 +55,18 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="465.0" layoutY="280.0" text="Tipo de Usuario" />
-      <ComboBox fx:id="cbTipoUsuario" layoutX="444.0" layoutY="305.0" prefWidth="150.0" />
-      <Line endX="-77.29289245605469" endY="28.600006103515625" layoutX="123.0" layoutY="401.0" startX="-77.29290771484375" startY="-26.5" />
-      <Line endX="-77.29290771484375" endY="31.707122802734375" layoutX="700.0" layoutY="400.0" startX="-77.29290771484375" startY="-26.5" />
-      <Line endX="451.7928466796875" endY="-1.999969482421875" layoutX="174.0" layoutY="433.0" startX="-127.4141845703125" startY="-5.0" />
-      <Line endX="-73.0" layoutX="157.0" layoutY="373.0" startX="-110.79290771484375" />
-      <Label layoutX="95.0" layoutY="362.0" text="¿Qué quieres hacer?">
+      <Label layoutX="465.0" layoutY="280.0" text="Nueva Controseña:" />
+      <TextField fx:id="fContraseniaNuevo" layoutX="461.0" layoutY="302.0" />
+      <BorderPane layoutX="267.0" layoutY="256.0" prefHeight="95.0" prefWidth="354.0" style="-fx-border-color: black;" />
+      <Button fx:id="btActualizarDatos" layoutX="106.0" layoutY="393.0" mnemonicParsing="false" onAction="#actualizar" text="Actualizar Datos">
          <font>
-            <Font size="14.0" />
+            <Font size="13.0" />
          </font>
-      </Label>
-      <Line endX="293.99981689453125" layoutX="329.0" layoutY="373.0" startX="-100.0" />
+      </Button>
+      <Button fx:id="btElimanar" layoutX="394.0" layoutY="393.0" mnemonicParsing="false" onAction="#eliminarUsuario" text="Eliminar">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -5,20 +5,28 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="259.0" prefWidth="242.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.LoginViewController">
+<AnchorPane prefHeight="289.0" prefWidth="300.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.LoginViewController">
     <children>
-        <TextField fx:id="fUsuario" layoutX="47.0" layoutY="94.0" />
-        <PasswordField fx:id="fContrasenia" layoutX="47.0" layoutY="157.0" />
-        <Button fx:id="btnIniciarSesion" layoutX="79.0" layoutY="193.0" mnemonicParsing="false" onAction="#iniciarSesionEvent" text="Iniciar sesion" />
-        <Label layoutX="45.0" layoutY="76.0" text="Usuario" />
-        <Label layoutX="50.0" layoutY="139.0" text="Contraseña" />
-      <Label layoutX="65.0" layoutY="28.0" text="Sign in to Subasta">
+      <BorderPane layoutX="21.0" layoutY="68.0" prefHeight="133.0" prefWidth="255.0" style="-fx-border-color: black;" />
+        <TextField fx:id="fUsuario" layoutX="72.0" layoutY="94.0" />
+        <PasswordField fx:id="fContrasenia" layoutX="72.0" layoutY="154.0" />
+        <Button fx:id="btnIniciarSesion" layoutX="47.0" layoutY="221.0" mnemonicParsing="false" onAction="#iniciarSesionEvent" style="-fx-border-color: black;" text="Iniciar sesion">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font size="13.0" />
+         </font></Button>
+        <Label layoutX="80.0" layoutY="76.0" text="Usuario" />
+        <Label layoutX="70.0" layoutY="136.0" text="Contraseña" />
+      <Label layoutX="83.0" layoutY="34.0" text="Sign in to Subasta">
+         <font>
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Button fx:id="btnRegistrarse" layoutX="79.0" layoutY="227.0" mnemonicParsing="false" onAction="#registrarseEvent" prefHeight="25.0" prefWidth="85.0" text="Registrarse" />
+      <Button fx:id="btnRegistrarse" layoutX="167.0" layoutY="221.0" mnemonicParsing="false" onAction="#registrarseEvent" prefHeight="25.0" prefWidth="85.0" style="-fx-border-color: black;" text="Registrarse">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
     </children>
 </AnchorPane>

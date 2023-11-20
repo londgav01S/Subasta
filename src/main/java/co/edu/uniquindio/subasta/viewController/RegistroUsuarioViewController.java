@@ -1,6 +1,5 @@
 package co.edu.uniquindio.subasta.viewController;
 import co.edu.uniquindio.subasta.controller.ModelFactoryController;
-import co.edu.uniquindio.subasta.controller.ProductoController;
 import co.edu.uniquindio.subasta.controller.RegistroUsuarioController;
 import co.edu.uniquindio.subasta.model.*;
 import javafx.collections.FXCollections;
@@ -9,14 +8,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import co.edu.uniquindio.subasta.model.Persona;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -183,7 +179,7 @@ public class RegistroUsuarioViewController implements Initializable {
 
     @FXML
     void volverInicioSesionEvent(ActionEvent event) {
-        loginController.mortrar();
+        loginController.mostrar();
         this.stage.close();
     }
 

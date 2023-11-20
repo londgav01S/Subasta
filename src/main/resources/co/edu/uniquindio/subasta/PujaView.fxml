@@ -5,15 +5,15 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="541.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.PujaViewController">
+<AnchorPane prefHeight="572.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.PujaViewController">
    <children>
-      <TabPane layoutX="26.0" layoutY="19.0" prefHeight="522.0" prefWidth="599.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="43.0" layoutY="17.0" prefHeight="538.0" prefWidth="631.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Gestión de Pujas">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="494.0" prefWidth="599.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="631.0">
                      <children>
-                        <SplitPane layoutX="14.0" layoutY="6.0" prefHeight="474.0" prefWidth="566.0">
+                        <SplitPane layoutX="32.0" layoutY="7.0" prefHeight="496.0" prefWidth="566.0">
                             <items>
                                 <fx:include source="GestionPujaView.fxml" />
                             </items>
@@ -24,9 +24,9 @@
           </Tab>
           <Tab text="Pujas Realizadas">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="362.0" prefWidth="631.0">
                      <children>
-                        <SplitPane layoutX="14.0" layoutY="14.0" prefHeight="366.0" prefWidth="574.0">
+                        <SplitPane layoutX="12.0" layoutY="50.0" prefHeight="409.0" prefWidth="606.0">
                             <items>
                                 <fx:include source="PujaRealizadaView.fxml" />
                             </items>
