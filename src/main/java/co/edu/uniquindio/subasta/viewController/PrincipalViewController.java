@@ -1,5 +1,6 @@
 package co.edu.uniquindio.subasta.viewController;
 
+import co.edu.uniquindio.subasta.controller.PrincipalController;
 import co.edu.uniquindio.subasta.model.Persona;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,7 +34,7 @@ public class PrincipalViewController implements Initializable {
     @FXML
     private AnchorPane panelCentral;
 
-
+    private PrincipalController principalController;
     Persona persona;
 
     public void setPersona(Persona persona) {
@@ -64,8 +65,17 @@ public class PrincipalViewController implements Initializable {
 
 
     }
+
+    public void bloquearBotones (){
+        if(principalController.verificarTipoUsuario()){
+            bPage1.setDisable(true);
+        }
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        principalController = new PrincipalController() ;
+        bloquearBotones();
+
     }
     private LoginViewController loginController;
     private Stage stage;
