@@ -155,11 +155,11 @@ public class RegistroUsuarioViewController implements Initializable {
 
             if(tipoUsuario.equals("Anunciante")){
                 persona= registroUsuarioController.crearAnunciante(nombreCompleto, telefono, identificacion, correoElectronico,
-                        LocalDate.parse(fechaNacimiento),null);
+                        (fechaNacimiento),null);
             }
             else{
                 persona= registroUsuarioController.crearComprador(nombreCompleto, telefono, identificacion, correoElectronico,
-                        LocalDate.parse(fechaNacimiento),null);
+                        (fechaNacimiento),null);
             }
 
             if(persona != null){
