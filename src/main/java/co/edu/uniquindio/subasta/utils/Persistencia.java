@@ -205,7 +205,7 @@ public class Persistencia {
             anunciante.setTelefono(linea.split("@@")[1]);
             anunciante.setIdentificacion(linea.split("@@")[3]);
             anunciante.setCorreoElectronico(linea.split("@@")[4]);
-            anunciante.setFechaNacimiento(LocalDate.parse(linea.split("@@")[5]));
+            anunciante.setFechaNacimiento((linea.split("@@")[5]));
             anunciantes.add(anunciante);
         }
         return anunciantes;

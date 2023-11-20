@@ -19,6 +19,8 @@ public class PujaRealizadaViewController  implements Initializable {
 
     @FXML
     private Button btnRechazarPuja;
+    @FXML
+    private Button btnCancelar;
 
     @FXML
     private TableColumn<?, ?> clmEstado;
@@ -47,26 +49,60 @@ public class PujaRealizadaViewController  implements Initializable {
     @FXML
     private TextField txtPrecioConcordado;
 
+
+
     @FXML
     void aceptarPuja(ActionEvent event) {
-        System.out.println("sexo");
+        PujaRealizadaController.aceptarPuja(tblPujasPendientes.getSelectionModel().getSelectedItem());
+        updateTablas();
+        PujaRealizadaController.enviarAlerta("Puja Aceptada",
+                "La puja ha sido confirmada", "Has aceptado esta compra",
+        Alert.AlertType.CONFIRMATION);
+        txtPrecioConcordado.clear();
+        txtAreaInformacionPuja.clear();
     }
 
     @FXML
-    void rechazarPuja(ActionEvent event) {
+    void cancelarPuja(ActionEvent event) {
+        PujaRealizadaController.cancelarPuja(tblPujasPendientes.getSelectionModel().getSelectedItem());
+        updateTablas();
+        PujaRealizadaController.enviarAlerta("Puja cancelada", "La puja ha sido Cancelada",
+                "Has cancelado esta puja", Alert.AlertType.INFORMATION);
+        txtPrecioConcordado.clear();
+        txtAreaInformacionPuja.clear();
 
+    }
+
+    private void updateTablas() {
+        tblPujasPendientes.setItems(PujaRealizadaController.getListaPujasPendientes());
+        tblPujasAnswered.setItems(PujaRealizadaController.getListaPujasRespondidas());
+
+    }
+
+
+    @FXML
+    void rechazarPuja(ActionEvent event) {
+        PujaRealizadaController.rechazarPuja(tblPujasPendientes.getSelectionModel().getSelectedItem());
+        updateTablas();
+        PujaRealizadaController.enviarAlerta("Puja Rechazada",
+                "La puja ha sido rechazada", "Has rechazado esta compra",
+                Alert.AlertType.CONFIRMATION);
+        txtPrecioConcordado.clear();
+        txtAreaInformacionPuja.clear();
     }
 
     @FXML
     void selectPujaRespondida(MouseEvent event) {
-        btnAceptarPuja.setDisable(true);
-        btnRechazarPuja.setDisable(true);
+        btnAceptarPuja.setDisable(false);
+        btnRechazarPuja.setDisable(false);
+        btnCancelar.setDisable(true);
     }
 
     @FXML
     void selectPujasPendiente(MouseEvent event) {
-        btnAceptarPuja.setDisable(false);
-        btnRechazarPuja.setDisable(false);
+        btnAceptarPuja.setDisable(true);
+        btnRechazarPuja.setDisable(true);
+        btnCancelar.setDisable(false);
         txtAreaInformacionPuja.setText(tblPujasPendientes.getSelectionModel().getSelectedItem().getAnuncio().toString());
         txtPrecioConcordado.setText(tblPujasPendientes.getSelectionModel().getSelectedItem().getValorInicial()+"");
     }
@@ -76,6 +112,6 @@ public class PujaRealizadaViewController  implements Initializable {
         clmProductoPendiente.setCellValueFactory(new PropertyValueFactory<>("producto"));
         clmPrecioRespondido.setCellValueFactory(new PropertyValueFactory<>("valorInicial"));
         clmProductoRespondido.setCellValueFactory(new PropertyValueFactory<>("producto"));
-        tblPujasPendientes.setItems(PujaRealizadaController.getListaPujasPendientes());
+        updateTablas();
     }
 }

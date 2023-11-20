@@ -112,9 +112,6 @@ public class AnuncioViewController implements Initializable {
     return anuncio;
     }
 
-    private List<Producto> cargarProducto (){
-        return productoController.cargarProducto();
-    }
 
     ProductoViewController productoViewController;
     ProductoController productoController;
@@ -144,9 +141,9 @@ llenarCombo();
     }
 
     private void llenarCombo (){
-        List<Producto> lista = cargarProducto();
-        ObservableList<Producto> listaProducts = FXCollections.observableArrayList(lista);
-        comboProducto.setItems(listaProducts);
+        //List<Producto> lista = cargarProducto();
+        //ObservableList<Producto> listaProducts = FXCollections.observableArrayList(lista);
+        //comboProducto.setItems(listaProducts);
     }
         private boolean datosValidados(String nombreAux, String idAux, String telefonoAux, String correoAux, String usuarioAux, String contraAux) {
         String notificacion = "";

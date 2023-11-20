@@ -12,7 +12,7 @@ public class Anunciante extends Persona implements Serializable {
     public Anunciante() {}
 
     public Anunciante(String nombre, String telefono, String identificacion, String correoElectronico,
-                      LocalDate fechaNacimiento, List<Anuncio> listaAnuncios) {
+                      String fechaNacimiento, List<Anuncio> listaAnuncios) {
         super(nombre, telefono, identificacion, correoElectronico, fechaNacimiento);
         this.listaAnuncios = listaAnuncios;
     }

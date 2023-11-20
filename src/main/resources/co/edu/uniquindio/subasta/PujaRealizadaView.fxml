@@ -8,7 +8,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.viewController.PujaRealizadaViewController">
    <children>
       <TableView fx:id="tblPujasPendientes" layoutX="14.0" layoutY="22.0" onMouseClicked="#selectPujasPendiente" prefHeight="183.0" prefWidth="292.0">
@@ -33,10 +32,11 @@
          </columnResizePolicy>
       </TableView>
       <TextArea fx:id="txtAreaInformacionPuja" editable="false" layoutX="321.0" layoutY="24.0" prefHeight="256.0" prefWidth="266.0" />
-      <Button fx:id="btnAceptarPuja" layoutX="454.0" layoutY="349.0" mnemonicParsing="false" onAction="#aceptarPuja" text="Aceptar" textFill="#10730a" />
-      <Button fx:id="btnRechazarPuja" layoutX="522.0" layoutY="349.0" mnemonicParsing="false" onAction="#rechazarPuja" text="Rechazar" textFill="RED" />
+      <Button fx:id="btnAceptarPuja" layoutX="320.0" layoutY="349.0" mnemonicParsing="false" onAction="#aceptarPuja" text="Confirmar" textFill="#10730a" />
+      <Button fx:id="btnRechazarPuja" layoutX="393.0" layoutY="349.0" mnemonicParsing="false" onAction="#rechazarPuja" text="Rechazar" textFill="RED" />
       <Label layoutX="321.0" layoutY="6.0" text="Información:" />
       <Label layoutX="321.0" layoutY="296.0" text="Precio Concordado:" />
       <TextField fx:id="txtPrecioConcordado" editable="false" layoutX="437.0" layoutY="292.0" />
+      <Button fx:id="btnCancelar" layoutX="525.0" layoutY="349.0" mnemonicParsing="false" onAction="#cancelarPuja" text="Cancelar" textFill="RED" />
    </children>
 </AnchorPane>

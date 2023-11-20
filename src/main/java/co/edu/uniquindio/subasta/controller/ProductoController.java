@@ -21,9 +21,9 @@ public class ProductoController {
 
     }
 
-    public List<Producto> cargarProducto() {
+    /*public List<Producto> cargarProducto() {
         List <Producto> lista = new ArrayList<>();
         lista = mfm.cargarProducto();
         return lista;
-    }
+    }*/
 }
